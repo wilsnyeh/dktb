@@ -2,6 +2,47 @@
 
 Website that utilizes National State Park(NPS) API and allows users to peruse parks and make a list of locations that they want to visit with all the information that comes along with them.
 
+😁😁😁😁😁
+- Sergey Lyuft
+- Liam Cahill
+- Greg Robertson
+- Siah Meraki
+- Wilson Yeh
+
+The ultimate shopping list for your bucket list
+
+## intended market
+
+outdoorsy people - or those that want to get outside more - instead of being stuck infront of a computer all day...
+Our intended market of users for this would be 'weekend warriors' or travelers who are looking to enjoy adventures that are more outdoors oriented - here they are able to look up places of interest and possibly find others who have visited and see their comments on a park. On each page theyre able to check valuable information on a states park such as weather, activities, and amenities. 
+
+
+* possible ad revenue from vendors - REI/ outdoor retailers/ travel sites/ 
+* travelers looking to visit state park areas
+* 
+
+## functionality 
+** uses NPS API to retrieve data for parks **
+** uses Weather API to retrieve weather data for parks **
+** Users are those who have created an account ** 
+
+* anyone can create an account
+    * users can edit their profile/account
+    * add pinned parks to your account - create their 'bucket list' of places they want to/ intend on visiting
+    * pinned parks can be 'checked off' after youve made your visit to the park 
+    * users will have a history of parks theyve visited/checked off their bucket list 
+* search states for parks - to list parks in the state  
+    * unlock additional info from parks after login/signing up to encourage users to create an account
+    * include weather conditions for parks
+* users can leave comments on a park/ park rating system?
+* amenities - parking/ restrooms/ food/ camping
+* activities to do at the parks
+* articles of the park/ info? 
+
+*** achievements - something used to track how many parks a user has visited; at some thresholds users gain medals or accolades
+*** social aspect 
+*** live feed from area if cam is available - some parks have ranger cameras if we are able to find a way to tap into their feeds we can include these as part of a parks page information (can also make this available for users after signup)
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
@@ -9,6 +50,8 @@ To make it easy for you to get started with GitLab, here's a list of recommended
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
 ## Add your files
+
+
 👀👀👀👀
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
 - [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
@@ -91,46 +134,7 @@ For open source projects, say how it is licensed.
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
 
-😁😁😁😁😁
-- Sergey Lyuft
-- Liam Cahill
-- Greg Robertson
-- Siah Meraki
-- Wilson Yeh
 
-The ultimate shopping list for your bucket list
-
-## intended market
-
-outdoorsy people - or those that want to get outside more - instead of being stuck infront of a computer all day...
-Our intended market of users for this would be 'weekend warriors' or travelers who are looking to enjoy adventures that are more outdoors oriented - here they are able to look up places of interest and possibly find others who have visited and see their comments on a park. On each page theyre able to check valuable information on a states park such as weather, activities, and amenities. 
-
-
-* possible ad revenue from vendors - REI/ outdoor retailers/ travel sites/ 
-* travelers looking to visit state park areas
-* 
-
-## functionality 
-** uses NPS API to retrieve data for parks **
-** uses Weather API to retrieve weather data for parks **
-** Users are those who have created an account ** 
-
-* anyone can create an account
-    * users can edit their profile/account
-    * add pinned parks to your account - create their 'bucket list' of places they want to/ intend on visiting
-    * pinned parks can be 'checked off' after youve made your visit to the park 
-    * users will have a history of parks theyve visited/checked off their bucket list 
-* search states for parks - to list parks in the state  
-    * unlock additional info from parks after login/signing up to encourage users to create an account
-    * include weather conditions for parks
-* users can leave comments on a park/ park rating system?
-* amenities - parking/ restrooms/ food/ camping
-* activities to do at the parks
-* articles of the park/ info? 
-
-*** achievements - something used to track how many parks a user has visited; at some thresholds users gain medals or accolades
-*** social aspect 
-*** live feed from area if cam is available - some parks have ranger cameras if we are able to find a way to tap into their feeds we can include these as part of a parks page information (can also make this available for users after signup)
 
 
 
