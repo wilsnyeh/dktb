@@ -1,4 +1,9 @@
 # Dont Kick The Bucket
+## Design
+* [API design](docs/apis.md)
+* [Data model](docs/data-model.md)
+* [GHI](docs/ghi.md)
+* [Integrations](docs/integrations.md)
 
 Website that utilizes National State Park(NPS) API and allows users to peruse parks and make a list of locations that they want to visit with all the information that comes along with them.
 
