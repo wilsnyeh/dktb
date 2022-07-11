@@ -1,26 +1,39 @@
 volumes:
-  DONT-KICK-THE-BUCKET:
-    external: true
+    DONT-KICK-THE-BUCKET:
+        external: true
+    postgres-data:
+        external: true
 services:
-  users:
-      build:
-          context: ./users
-          dockerfile: ./Dockerfile.dev
-      ports:
-          - "8090:8000"
-      volumes:
-          - ./users:/app
-      environment:
-          DATABASE_URL: postgresql://user-name:password@postgres/db-name
-          WAIT_HOSTS: postgres:5432
-  parks:
-      build:
-          context: ./parks
-          dockerfile: ./Dockerfile.dev
-      ports:
-          - "8080:8000"
-      volumes:
-          - ./parks:/app
-      environment:
-          DATABASE_URL: postgresql://user-name:password@postgres/db-name
-          WAIT_HOSTS: postgres:5432
+    postgres:
+        build:
+            context: ./db
+            dockerfile: ./Dockerfile.dev
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_MULTIPLE_DATABASES=users, parks
+            - POSTGRES_PASSWORD=test-databases
+        ports:
+            - 15432:5432
+    users:
+        build:
+            context: ./users
+            dockerfile: ./Dockerfile.dev
+        ports:
+            - "8090:8000"
+        volumes:
+            - ./users:/app
+        environment:
+            DATABASE_URL: postgresql://user-name:password@postgres/users
+            WAIT_HOSTS: postgres:5432
+    parks:
+        build:
+            context: ./parks
+            dockerfile: ./Dockerfile.dev
+        ports:
+            - "8080:8000"
+        volumes:
+            - ./parks:/app
+        environment:
+            DATABASE_URL: postgresql://user-name:password@postgres/parks
+            WAIT_HOSTS: postgres:5432
