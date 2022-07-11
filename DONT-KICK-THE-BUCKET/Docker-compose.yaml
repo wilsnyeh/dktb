@@ -1,0 +1,26 @@
+volumes:
+  DONT-KICK-THE-BUCKET:
+    external: true
+services:
+  users:
+      build:
+          context: ./users
+          dockerfile: ./Dockerfile.dev
+      ports:
+          - "8090:8000"
+      volumes:
+          - ./users:/app
+      environment:
+          DATABASE_URL: postgresql://user-name:password@postgres/db-name
+          WAIT_HOSTS: postgres:5432
+  parks:
+      build:
+          context: ./parks
+          dockerfile: ./Dockerfile.dev
+      ports:
+          - "8080:8000"
+      volumes:
+          - ./parks:/app
+      environment:
+          DATABASE_URL: postgresql://user-name:password@postgres/db-name
+          WAIT_HOSTS: postgres:5432
