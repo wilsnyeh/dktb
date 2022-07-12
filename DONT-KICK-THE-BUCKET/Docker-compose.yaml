@@ -24,7 +24,7 @@ services:
         volumes:
             - ./users:/app
         environment:
-            DATABASE_URL: postgresql://user-name:password@postgres/users
+            DATABASE_URL: postgresql://users:password@postgres/users
             WAIT_HOSTS: postgres:5432
     parks:
         build:
@@ -35,5 +35,5 @@ services:
         volumes:
             - ./parks:/app
         environment:
-            DATABASE_URL: postgresql://user-name:password@postgres/parks
+            DATABASE_URL: postgresql://parks:password@postgres/parks
             WAIT_HOSTS: postgres:5432
