@@ -14,3 +14,9 @@ Petra who was working on the GHI with Azami.
 Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
+
+07.11 June.
+
+- Setting up Docker and Journal entries
+
+Working with Docker.
