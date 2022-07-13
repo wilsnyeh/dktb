@@ -1,5 +1,7 @@
 ## July 13, 2022
+* Started creating models for the Parks and Users apps
 
+We had a driver and multiple navigators to test out paired programming today, it seemed to work very well with the group. We got a lot done in term of the models. Tomorrow we continue with testing the migrations
 ## July 12, 2022
 
 Today, I worked on:
