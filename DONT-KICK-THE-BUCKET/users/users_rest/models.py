@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class ParksVO(models.Model):
+class ParkVO(models.Model):
     name = models.CharField(max_length=50, unique=True)
     state = models.CharField(max_length=2, unique=True)
     parks_visited = models.BooleanField(default=False)
@@ -13,9 +13,7 @@ class Account(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=50, unique=True)
     park = models.ForeignKey(
-        ParksVO,
+        ParkVO,
         related_name= "Accounts",
         on_delete= models.CASCADE 
     )
-
-
