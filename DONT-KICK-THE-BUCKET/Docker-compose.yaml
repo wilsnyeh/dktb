@@ -24,7 +24,7 @@ services:
         volumes:
             - ./users:/app
         environment:
-            DATABASE_URL: postgresql://user-name:password@postgres/users
+            DATABASE_URL: postgresql://users:password@postgres/users
             WAIT_HOSTS: postgres:5432
     parks:
         build:
@@ -35,5 +35,17 @@ services:
         volumes:
             - ./parks:/app
         environment:
-            DATABASE_URL: postgresql://user-name:password@postgres/parks
+            DATABASE_URL: postgresql://parks:password@postgres/parks
             WAIT_HOSTS: postgres:5432
+    ghi:
+        image: node:lts-bullseye
+        command: /bin/bash run.sh
+        working_dir: /app
+        volumes:
+            - ./ghi:/app
+        ports:
+            - "3000:3000"
+        environment:
+            HOST_OS: ${OS}
+            NODE_ENV: development
+            HOST: "0.0.0.0"
