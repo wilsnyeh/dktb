@@ -1,3 +1,26 @@
+July 13, 2022
+
+Began creating models. While creating the models we realized it was not as simple as it sounded. We ran into an "issue" regarding organization of our models. We 
+-----
+
+July 12, 2022
+
+Greg is succesfully up to date. 
+
+Liam, Wilson and Myself are troubleshooting an error 
+    FATAL:  password authentication failed for user "user-name"
+        RESOLVED:  Liam created a help desk ticket and the issue was resolved with the help of Zynh and Yesenia
+While greg begins creating the react app. 
+
+Greg had questions creating the react and brought the issue to peer programming.
+We all troubleshooted the issue. 
+(-) Issue
+    [x]run.sh not being recognized as a .sh file
+        - RESOLVED: I remembered that all .sh files needed to have the bash command: #!/bin/bash and after adding this on line one of run.sh the file is now recognized and all erros disappeared that greg was having.
+No new issues as of End of Day.
+Next steps, discuss in more detail work load for each person. 
+
+-----
 July 11, 2022
 
 Partnered with Laim in creating the required files needed to run the docker containers. 
@@ -31,19 +54,3 @@ Inform @Greg of next steps:
 
 Accomplished Docker containers up and running for Siah, Liam, Wilson, Sergey
 
-July 12
-
-Greg is succesfully up to date. 
-
-Liam, Wilson and Myself are troubleshooting an error 
-    FATAL:  password authentication failed for user "user-name"
-        RESOLVED:  Liam created a help desk ticket and the issue was resolved with the help of Zynh and Yesenia
-While greg begins creating the react app. 
-
-Greg had questions creating the react and brought the issue to peer programming.
-We all troubleshooted the issue. 
-(-) Issue
-    [x]run.sh not being recognized as a .sh file
-        - RESOLVED: I remembered that all .sh files needed to have the bash command: #!/bin/bash and after adding this on line one of run.sh the file is now recognized and all erros disappeared that greg was having.
-No new issues as of End of Day.
-Next steps, discuss in more detail work load for each person. 
