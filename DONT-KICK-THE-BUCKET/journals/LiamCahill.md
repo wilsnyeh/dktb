@@ -5,7 +5,6 @@
 - Started writing Django model classes for both microservices and discussed functionality.
 
 
-
 # 07/12/2022
 - Created both backend microservices and integrated to POSTGRES from defualt SQLite3.
 - Created React app frontend
