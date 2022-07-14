@@ -49,3 +49,5 @@ services:
             HOST_OS: ${OS}
             NODE_ENV: development
             HOST: "0.0.0.0"
+            REACT_APP_USERS: http://localhost:8090
+            REACT_APP_PARKS: http://localhost:8080

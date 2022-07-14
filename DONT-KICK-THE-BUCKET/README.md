@@ -18,8 +18,8 @@ The ultimate shopping list for your bucket list
 
 ## Intended Market
 
-outdoorsy people - or those that want to get outside more - instead of being stuck infront of a computer all day...
-Our intended market of users for this would be 'weekend warriors' or travelers who are looking to enjoy adventures that are more outdoors oriented - here they are able to look up places of interest and possibly find others who have visited and see their comments on a park. On each page theyre able to check valuable information on a states park such as weather, activities, and amenities. 
+outdoorsy people - or those that want to get outside more - instead of being stuck in front of a computer all day...
+Our intended market of users for this would be 'weekend warriors' or travelers who are looking to enjoy adventures that are more outdoors oriented - here they are able to look up places of interest and possibly find others who have visited and see their comments on a park. On each page they-re able to check valuable information on a states park such as weather, activities, and amenities. 
 
 
 * possible ad revenue from vendors - REI/ outdoor retailers/ travel sites/ 
@@ -34,8 +34,8 @@ Our intended market of users for this would be 'weekend warriors' or travelers w
 * anyone can create an account
     * users can edit their profile/account
     * add pinned parks to your account - create their 'bucket list' of places they want to/ intend on visiting
-    * pinned parks can be 'checked off' after youve made your visit to the park 
-    * users will have a history of parks theyve visited/checked off their bucket list 
+    * pinned parks can be 'checked off' after you've made your visit to the park 
+    * users will have a history of parks they've visited/checked off their bucket list 
 * search states for parks - to list parks in the state  
     * unlock additional info from parks after login/signing up to encourage users to create an account
     * include weather conditions for parks
@@ -46,7 +46,7 @@ Our intended market of users for this would be 'weekend warriors' or travelers w
 
 *** achievements - something used to track how many parks a user has visited; at some thresholds users gain medals or accolades
 *** social aspect 
-*** live feed from area if cam is available - some parks have ranger cameras if we are able to find a way to tap into their feeds we can include these as part of a parks page information (can also make this available for users after signup)
+*** live feed from area if cam is available - some parks have ranger cameras if we are able to find a way to tap into their feeds we can include these as part of a parks page information (can also make this available for users after sign-up)
 
 ## Add your files
 
