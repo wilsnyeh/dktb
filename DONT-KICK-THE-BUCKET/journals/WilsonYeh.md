@@ -1,4 +1,7 @@
+## July 13, 2022
+Today, I worked on:
 
+We had taken roles as driver/navigators for today to help develop our models and taking some time to work through this type of coding to gain some experience talking through our code and our logic of getting something to work the way we intend. These seemingly 'easy' tasks can prove to be quite difficult when the spotlight is shining on us. 
 ## July 12, 2022
 Today, I worked on:
 
@@ -6,7 +9,7 @@ Today, I worked on:
 
 We were able to troubleshoot through the issues we were having moving from sqlite into postgres db. And worked through getting default React. 
 
-## July 07, 2022
+## July 11, 2022
 Today, I worked on:
 
 * Setting up Docker and Journal entries
