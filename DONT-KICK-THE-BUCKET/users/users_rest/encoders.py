@@ -16,8 +16,9 @@ class AccountEncoder(ModelEncoder):
         "first_name",
         "last_name",
         "email",
-        "park",
     ]
-    encoder = {
-        "park" : ParkVOEncoder(),
-    }
+    #     "park",
+    # ]
+    # encoder = {
+    #     "park" : ParkVOEncoder(),
+    # }
