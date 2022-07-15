@@ -1,3 +1,8 @@
+## July 15, 2022
+Today, I worked on:
+
+We were trying to troubleshoot issues we were having with getting user authentication working properly. 
+
 ## July 14, 2022
 Today, I worked on:
 
