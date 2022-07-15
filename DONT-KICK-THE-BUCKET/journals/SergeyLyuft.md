@@ -15,7 +15,29 @@ Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
 
-07.11 June.
+07.14.22
+
+- Worked in pairs with views.py for Users and for Parks microservices. Me, Siah and Greg worked for Users views.py.
+- After,checked that everything is working with Insomnia. Received empty list of Accounts in Insomnia like a proof that everything is working.
+  ##Issues:
+- Thought about how we want to implement our login and signup option: with React or with Django.
+
+  07.13.2022
+
+- Worked with Bootstrap to create style of website.
+- Created issue ticket on GitLab to get experience with that.
+  ##Issues:
+- Had issue with link to Bootstrap server. Styles did not show up. Updated link and everything is working.
+
+  07.12.2022
+
+- Integrated PostgreSQL instead of default SQLite.
+- Create React APP.
+  ##Issues:
+- Had errors with .sh files. Did not have !bin/bash/ to indicate a shell script file.
+- Had issues with docker-compose file.Updated data depends on database.
+
+  07.11.2022
 
 - Setting up Docker and Journal entries
 
