@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure--t&=qqxa^0^g-_2_-ahj1=tu_&5&5mm2)se1@g(fp^16ce8&ij
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+AUTH_USER_MODEL = "users_rest.Account"
+
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
@@ -45,7 +47,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -87,6 +89,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {'min_length': '8', 'max_length': '128'},
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
