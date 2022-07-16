@@ -15,7 +15,14 @@ Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
 
-07.14.22
+07.15.22
+
+- Changed login option, change views.py for users.
+- Started work with poller.py file.
+  ##Issues
+- Had issues with migrations, because we changed models, but very fast fix it.
+
+  07.14.22
 
 - Worked in pairs with views.py for Users and for Parks microservices. Me, Siah and Greg worked for Users views.py.
 - After,checked that everything is working with Insomnia. Received empty list of Accounts in Insomnia like a proof that everything is working.

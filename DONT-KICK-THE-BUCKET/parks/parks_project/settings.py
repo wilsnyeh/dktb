@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-$#$o8zej$9vrf&-75j#tgo77l*u!ujv7qgtkmfv-_612h4rkkt
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+NPS_API_KEY = os.environ["NPS_API_KEY"]
 
 # Application definition
 
