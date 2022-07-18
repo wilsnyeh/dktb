@@ -1,9 +1,21 @@
+## July 15, 2022
+
+Today, I worked on:
+
+* Trying to solve authentication issues with Django
+
+Made progress on the views for users and parks
+
 ## July 14, 2022
+Today, I worked on:
+
 * Created poller files/ started on Views
 
-Made some small adjustments to the YAML file to account for GHI/Back end communication. Continuing to brainstorm ideas for functionality. Created out first views for Parks
+Made some small adjustments to the YAML file to account for GHI/Back end communication. Continuing to brainstorm ideas for functionality. Created out first views for Parks and Users. Coming up with a plan to user django authentication
 
 ## July 13, 2022
+Today, I worked on:
+
 * Started creating models for the Parks and Users apps
 
 We had a driver and multiple navigators to test out paired programming today, it seemed to work very well with the group. We got a lot done in term of the models. Tomorrow we continue with testing the migrations
