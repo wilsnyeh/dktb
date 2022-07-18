@@ -1,14 +1,11 @@
 volumes:
     DONT-KICK-THE-BUCKET:
         external: true
-    postgres-data:
-        external: true
 services:
-
     postgres:
         image: postgres:14.2-bullseye        
         volumes:
-            - postgres-data:/var/lib/postgres/data
+            - DONT-KICK-THE-BUCKET:/var/lib/postgresql/data
         environment:
             - POSTGRES_MULTIPLE_DATABASES=users, parks
             - POSTGRES_PASSWORD=test-databases
@@ -22,9 +19,12 @@ services:
             - "8090:8000"
         volumes:
             - ./users:/app
+        depends_on:
+            - postgres
         environment:
-            DATABASE_URL: postgres://users:password@postgres/users
+            DATABASE_URL: postgresql://users:password@postgres:5432/users
             WAIT_HOSTS: postgres:5432
+            WAIT_TIMEOUT: 240
     parks:
         build:
             context: ./parks
@@ -33,9 +33,12 @@ services:
             - "8080:8000"
         volumes:
             - ./parks:/app
+        depends_on:
+            - postgres
         environment:
-            DATABASE_URL: postgres://parks:password@postgres/parks
+            DATABASE_URL: postgresql://parks:password@postgres:5432/parks
             WAIT_HOSTS: postgres:5432
+            WAIT_TIMEOUT: 240
             NPS_API_KEY: ${NPS_API_KEY}
     parks-poller:        
         build:
@@ -49,8 +52,8 @@ services:
             - postgres
             - parks
         environment:
-            DATABASE_URL: postgres://parks:password@database:5432/parks
-            WAIT_HOSTS: database:5432,parks:8000
+            DATABASE_URL: postgresql://parks:password@postgres:5432/parks
+            WAIT_HOSTS: postgres:5432,parks:8000
             WAIT_TIMEOUT: 240
     ghi:
         image: node:lts-bullseye

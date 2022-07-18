@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-$#$o8zej$9vrf&-75j#tgo77l*u!ujv7qgtkmfv-_612h4rkkt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost"]
 NPS_API_KEY = os.environ["NPS_API_KEY"]
 
 # Application definition
@@ -75,6 +75,17 @@ WSGI_APPLICATION = 'parks_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'DONT-KICK-THE-BUCKET',
+#         'USER':'parks',
+#         'PASSWORD':'password',
+#         'HOST':'postgres',
+#         'PORT':'5432',
+#     }
+# }
 
 DATABASES = {}
 DATABASES["default"] = dj_database_url.config()
