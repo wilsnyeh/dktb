@@ -1,3 +1,13 @@
+## July 15, 2022
+Today, I worked on:
+
+We were trying to troubleshoot issues we were having with getting user authentication working properly. 
+
+## July 14, 2022
+Today, I worked on:
+
+I was able to take on the role of driver this afternoon, while Liam was the navigator. This allowed me to take a shot at what felt like 'true' pair programming talking through my thought process and having someone else be the sort of eyes, incase I had missed something. We were able to get our requests to return what we had expected and only experienced a small hic-up that was quickly resolved. 
+
 ## July 13, 2022
 Today, I worked on:
 
