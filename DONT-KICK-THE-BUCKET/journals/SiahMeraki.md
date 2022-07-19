@@ -1,7 +1,7 @@
 July 18, 2022
 
 "Today was a good day" -- Ice Cube
-Today with Sergey as the driver we began polling for data. We used the NPS API docs to get the correct paths for the data we wanted to poll from. It was a bit nerve rackig at first because w e did not want to get stuck in an infiinite loop and max out our API key. (luckily the process to get an API key for NPS is a straight forward process)
+Today with Sergey as the driver we began polling for data. We used the NPS API docs to get the correct paths for the data we wanted to poll from. It was a bit nerve rackig at first because w e did not want to get stuck in an infiinite loop and max out our API key. (luckily the process to get an API key for NPS is a straight forward process).
 
 
 july 15, 2022
