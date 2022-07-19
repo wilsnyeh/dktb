@@ -18,20 +18,25 @@ def get_parks():
     response = requests.get("https://developer.nps.gov/api/v1/parks?parkCode=&api_key=uxgDw6XIywVawiRxM2cbgQhzU9UZEfVrBgFdMtvz")
     content = json.loads(response.content)
     for park in content["data"]:
-        Park.objects.update_or_create(defaults={
-                "name": park["fullName"],
+        phoneNumber = ""
+        try:
+            phoneNumber = park["contacts"]["phoneNumbers"][0]["phoneNumber"]
+        except IndexError:
+            pass
+
+        Park.objects.update_or_create(
+            name=park["fullName"], ## unique identifier
+            defaults={
                 "state": park["states"],
                 "city": park["addresses"][0]["city"],
                 "address": park["addresses"][0]["line1"],
                 "description": park["description"],
                 "weather_info": park["weatherInfo"],
                 "entrance_fee": park["entranceFees"][0]["cost"],
-                # "contact_num": park["contacts"]["phoneNumbers"][0]["phoneNumber"],
+                "contact_num": phoneNumber,
                 "image_url": park["images"][0]["url"],
                 }
             )
-        # except TypeError:
-        #     print("error")
 
 def poll():
     while True:
@@ -40,7 +45,7 @@ def poll():
             get_parks()
         except Exception as e:
             print(e, file=sys.stderr)
-        time.sleep(5)
+        time.sleep(20) ## 86400
 
 if __name__ == "__main__":
     poll()
