@@ -1,7 +1,18 @@
 volumes:
     DONT-KICK-THE-BUCKET:
         external: true
+    pgadmin:
+        external: true
 services:
+    pgadmin:
+        image: dpage/pgadmin4
+        volumes:
+            - pgadmin:/var/lib/pgadmin
+        ports:
+            - 1325:80
+        environment:
+             PGADMIN_DEFAULT_EMAIL: person@gmail.com
+             PGADMIN_DEFAULT_PASSWORD: password
     postgres:
         build:
             context: ./db
@@ -36,7 +47,7 @@ services:
             DATABASE_URL: postgresql://parks:password@postgres/parks
             WAIT_HOSTS: postgres:5432
 
-    parks-poller:        
+    parks-poller: #  uncommment for production or to repopulate database
         build:
             context: ./parks/poll
             dockerfile: ./Dockerfile.dev
