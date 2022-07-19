@@ -1,5 +1,10 @@
 # Journal entries for MOD 3 group project
 
+## July 19, 2022
+*Finished Poller.py file
+
+
+
 ## July 18, 2022
 *Error handled database issues
 PostgreSQL in our YML file was established incorrectly, reverted back to previous version on my computer and adjusted accordingly. Working now.
