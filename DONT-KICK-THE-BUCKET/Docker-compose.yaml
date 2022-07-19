@@ -38,8 +38,6 @@ services:
         environment:
             DATABASE_URL: postgresql://parks:password@postgres:5432/parks
             WAIT_HOSTS: postgres:5432
-            WAIT_TIMEOUT: 240
-            NPS_API_KEY: ${NPS_API_KEY}
     parks-poller:        
         build:
             context: ./parks/poll

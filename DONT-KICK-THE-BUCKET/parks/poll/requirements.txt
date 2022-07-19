@@ -21,4 +21,8 @@ requests==2.27.1
 sqlparse==0.4.2
 tomli==2.0.1
 urllib3==1.26.9
+<<<<<<< HEAD
 whitenoise==5.3.0
+=======
+whitenoise==5.3.0
+>>>>>>> 16b18b51afaa7ab3966825106fa8e463dbe9d4e7
