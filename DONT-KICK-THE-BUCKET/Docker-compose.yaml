@@ -11,8 +11,8 @@ services:
         ports:
             - 1325:80
         environment:
-             PGADMIN_DEFAULT_EMAIL: person@gmail.com
-             PGADMIN_DEFAULT_PASSWORD: password
+            PGADMIN_DEFAULT_EMAIL: person@gmail.com
+            PGADMIN_DEFAULT_PASSWORD: password
     postgres:
         build:
             context: ./db
@@ -47,21 +47,21 @@ services:
             DATABASE_URL: postgresql://parks:password@postgres/parks
             WAIT_HOSTS: postgres:5432
 
-    parks-poller: #  uncommment for production or to repopulate database
-        build:
-            context: ./parks/poll
-            dockerfile: ./Dockerfile.dev
-        volumes:
-            - ./parks/poll:/app
-            - ./parks/parks_project:/app/parks_project
-            - ./parks/parks_rest:/app/parks_rest
-        depends_on:
-            - postgres
-            - parks
-        environment:
-            DATABASE_URL: postgresql://parks:password@postgres:5432/parks
-            WAIT_HOSTS: postgres:5432,parks:8000
-            WAIT_TIMEOUT: 240
+    # parks-poller: #  uncommment for production or to repopulate database
+    #     build:
+    #         context: ./parks/poll
+    #         dockerfile: ./Dockerfile.dev
+    #     volumes:
+    #         - ./parks/poll:/app
+    #         - ./parks/parks_project:/app/parks_project
+    #         - ./parks/parks_rest:/app/parks_rest
+    #     depends_on:
+    #         - postgres
+    #         - parks
+    #     environment:
+    #         DATABASE_URL: postgresql://parks:password@postgres:5432/parks
+    #         WAIT_HOSTS: postgres:5432,parks:8000
+    #         WAIT_TIMEOUT: 240
     ghi:
         image: node:lts-bullseye
         command: /bin/bash run.sh

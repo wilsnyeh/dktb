@@ -44,7 +44,7 @@ def poll():
             get_parks()
         except Exception as e:
             print(e, file=sys.stderr)
-        time.sleep(20) ## 86400
+        time.sleep(86400) ## 86400
 
 if __name__ == "__main__":
     poll()
