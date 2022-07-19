@@ -3,7 +3,9 @@ volumes:
         external: true
 services:
     postgres:
-        image: postgres:14.2-bullseye        
+        build:
+            context: ./db
+            dockerfile: ./Dockerfile.dev
         volumes:
             - DONT-KICK-THE-BUCKET:/var/lib/postgresql/data
         environment:
@@ -19,12 +21,9 @@ services:
             - "8090:8000"
         volumes:
             - ./users:/app
-        depends_on:
-            - postgres
         environment:
-            DATABASE_URL: postgresql://users:password@postgres:5432/users
+            DATABASE_URL: postgresql://users:password@postgres/users
             WAIT_HOSTS: postgres:5432
-            WAIT_TIMEOUT: 240
     parks:
         build:
             context: ./parks
@@ -33,11 +32,10 @@ services:
             - "8080:8000"
         volumes:
             - ./parks:/app
-        depends_on:
-            - postgres
         environment:
-            DATABASE_URL: postgresql://parks:password@postgres:5432/parks
+            DATABASE_URL: postgresql://parks:password@postgres/parks
             WAIT_HOSTS: postgres:5432
+
     parks-poller:        
         build:
             context: ./parks/poll
@@ -67,3 +65,4 @@ services:
             HOST: "0.0.0.0"
             REACT_APP_USERS: http://localhost:8090
             REACT_APP_PARKS: http://localhost:8080
+
