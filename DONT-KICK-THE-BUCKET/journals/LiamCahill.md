@@ -1,5 +1,29 @@
 # Journal entries for MOD 3 group project
 
+## July 18, 2022
+*Error handled database issues
+PostgreSQL in our YML file was established incorrectly, reverted back to previous version on my computer and adjusted accordingly. Working now.
+
+* Reformatted Poller.py
+still working on poller file but it is grabbing correct information and applying it to a model. Only polling one instance currently.
+
+**Database currently working and established correctly and speaking to both microservices**
+
+## July 15, 2022
+*Completed API view endpoints for both microservices
+Wrote and registered views for all request types needed
+**All endpoints working**
+
+*Started writing 3rd party poller for NPS microservice
+Creating a poller file that has a polling function to grab data from 3rd party API and register a model we have created which is essentially a VO.
+
+## July 14, 2022
+*Resolved User model framing
+Decided to go with djangos AbstractUser model that comes with some built in authentication features to help with sessions.
+
+* Started creating API views
+Paired programmed API views for both microservices and solidified endpoints on insomnia.
+
 # 07/13/2022
 - Started creating GitLab issues formatting project structure
 - Started writing Django model classes for both microservices and discussed functionality.
