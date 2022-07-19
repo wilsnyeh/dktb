@@ -1,15 +1,13 @@
 volumes:
     DONT-KICK-THE-BUCKET:
         external: true
-    postgres-data:
-        external: true
 services:
     postgres:
         build:
             context: ./db
             dockerfile: ./Dockerfile.dev
         volumes:
-            - postgres-data:/var/lib/postgresql/data
+            - DONT-KICK-THE-BUCKET:/var/lib/postgresql/data
         environment:
             - POSTGRES_MULTIPLE_DATABASES=users, parks
             - POSTGRES_PASSWORD=test-databases
@@ -37,6 +35,22 @@ services:
         environment:
             DATABASE_URL: postgresql://parks:password@postgres/parks
             WAIT_HOSTS: postgres:5432
+
+    parks-poller:        
+        build:
+            context: ./parks/poll
+            dockerfile: ./Dockerfile.dev
+        volumes:
+            - ./parks/poll:/app
+            - ./parks/parks_project:/app/parks_project
+            - ./parks/parks_rest:/app/parks_rest
+        depends_on:
+            - postgres
+            - parks
+        environment:
+            DATABASE_URL: postgresql://parks:password@postgres:5432/parks
+            WAIT_HOSTS: postgres:5432,parks:8000
+            WAIT_TIMEOUT: 240
     ghi:
         image: node:lts-bullseye
         command: /bin/bash run.sh
