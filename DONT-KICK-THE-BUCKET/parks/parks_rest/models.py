@@ -4,7 +4,7 @@ from django.db import models
 
 class Park(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    state = models.CharField(max_length=2)
+    state = models.CharField(max_length=250)
     city = models.CharField(max_length=50, blank=True, null=True)
     address = models.CharField(max_length=50, unique=True)
     description = models.TextField()
