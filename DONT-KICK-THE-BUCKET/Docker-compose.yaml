@@ -46,6 +46,9 @@ services:
         environment:
             DATABASE_URL: postgresql://parks:password@postgres/parks
             WAIT_HOSTS: postgres:5432
+            PARKS_API: http://localhost:8080
+            NPS_API_KEY: ${NPS_API_KEY}
+            WAIT_TIMEOUT: 180
 
     parks-poller: #  uncommment for production or to repopulate database
         build:
@@ -62,6 +65,7 @@ services:
             DATABASE_URL: postgresql://parks:password@postgres:5432/parks
             WAIT_HOSTS: postgres:5432,parks:8000
             WAIT_TIMEOUT: 240
+            NPS_API_KEY: ${NPS_API_KEY}
     ghi:
         image: node:lts-bullseye
         command: /bin/bash run.sh
