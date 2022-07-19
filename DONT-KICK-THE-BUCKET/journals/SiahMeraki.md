@@ -4,7 +4,7 @@ July 18, 2022
 Today with Sergey as the driver we began polling for data. We used the NPS API docs to get the correct paths for the data we wanted to poll from. It was a bit nerve rackig at first because w e did not want to get stuck in an infiinite loop and max out our API key. (luckily the process to get an API key for NPS is a straight forward process).
 
 
-july 15, 2022
+July 15, 2022
 
 Today we began discussing how the poller will be handled. We also began working with our API key. I figured out this needs to be stored in the gitignore file by a quick search online. We replicated the settings to successfully convert our API to a hidden file and made sure not to just "show" our API in our code. We used a template variable. A long process but I've never done it before which was cool to see. 
 
