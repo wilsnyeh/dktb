@@ -29,7 +29,6 @@ def get_parks():
             defaults={
                 "state": park["states"],
                 "city": park["addresses"][0]["city"],
-                "address": park["addresses"][0]["line1"],
                 "description": park["description"],
                 "weather_info": park["weatherInfo"],
                 "entrance_fee": park["entranceFees"][0]["cost"],
