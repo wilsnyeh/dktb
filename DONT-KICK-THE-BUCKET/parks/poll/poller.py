@@ -5,6 +5,8 @@ import time
 import json
 import requests
 
+NPS_API_KEY = os.environ["NPS_API_KEY"]
+
 sys.path.append("")
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "parks_project.settings")
 django.setup()
@@ -14,8 +16,11 @@ import parks_rest.models
 # from park_rest.models import Something
 from parks_rest.models import Park
 
+
+
 def get_parks():
-    response = requests.get("https://developer.nps.gov/api/v1/parks?parkCode=&api_key=uxgDw6XIywVawiRxM2cbgQhzU9UZEfVrBgFdMtvz")
+    print("😀😀😀", NPS_API_KEY)
+    response = requests.get(f'https://developer.nps.gov/api/v1/parks?parkCode=&api_key={NPS_API_KEY}')
     content = json.loads(response.content)
     for park in content["data"]:
         phoneNumber = ""
