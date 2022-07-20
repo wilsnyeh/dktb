@@ -15,7 +15,7 @@ import parks_rest.models
 from parks_rest.models import Park
 
 def get_parks():
-    response = requests.get("https://developer.nps.gov/api/v1/parks?parkCode=&api_key=uxgDw6XIywVawiRxM2cbgQhzU9UZEfVrBgFdMtvz")
+    response = requests.get("https://developer.nps.gov/api/v1/parks?parkCode=&api_key={api_key}")
     content = json.loads(response.content)
     for park in content["data"]:
         phoneNumber = ""
@@ -29,7 +29,7 @@ def get_parks():
             defaults={
                 "state": park["states"],
                 "city": park["addresses"][0]["city"],
-                "address": park["addresses"][0]["line1"],
+                # "address": park["addresses"][0]["line1"],
                 "description": park["description"],
                 "weather_info": park["weatherInfo"],
                 "entrance_fee": park["entranceFees"][0]["cost"],

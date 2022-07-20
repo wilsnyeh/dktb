@@ -7,12 +7,17 @@ from django.views.decorators.http import require_http_methods
 from .models import Park
 from .encoders import ParkEncoder
 import json
+from django.conf import settings
 # Create your views here.
 
 
 
 @require_http_methods(["GET", "POST"])
 def parks_list(request):
+    context = {
+        'api_key': settings.NPS_API_KEY
+    }
+    return render("https://developer.nps.gov/api/v1/parks?parkCode=&api_key=",context)
     if request.method == "GET":
         parks = Park.objects.all()
         return JsonResponse(

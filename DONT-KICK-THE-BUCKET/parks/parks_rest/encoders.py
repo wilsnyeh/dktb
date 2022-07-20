@@ -8,7 +8,7 @@ class ParkEncoder(ModelEncoder):
         "name",
         "state",
         "city",
-        "address",
+        # "address",
         "description",
         "weather_info",
         "entrance_fee",
