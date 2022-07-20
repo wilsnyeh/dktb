@@ -55,3 +55,13 @@ def account_detail(request, id):
                 "email": account.email,
             }
         )
+
+
+@require_http_methods(["GET"])
+def api_user_token(request):
+    if "jwt_access_token" in request.COOKIES:
+        token = request.COOKIES["jwt_access_token"]
+        if token:
+            return JsonResponse({"token": token})
+    response = JsonResponse({"token": None})
+    return response
