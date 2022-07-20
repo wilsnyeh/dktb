@@ -29,7 +29,6 @@ def get_parks():
             defaults={
                 "state": park["states"],
                 "city": park["addresses"][0]["city"],
-                "address": park["addresses"][0]["line1"],
                 "description": park["description"],
                 "weather_info": park["weatherInfo"],
                 "entrance_fee": park["entranceFees"][0]["cost"],
@@ -45,7 +44,7 @@ def poll():
             get_parks()
         except Exception as e:
             print(e, file=sys.stderr)
-        time.sleep(20) ## 86400
+        time.sleep(120) ## 86400
 
 if __name__ == "__main__":
     poll()
