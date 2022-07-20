@@ -7,9 +7,8 @@ from django.views.decorators.http import require_http_methods
 from .models import Park
 from .encoders import ParkEncoder
 import json
+from django.conf import settings
 # Create your views here.
-
-
 
 @require_http_methods(["GET", "POST"])
 def parks_list(request):
@@ -43,19 +42,3 @@ def park_detail(request, id):
             )
         except Park.DoesNotExist:
             return JsonResponse({"message": "Park does not exist"})
-    # else:
-    #     try:
-    #         content = json.loads(request.body)
-    #         park = Park.objects.get(id=id)
-    #         props = [
-    #             "id",
-    #             "name",
-    #             "state",
-    #             "city",
-    #             "address",
-    #             "description",
-    #             "weather_info",
-    #             "entrance_fee",
-    #             "contact_num",
-    #             "image_url",
-    #     ]
