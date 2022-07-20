@@ -46,7 +46,9 @@ services:
         environment:
             DATABASE_URL: postgresql://parks:password@postgres/parks
             WAIT_HOSTS: postgres:5432
-            NPS_API_KEY: ${NPS_API_KEY}            
+            PARKS_API: http://localhost:8080
+            NPS_API_KEY: ${NPS_API_KEY}
+            WAIT_TIMEOUT: 180
 
     parks-poller: #  uncommment for production or to repopulate database
         build:
