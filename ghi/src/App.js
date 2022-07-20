@@ -2,7 +2,7 @@ import react from 'react';
 import Nav from "./Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './Header';
-import Footer from './Footer';
+import Footer from './mainpage/Footer';
 import ParksList from './parks/ParksList';
 
 
@@ -11,8 +11,8 @@ function App(props) {
     <BrowserRouter>
     <Nav />
     <Header />
-    <Footer />
     <ParksList />
+    <Footer />
     {/* <Routes>
       <Route path="list" element={<ParksList />} />
     </Routes> */}
