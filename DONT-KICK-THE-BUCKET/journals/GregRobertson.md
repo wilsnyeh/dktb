@@ -2,6 +2,13 @@
 
 Today, I worked on:
 
+* Fixing issues with API calls - Set up PGadmin
+
+Having issues with API calls. API call only retrieves one park out 
+of hundreds of parks. Attempted to adjust poller.py and Park model.
+Decided to run the poller once every 24hrs since national parks don't 
+update often. Going to add the weather API that will update more 
+frequently on the hour. Went into PGadmin and set up the volume.
 
 ## July 18, 2022
 
