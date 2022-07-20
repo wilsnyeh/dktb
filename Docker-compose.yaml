@@ -11,8 +11,8 @@ services:
         ports:
             - 1325:80
         environment:
-             PGADMIN_DEFAULT_EMAIL: person@gmail.com
-             PGADMIN_DEFAULT_PASSWORD: password
+            PGADMIN_DEFAULT_EMAIL: person@gmail.com
+            PGADMIN_DEFAULT_PASSWORD: password
     postgres:
         build:
             context: ./db
@@ -49,7 +49,8 @@ services:
             NPS_API_KEY: ${NPS_API_KEY}
             WAIT_TIMEOUT: 180
 
-    parks-poller: #  uncommment for production or to repopulate database
+    parks-poller:
+        #  uncommment for production or to repopulate database
         build:
             context: ./parks/poll
             dockerfile: ./Dockerfile.dev
