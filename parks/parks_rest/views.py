@@ -14,10 +14,6 @@ from django.conf import settings
 
 @require_http_methods(["GET", "POST"])
 def parks_list(request):
-    context = {
-        'api_key': settings.NPS_API_KEY
-    }
-    return render("https://developer.nps.gov/api/v1/parks?parkCode=&api_key=",context)
     if request.method == "GET":
         parks = Park.objects.all()
         return JsonResponse(
@@ -48,19 +44,3 @@ def park_detail(request, id):
             )
         except Park.DoesNotExist:
             return JsonResponse({"message": "Park does not exist"})
-    # else:
-    #     try:
-    #         content = json.loads(request.body)
-    #         park = Park.objects.get(id=id)
-    #         props = [
-    #             "id",
-    #             "name",
-    #             "state",
-    #             "city",
-    #             "address",
-    #             "description",
-    #             "weather_info",
-    #             "entrance_fee",
-    #             "contact_num",
-    #             "image_url",
-    #     ]

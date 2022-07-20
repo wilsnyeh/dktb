@@ -10,6 +10,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "parks_project.settings")
 django.setup()
 
 NPS_API_KEY = os.environ["NPS_API_KEY"]
+print("HEEELLLLOOOOOOOOO~!!!!!!", type(NPS_API_KEY))
 
 # Import models from park_rest, here.
 import parks_rest.models
@@ -20,11 +21,7 @@ import os
 
 
 def get_parks():
-<<<<<<< HEAD:DONT-KICK-THE-BUCKET/parks/poll/poller.py
-    response = requests.get("https://developer.nps.gov/api/v1/parks?parkCode=&api_key={api_key}")
-=======
     response = requests.get(f'https://developer.nps.gov/api/v1/parks?parkCode=&api_key={["NPS_API_KEY"]}')
->>>>>>> 444faa6477c90885212497c316c7179313e4aa87:parks/poll/poller.py
     content = json.loads(response.content)
     for park in content["data"]:
         phoneNumber = ""
@@ -38,10 +35,6 @@ def get_parks():
             defaults={
                 "state": park["states"],
                 "city": park["addresses"][0]["city"],
-<<<<<<< HEAD:DONT-KICK-THE-BUCKET/parks/poll/poller.py
-                # "address": park["addresses"][0]["line1"],
-=======
->>>>>>> 444faa6477c90885212497c316c7179313e4aa87:parks/poll/poller.py
                 "description": park["description"],
                 "weather_info": park["weatherInfo"],
                 "entrance_fee": park["entranceFees"][0]["cost"],
