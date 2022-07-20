@@ -1,3 +1,7 @@
+## July 20, 2022
+
+Today Liam and I worked on user auth. Liam was able to get the user login form rendered, while I worked on rendering sign up form, and we felt it was important to get this part working before we could test users/user auth.
+
 ## July 19, 2022
 
 Today I think we were finally able to resolve the issues with our poller. With a lot of troubleshooting, we have gotten the NPS_API_KEY to be hidden and recognized in our poller dynamically, and is no longer shown when someone pulls the most recent commits. 
