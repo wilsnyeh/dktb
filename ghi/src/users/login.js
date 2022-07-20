@@ -1,9 +1,10 @@
 import React from 'react';
 import { Navigate, Link } from 'react-router-dom';
-import './login.css';
+
 
 
 class LoginForm extends React.Component{
+
     state={
         username:'',
         password:'',
@@ -54,7 +55,7 @@ class LoginForm extends React.Component{
                                 <input type={this.state.showPassword ? "text" : "password"} id="loginpagepass" name='password' placeholder='●●●●●●●●' 
                                     required onChange={this.handleChange} />
                                     
-                                <button className='input-group-text bg-dark text-light' type="button"
+                                <button className='input-group-text bg-primary text-light' type="button"
                                     onClick={() => this.setState({showPassword: !this.state.showPassword})}>Show Password
                                 </button>
                             </div>
@@ -65,10 +66,10 @@ class LoginForm extends React.Component{
 
                                     className="btn btn-primary" form="login-form">Log In
                                 </button>
-                                <Link to='/login/new'>Forgot Password?</Link> 
                             </div>
-                                
-                             
+                                <p> 
+                                <Link to='/login/new'>Forgot Password?</Link> 
+                                </p>
                                 <p>
                                     Don't have an Account? <Link to='/login/new'>Create Account</Link> 
                                 </p>
@@ -79,8 +80,5 @@ class LoginForm extends React.Component{
        
         )
     }
-       
 }
-
-
-export default LoginForm
+export default LoginForm;
