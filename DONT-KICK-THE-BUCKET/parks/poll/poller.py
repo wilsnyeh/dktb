@@ -20,9 +20,6 @@ import os
 
 def get_parks():
     response = requests.get(
-        f"https://developer.nps.gov/api/v1/parks?parkCode=all&api_key={['NPS_API_KEY']}"
-    )
-    response = requests.get(
         f'https://developer.nps.gov/api/v1/parks?parkCode=&api_key={["NPS_API_KEY"]}'
     )
     content = json.loads(response.content)
