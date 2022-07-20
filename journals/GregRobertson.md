@@ -9,7 +9,7 @@ of hundreds of parks. Attempted to adjust poller.py and Park model.
 Decided to run the poller once every 24hrs since national parks don't 
 update often. Going to add the weather API that will update more 
 frequently on the hour. Went into PGadmin and set up the volume.
-
+testing**
 ## July 18, 2022
 
 Today, I worked on:
