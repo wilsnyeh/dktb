@@ -50,25 +50,8 @@ services:
             NPS_API_KEY: ${NPS_API_KEY}
             WAIT_TIMEOUT: 180
 
-<<<<<<< HEAD
-    # parks-poller:
-    #     #  uncommment for production or to repopulate database
-    #     build:
-    #         context: ./parks/poll
-    #         dockerfile: ./Dockerfile.dev
-    #     volumes:
-    #         - ./parks/poll:/app
-    #         - ./parks/parks_project:/app/parks_project
-    #         - ./parks/parks_rest:/app/parks_rest
-    #     depends_on:
-    #         - postgres
-    #         - parks
-    #     environment:
-    #         DATABASE_URL: postgresql://parks:password@postgres:5432/parks
-    #         WAIT_HOSTS: postgres:5432,parks:8000
-    #         WAIT_TIMEOUT: 240
-=======
-    parks-poller: #  uncommment for production or to repopulate database
+    parks-poller:
+        #  uncommment for production or to repopulate database
         build:
             context: ./parks/poll
             dockerfile: ./Dockerfile.dev
@@ -84,7 +67,6 @@ services:
             WAIT_HOSTS: postgres:5432,parks:8000
             WAIT_TIMEOUT: 240
             NPS_API_KEY: ${NPS_API_KEY}
->>>>>>> 0a47ad804269bad10972c7081de8414b3e2a8ced
     ghi:
         image: node:lts-bullseye
         command: /bin/bash run.sh
