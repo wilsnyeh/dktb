@@ -8,7 +8,7 @@ import SignUpForm from './users/signup';
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
+      {/* <Nav /> */}
       <div className="container">
         <Routes>
           {/* <Route path="/" element={<MainPage/>} /> */}
