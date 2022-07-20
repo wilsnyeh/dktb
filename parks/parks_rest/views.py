@@ -10,8 +10,6 @@ import json
 from django.conf import settings
 # Create your views here.
 
-
-
 @require_http_methods(["GET", "POST"])
 def parks_list(request):
     if request.method == "GET":
