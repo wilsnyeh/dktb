@@ -1,7 +1,7 @@
-import react from 'react';
+import React from 'react';
 import Nav from "./Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from './Header';
+import Header from './mainpage/Header';
 import Footer from './mainpage/Footer';
 import ParksList from './parks/ParksList';
 
@@ -9,14 +9,10 @@ import ParksList from './parks/ParksList';
 function App(props) {
   return (
     <BrowserRouter>
-    <Nav />
-    <Header />
-    <ParksList />
-    <Footer />
-    {/* <Routes>
-      <Route path="list" element={<ParksList />} />
-    </Routes> */}
-
+      <Nav />
+      <Header />
+      <ParksList fetchUrl={"http://localhost:8080/parks/list/"}/>
+      <Footer />
     </BrowserRouter>
   )
 }
