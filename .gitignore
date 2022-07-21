@@ -15,7 +15,11 @@ web-scraper/node_modules
 /build
 
 # misc
+<<<<<<< HEAD
 .DS_Storegit 
+=======
+.DS_Store
+>>>>>>> 70e3cadd8f288d4590af57f1bb78856b24971785
 .env.local
 .env.development.local
 .env.test.local
