@@ -6,9 +6,10 @@ import React from 'react';
 import Nav from "./Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './mainpage/Header';
-import Footer from './mainpage/Footer';
+import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
 import LoginForm from './users/login';
+
 
 
 function App(props) {
