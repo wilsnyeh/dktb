@@ -8,20 +8,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './mainpage/Header';
 import Footer from './mainpage/Footer';
 import ParksList from './parks/ParksList';
+import LoginForm from './users/login';
 
 
 function App(props) {
   return (
     <BrowserRouter>
-      {/* <Nav /> */}
+      <Nav />
       <Header />
-      <ParksList fetchUrl={"http://localhost:8080/parks/list/"}/>
+      <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
       <Footer />
       <div className="container">
         <Routes>
           {/* <Route path="/" element={<MainPage/>} /> */}
-          <Route path="/login" element={<login/>} />
-          <Route path="/signup" element={<SignUpForm/>} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signup" element={<SignUpForm />} />
         </Routes>
       </div>
     </BrowserRouter>
