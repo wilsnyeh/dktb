@@ -1,9 +1,17 @@
 # Journal entries for MOD 3 group project
 
+## July 20, 2022
+* Started working on React pages
+Completed setting up routes and paths for user login and signup pages. Still not completed. pair programmed with Wilson
+used hooks and created an auth.js file to authenticate our JWT tokens and user sessions.
+
+* React parks list
+Siah and Sergey pair programmed to create and populate the main list page with react.
+
 ## July 19, 2022
 *Finished Poller.py file
-
-
+Completed both endpoints for list and detail GET requests for Parks poller.
+**Poller completed successfully** 
 
 ## July 18, 2022
 *Error handled database issues
