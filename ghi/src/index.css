@@ -7,7 +7,20 @@ body {
   padding-bottom: 3rem;
   color: #5a5a5a;
 }
+/* .root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
+} */
 
+
+.parkslist {
+  padding: 10%;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -27,6 +40,9 @@ body {
   height: 32rem;
 }
 
+.row-featurette {
+  padding-top: 56.25%;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -42,7 +58,10 @@ body {
   margin-left: .75rem;
 }
 /* rtl:end:ignore */
-
+.marketing .col-md-7 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
 
 /* Featurettes
 ------------------------- */
