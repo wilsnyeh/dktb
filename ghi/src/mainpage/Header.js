@@ -11,9 +11,9 @@ function Header() {
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active">
+        <div className="carousel-item active caruselphoto">
           {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> */}
-          <img src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+          <img src="https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?cs=srgb&dl=pexels-pixabay-210243.jpg&fm=jpg" hight="200px" alt="" />
           <div className="container">
             <div className="carousel-caption text-start">
               <h1>Example headline.</h1>

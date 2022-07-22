@@ -3,7 +3,20 @@
 }
 
 .white-section {
-    padding: 3% 15% 7%;
+    padding: 10px;
+    text-align: center;
+}
+
+.photo {
+    padding: 2px 0 10px 10px;
+}
+
+.caruselphoto {
+}
+
+.featurette-divider {
+    padding: 1px;
+    margin-top: 5px;
 }
 
 .footicon {
@@ -13,6 +26,6 @@
 }
 
  .footp {
-     padding: 7%;
+     padding: 3%;
      padding: 0;
  }
