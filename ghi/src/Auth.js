@@ -9,7 +9,7 @@ export function getToken() {
 export async function getTokenInternal() {
     const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/accounts/me/token/`;
     try {
-        const response = await fetch(url, {
+        const response = await fetch(url,    {
             credentials: "include",
         });
         if (response.ok) {
@@ -84,7 +84,7 @@ export async function getTokenInternal() {
         }
 
         async function login(username, password) {
-            const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/login/`;
+            const url = `${process.env.REACT_APP_USERS}/login/`;
             const form = new FormData();
             form.append("username", username);
             form.append("password", password);
@@ -95,7 +95,7 @@ export async function getTokenInternal() {
             });
             if (response.ok) {
                 const token = await getTokenInternal();
-                setToken(token);
+                setToken(token);    
                 return;
             }
             let error = await response.json();
@@ -103,7 +103,7 @@ export async function getTokenInternal() {
         }
 
         async function signup(username, password, email, firstName, lastName) {
-            const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/accounts/`;
+            const url = `${process.env.REACT_APP_USERS}/accounts/`;
             const response = await fetch(url, {
                 method: "post",
                 body: JSON.stringify({
