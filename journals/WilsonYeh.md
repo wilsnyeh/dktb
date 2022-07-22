@@ -1,3 +1,6 @@
+## July 21, 2022
+
+Not a lot of news today - Liam and I continue to make progress on the user authentication; We are both very close to completion with users signing up and users logging in. 
 ## July 20, 2022
 
 Today Liam and I worked on user auth. Liam was able to get the user login form rendered, while I worked on rendering sign up form, and we felt it was important to get this part working before we could test users/user auth.
