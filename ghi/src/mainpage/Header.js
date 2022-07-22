@@ -4,16 +4,15 @@ import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
-    <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
+    <div id="myCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
       <div className="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active caruselphoto">
-          {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> */}
-          <img src="https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?cs=srgb&dl=pexels-pixabay-210243.jpg&fm=jpg" hight="200px" alt="" />
+        <div className="carousel-item active " data-bs-interval="5000">          
+          <img className='w-100 carouselphoto' src="https://images.pexels.com/photos/259526/pexels-photo-259526.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
           <div className="container">
             <div className="carousel-caption text-start">
               <h1>Example headline.</h1>
@@ -22,9 +21,8 @@ function Header() {
             </div>
           </div>
         </div>
-        <div className="carousel-item">
-          <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
+        <div className="carousel-item">          
+          <img className='w-100 carouselphoto' src="https://images.unsplash.com/photo-1541075217473-93119871682d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1159&q=80" alt="" />
           <div className="container">
             <div className="carousel-caption">
               <h1>Another example headline.</h1>
@@ -34,8 +32,7 @@ function Header() {
           </div>
         </div>
         <div className="carousel-item">
-          <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
+        <img className='w-100 carouselphoto' src="https://images.unsplash.com/photo-1602851688358-f72cc9e847a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1711&q=80" alt="" />
           <div className="container">
             <div className="carousel-caption text-end">
               <h1>One more for good measure.</h1>
