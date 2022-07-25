@@ -65,13 +65,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "users-api",
-    os.environ.get("HOST_NAME", "127.0.0.1"),
-]
+AUTH_USER_MODEL = "users_rest.Account"
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000/"]
+ROOT_URLCONF = 'users_project.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
@@ -79,8 +75,6 @@ CORS_ALLOWED_ORIGINS = [
     os.environ.get("CORS_HOST", "http://localhost:3001"),
 ]
 CORS_ALLOW_CREDENTIALS = True
-
-ROOT_URLCONF = 'users_project.urls'
 
 TEMPLATES = [
     {

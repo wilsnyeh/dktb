@@ -9,7 +9,7 @@ export function getToken() {
 export async function getTokenInternal() {
     const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/accounts/me/token/`;
     try {
-        const response = await fetch(url, {
+        const response = await fetch(url,    {
             credentials: "include",
         });
         if (response.ok) {
@@ -95,7 +95,7 @@ export async function getTokenInternal() {
             });
             if (response.ok) {
                 const token = await getTokenInternal();
-                setToken(token);
+                setToken(token);    
                 return;
             }
             let error = await response.json();
