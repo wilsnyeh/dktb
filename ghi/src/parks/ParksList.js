@@ -21,7 +21,7 @@ function ParksList({fetchUrl}) {
           <div key={park.id} className="row">
             <div className="col-9">
               <h2 className="featurette-heading">{park.name}</h2>
-              <h4><span class="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
+              <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
               <p className="lead">{park.description}</p>
             </div>
             <div className="col-3 photo">
