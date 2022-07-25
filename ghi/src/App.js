@@ -8,7 +8,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './mainpage/Header';
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
+<<<<<<< HEAD
 import LoginForm from './users/login';
+=======
+import ParkDetails from "./parks/ParkDetails"
+>>>>>>> 510c312946d848e48cbd905d87a2d8c437dbd084
 
 
 
@@ -17,7 +21,12 @@ function App(props) {
     <BrowserRouter>
       <Nav />
       <Header />
+<<<<<<< HEAD
       <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
+=======
+      <ParkDetails id={"7"}/>
+      <ParksList fetchUrl={"http://localhost:8080/parks/list/"}/>
+>>>>>>> 510c312946d848e48cbd905d87a2d8c437dbd084
       <Footer />
       <div className="container">
         <Routes>

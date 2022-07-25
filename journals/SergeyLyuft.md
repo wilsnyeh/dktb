@@ -15,7 +15,13 @@ Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
 
-07.21.2022
+7.22.22
+
+- Worked with header style. Adjusted hight of header and add 3 photo for carousel.
+  ##Issues
+- Hard to find panorama-photo with high resolution.
+
+  07.21.2022
 
 - Worked with style for main page with list of parks with Greg and Siah.
 - Adjusted style for list.

@@ -1,22 +1,47 @@
-.root {
-    padding: 3% 10% 7%;
-}
-
-.white-section {
-    padding: 10px;
-    text-align: center;
-}
 
 .photo {
     padding: 2px 0 10px 10px;
 }
 
-.caruselphoto {
+/* .carouselPhoto {
+    height: 400px;
+    max-width: 100%;
+} */
+
+
+/* HEADER SETTINGS */
+
+#myCarousel {    
+    object-fit: fill;
+    height: 380px;
+}
+
+.carouselphoto {
+    max-height: 380px;
+}
+
+/* LIST SETTINGS */
+
+.parkslist {
+    padding: 3% 12% 0%;
 }
 
 .featurette-divider {
     padding: 1px;
     margin-top: 5px;
+}
+
+/* .parksphoto {
+    max-width: 400px;
+    max-height: 300px;
+} */
+
+/* FOOTER SETTINGS */
+
+.white-section {
+    margin-top: 0;
+    padding: 10px;
+    text-align: center;
 }
 
 .footicon {
@@ -26,6 +51,5 @@
 }
 
  .footp {
-     padding: 3%;
      padding: 0;
  }
