@@ -18,8 +18,8 @@ function App(props) {
     <BrowserRouter>
       <Nav />
       <Header />
-      <ParkDetails id={"7"} />
-      <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
+      <ParkDetails Url={"http://localhost:8080/parks/list/7"} />
+      {/* <ParksList fetchUrl={"http://localhost:8080/parks/list/"}/> */}
       <Footer />
       <div className="container">
         <Routes>
