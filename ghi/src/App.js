@@ -25,7 +25,7 @@ function App(props) {
         <div className="container">
           <Routes>
             {/* <Route path="/login" element={<LoginForm token={token} login={login}/>} /> */}
-            <Route path="/signup" element={<SignUpForm />} />
+            <Route path="/signup" element={<SignUpForm token={token} signup={signup} />} />
           </Routes>
         </div>
       </div>

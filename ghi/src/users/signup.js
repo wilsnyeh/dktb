@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, NavLink} from "react-router-dom"
 
-function SignUpForm(props) {
-    const { token, signup } = props;
+function SignUpForm({ token, signup }) {
     const [username, setUserName] = useState ("");
     const [first_name, setFirstName] = useState ("");
     const [last_name, setLastName] = useState ("");
@@ -40,7 +39,13 @@ function SignUpForm(props) {
                     <label htmlFor="password" className="form-label">Password</label>
                     <input value ={password} onChange={(e)=> setPassword(e.target.value)} required type="password" className="form-control" id="password" />
                 </div>
-                <button type='submit' onClick={async () => await signup(username, first_name, last_name, email, password)}className="btn btn-danger btn-sm">
+                <button 
+                    type='submit' 
+                    onClick={async (e) => {
+                        e.preventDefault(); 
+                        await signup(username, password, email, first_name, last_name)
+                        }}
+                    className="btn btn-danger btn-sm">
                     LETS GO OUTSIDE!
                 </button>
             </form>
