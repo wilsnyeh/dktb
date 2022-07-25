@@ -23,9 +23,7 @@ function Header() {
             </div>
           </div>
         </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src="https://mtrainierguestservices.com/wp-content/uploads/sites/10/2017/10/mt-rainer-3.jpg" className="d-block w-100" alt="..." />
+        
 
             <div className="container">
               <div className="carousel-caption text-start">
@@ -56,8 +54,7 @@ function Header() {
                 <p><NavLink className="btn btn-lg btn-primary" to="/">Browse gallery</NavLink></p>
               </div>
             </div>
-          </div>
-        </div>
+
         <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Previous</span>
