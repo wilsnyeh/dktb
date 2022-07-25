@@ -19,6 +19,7 @@ function App(props) {
 
     return (
       <div>
+<<<<<<< HEAD
         {/* <Header />
           <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
         <Footer /> */}
@@ -26,6 +27,15 @@ function App(props) {
           <Routes>
             {/* <Route path="/login" element={<LoginForm token={token} login={login}/>} /> */}
             <Route path="/signup" element={<SignUpForm token={token} signup={signup} />} />
+=======
+        <Header />
+          <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
+        <Footer />
+        <div className="container">
+          <Routes>
+            <Route path="/login" element={<LoginForm token={token} login={login}/>} />
+            <Route path="/signup" element={<SignUpForm />} />
+>>>>>>> 0f2d53e342d9afdd7bfe3e8fbc3fb5c5d6969c46
           </Routes>
         </div>
       </div>
