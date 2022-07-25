@@ -1,3 +1,12 @@
+## July 25, 2022
+
+Today, I worked on:
+
+* Authorization Pair Programming
+We had a major merge conflict at the end of last week which broke the 
+sign up form. We managed to get it working. We still have a 500 error
+for the login page. 
+
 ## July 21, 2022
 
 Today, I worked on:
