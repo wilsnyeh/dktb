@@ -9,6 +9,7 @@ import Header from './mainpage/Header';
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
 import LoginForm from './users/login';
+import ParkDetails from "./parks/ParkDetails"
 
 
 
@@ -17,6 +18,7 @@ function App(props) {
     <BrowserRouter>
       <Nav />
       <Header />
+      <ParkDetails id={"7"} />
       <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
       <Footer />
       <div className="container">

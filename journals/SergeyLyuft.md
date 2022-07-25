@@ -15,7 +15,20 @@ Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
 
-07.20.22
+7.22.22
+
+- Worked with header style. Adjusted hight of header and add 3 photo for carousel.
+  ##Issues
+- Hard to find panorama-photo with high resolution.
+
+  07.21.2022
+
+- Worked with style for main page with list of parks with Greg and Siah.
+- Adjusted style for list.
+  ##Issues
+- Had issue with element positioning. Create HomePage.css file to adjust it.
+
+  07.20.22
 
 - Me abd Siah worked with list of park and style for all project.
 - Got list of all parks, but have to fix style for each park on the page.
@@ -29,9 +42,15 @@ variable without ca -->
 - Finished poller.py and fix issue with our API key.
 - Received list of parks in Insomnia.
   ##Issues
-- s
+- Had issues with API and poller, all time received only one park.
+- Before deployment will change poller time for 1 time in day, but now keep it for every 20 seconds.
 
   07.18.22
+
+- Put poller to their personal containers.
+- Learned ho to use script to improve speed of work
+  ##Issues
+- Had issues with our Postgres database, cause had incorrect settings in our docker-compose.yml file.
 
   07.15.22
 
