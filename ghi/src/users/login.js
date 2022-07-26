@@ -8,9 +8,9 @@ function Login(props) {
   const [password, setPassword] = useState("");
   const { token, login } = props;
 
-//   if (login) {
-//     return <Navigate to='/' />;
-//   }  
+  if (token) {  
+    return <Navigate to='/' />;
+  }  
 
   var handleUserName = function (e) {
     const value = e.target.value;

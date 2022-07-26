@@ -2,6 +2,7 @@
 import './App.css';
 import LoginForm from './users/login';
 import SignUpForm from './users/signup';
+import Logout from './users/logout';
 import React, { useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Header from './mainpage/Header';
@@ -19,11 +20,12 @@ function App(props) {
 
     return (
       <div>
-        <Header />
+        {/* <Header />
           <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
-        <Footer />
+        <Footer /> */}
         <div className="container">
           <Routes>
+            <Route path="/logout" element={<Logout />} />
             <Route path="/login" element={<LoginForm token={token} login={login}/>} />
             <Route path="/signup" element={<SignUpForm />} />
           </Routes>
