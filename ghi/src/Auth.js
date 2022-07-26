@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 let internalToken = null;
 
 export function getToken() {
@@ -8,7 +8,6 @@ export function getToken() {
 
 export async function getTokenInternal() {
     const url = `${process.env.REACT_APP_USERS}/accounts/tokens/mine/`;
-    console.log("HEEYYYY", url)
     try {
         const response = await fetch(url,    {
             credentials: "include",
@@ -96,7 +95,8 @@ export async function getTokenInternal() {
             });
             if (response.ok) {
                 const token = await getTokenInternal();
-                setToken(token);    
+                setToken(token);
+                navigate("/");
                 return;
             }
             let error = await response.json();

@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import {useToken} from "../Auth"
 
-
 function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { token, login } = props;
 
   if (token) {  
-    return <Navigate to='/' />;
-  }  
+    Navigate('/');
+  }
 
   var handleUserName = function (e) {
     const value = e.target.value;

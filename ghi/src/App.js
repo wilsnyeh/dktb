@@ -20,9 +20,9 @@ function App(props) {
 
     return (
       <div>
-        {/* <Header />
+        <Header />
           <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
-        <Footer /> */}
+        <Footer />
         <div className="container">
           <Routes>
             <Route path="/logout" element={<Logout />} />
