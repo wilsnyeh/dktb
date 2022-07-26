@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.db import IntegrityError
 from django.http import JsonResponse
-from django.views.decorators.http import require_http_methods # tell liam
+from django.views.decorators.http import require_http_methods 
 from .models import Account, ParkVO
 from .encoders import AccountEncoder, ParkVOEncoder
 import json

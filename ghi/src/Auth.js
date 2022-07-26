@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 let internalToken = null;
 
 export function getToken() {
@@ -97,7 +98,9 @@ export async function getTokenInternal() {
             });
             if (response.ok) {
                 const token = await getTokenInternal();
-                setToken(token);    
+                setToken(token);
+                console.log("😀😀😀😀")
+                navigate("/dashboard")
                 return;
             }
             let error = await response.json();
@@ -121,6 +124,7 @@ export async function getTokenInternal() {
                 },
             });
             if (response.ok) {
+                navigate('/dashboard');
                 console.log("IS THIS WORKING?")
                 await login(username, password);
             }

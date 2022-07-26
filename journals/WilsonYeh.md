@@ -1,3 +1,9 @@
+## July 26, 2022
+
+## July 25, 2022
+Was able to troubleshoot some user signup issues today - signup still returns 500 server error but still posts - tokens are still grandted to users on login, later in the day we were also able to get login to redirect properly. 
+## July 22, 2022
+Still working on users signup/logout - we ran into some conflicts this time around where once Liam and I merged functionality for user sign up stopped working.
 ## July 21, 2022
 
 Not a lot of news today - Liam and I continue to make progress on the user authentication; We are both very close to completion with users signing up and users logging in. 
