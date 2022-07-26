@@ -23,7 +23,7 @@ function App(props) {
       <Routes>
         <Route>
           <Route path="/" element={<ParksList fetchUrl={"http://localhost:8080/parks/list/"} />} />
-          <Route path="parks/detail" element={<ParkDetails detailUrl={"http://localhost:8080/parks/list/"} />} />
+          <Route path="parks/" element={<ParkDetails detailUrl={"http://localhost:8080/parks/list/"} />} />
         </Route>
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignUpForm />} />
