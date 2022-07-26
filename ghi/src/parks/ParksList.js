@@ -14,17 +14,18 @@ function ParksList({ fetchUrl }) {
     }
     fetchData();
   }, [fetchUrl])
-<<<<<<< HEAD
-=======
+
+
 
   const handleClick = (park) => {
     if (park.id) {
-        setId(park.id)
+      setId(park.id)
     }
   }
   console.log(id);
 
->>>>>>> a13f5641e1a2d157459f729c81623f6e8bfc2868
+
+
   return (
     <div className='parkslist'>
       {parks.map((park) => {
