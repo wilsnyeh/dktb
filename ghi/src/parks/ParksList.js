@@ -15,11 +15,7 @@ function ParksList({ fetchUrl }) {
   }, [fetchUrl])
 
   return (
-<<<<<<< HEAD
-    <div className='root'>
-=======
       <div className='parkslist'>
->>>>>>> 510c312946d848e48cbd905d87a2d8c437dbd084
       {parks.map((park) => {
         return (
           <div key={park.id} className="row">

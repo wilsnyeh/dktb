@@ -41,6 +41,7 @@ function Header() {
               {/* <p><NavLink className="btn btn-lg btn-primary" to="/">Browse gallery</NavLink></p> */}
             </div>
           </div>
+          </div>
           <div className="carousel-item">
             <img src="https://cdn.getyourguide.com/img/location/5c6a642fa076b.jpeg/99.webp" className="d-block w-100" alt="..." />
 
@@ -61,6 +62,7 @@ function Header() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+    </div>
     </div>
   )
 }
