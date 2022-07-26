@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import "../HomePage.css"
 
 function ParksList({ fetchUrl }) {
@@ -32,7 +33,7 @@ function ParksList({ fetchUrl }) {
         return (
           <div key={park.id} className="row">
             <div className="col-9">
-              <h2 className="featurette-heading" onClick={() => handleClick(park)}>{park.name}</h2>
+              <h2 className="featurette-heading" onClick={() => handleClick(park)}><Link to={'/parks/detail/' + park.id}>{park.name}</Link></h2>
               <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
               <p className="lead">{park.description}</p>
             </div>
