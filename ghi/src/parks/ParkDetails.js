@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import id from "./ParksList"
 
 const parkUrl = "http://localhost:8080/parks/list/"
 
-function ParkDetails({ detailUrl, id }) {
+function ParkDetails({ detailUrl, ...props }) {
   const [park, setPark] = useState({})
-
+  const { id } = useParams()
+  console.log(id)
   useEffect(() => {
     async function fetchData() {
-      const Url = detailUrl + 7;
+      const Url = detailUrl + id;
       const response = await fetch(Url);
       const data = await response.json();
       setPark(data);

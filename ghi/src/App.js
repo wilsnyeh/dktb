@@ -22,8 +22,8 @@ function App(props) {
       <Footer />
       <Routes>
         <Route>
-          <Route path="/" element={<ParksList fetchUrl={"http://localhost:8080/parks/list/"} />} />
-          <Route path="parks/" element={<ParkDetails detailUrl={"http://localhost:8080/parks/list/"} />} />
+          <Route path="/" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} />} />
+          <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} />} />
         </Route>
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignUpForm />} />
