@@ -13,7 +13,6 @@ function ParksList({ fetchUrl }) {
     }
     fetchData();
   }, [fetchUrl])
-
   return (
     <div className='parkslist'>
       {parks.map((park) => {

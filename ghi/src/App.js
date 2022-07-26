@@ -21,13 +21,11 @@ function App(props) {
       <ParkDetails Url={"http://localhost:8080/parks/list/7"} />
       <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
       <Footer />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<ParksList />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/signup" element={<SignUpForm />} />
-        </Routes>
-      </div>
+      <Routes>
+        {/* <Route path="/" element={<ParksList />} /> */}
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignUpForm />} />
+      </Routes>
     </BrowserRouter>
   );
 }
