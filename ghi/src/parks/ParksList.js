@@ -3,6 +3,7 @@ import "../HomePage.css"
 
 function ParksList({fetchUrl}) {
   const [parks, setParks] = useState([])
+  const [id, setId] = useState('')
 
   useEffect(() => {
     async function fetchData() {
@@ -14,13 +15,20 @@ function ParksList({fetchUrl}) {
     fetchData();
   }, [fetchUrl])
 
+  const handleClick = (park) => {
+    if (park.id) {
+        setId(park.id)
+    }
+  }
+  console.log(id);
+
   return (
       <div className='parkslist'>
       {parks.map((park) => {
         return (
           <div key={park.id} className="row">
             <div className="col-9">
-              <h2 className="featurette-heading">{park.name}</h2>
+              <h2 className="featurette-heading" onClick={() => handleClick(park)}>{park.name}</h2>
               <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
               <p className="lead">{park.description}</p>
             </div>
