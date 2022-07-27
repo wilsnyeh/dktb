@@ -4,17 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { AuthProvider } from './Auth';
 import reportWebVitals from './reportWebVitals';
-import { AuthProvider } from './Auth';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
       <AuthProvider>
-<<<<<<< HEAD
         <App />
-=======
-        <App/>
->>>>>>> main
       </AuthProvider>
     </BrowserRouter>
 );
