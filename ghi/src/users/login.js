@@ -9,11 +9,6 @@ function Login() {
   const [, login] = useToken();
 
 
-  var handleUserName = function (e) {
-    const value = e.target.value;
-    setUsername(value)
-  }
-
   return (
     <form className='container mt-5 py-5'>
             <input
