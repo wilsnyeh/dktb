@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
 import {useToken} from "../Auth"
 
 
@@ -8,16 +7,10 @@ function Login() {
   const [password, setPassword] = useState("");
   const [, login] = useToken();
 
-
-  var handleUserName = function (e) {
-    const value = e.target.value;
-    setUsername(value)
-  }
-
   return (
     <form className='container mt-5 py-5'>
             <input
-              onChange={handleUserName}
+              onChange={e => setUsername(e.target.value)}
               value={username}
               placeholder='Username'
               type='text'
