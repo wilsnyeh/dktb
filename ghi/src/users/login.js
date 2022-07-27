@@ -8,27 +8,8 @@ function Login() {
     const [password, setPassword] = useState("");
     const [, login] = useToken();
 
-
-    var handleUserName = function (e) {
-        const value = e.target.value;
-        setUsername(value)
-    }
-
-
-    const handleSubmit = async e => {
-        e.preventDefault()
-        // setErrors(validation(values))
-        console.log('login inside', login)
-
-        await login(username, password).then(message => {
-            console.log('😃😅😃')
-            if (message !== undefined) {
-                alert(message)
-            }
-        })
-    };
     return (
-        <form onSubmit={handleSubmit} className='container mt-5 py-5'>
+        <form className='container mt-5 py-5'>
             <input
                 onChange={e => setUsername(e.target.value)}
                 value={username}
@@ -43,13 +24,12 @@ function Login() {
                 type='password'
                 required
             />
-            <button type='submit' >
+            <button onClick={() => login(username, password)} type='submit' >
                 Login
             </button>
         </form>
     );
 }
 
-// {() => login(username, password)}
 export default Login;
 
