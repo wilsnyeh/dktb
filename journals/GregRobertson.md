@@ -1,8 +1,26 @@
+## July 27, 2022
+
+Today, I worked on:
+
+* 
+## July 26, 2022
+
+Today, I worked on:
+
+* NavLinks and Routing
+
+Routing was very disorganized, so today was spent refactoring
+the routes and reassigning some variables tpo make the code dry.
+Had some trouble tracing a URL path for the list & detail park pages.
+Implemented useParams() to get the id for each park and hyperlink the 
+name as a clickable event.
+
 ## July 25, 2022
 
 Today, I worked on:
 
 * Authorization Pair Programming
+
 We had a major merge conflict at the end of last week which broke the 
 sign up form. We managed to get it working. We still have a 500 error
 for the login page. 
