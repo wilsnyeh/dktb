@@ -7,7 +7,6 @@ const parkUrl = "http://localhost:8080/parks/list/"
 function ParkDetails({ detailUrl, ...props }) {
   const [park, setPark] = useState({})
   const { id } = useParams()
-  console.log(id)
   useEffect(() => {
     async function fetchData() {
       const Url = detailUrl + id;

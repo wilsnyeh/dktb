@@ -15,17 +15,6 @@ function ParksList({ fetchUrl }) {
     fetchData();
   }, [fetchUrl])
 
-
-
-  const handleClick = (park) => {
-    if (park.id) {
-      setId(park.id)
-    }
-  }
-  console.log(id);
-
-
-
   return (
     <div className='parkslist'>
       {parks.map((park) => {

@@ -19,6 +19,7 @@ variable without ca -->
 
 - Implement router function to correct park. Use usePARAMS to catch id of park.
 - Have to rebuild detail page to change design.
+- Pull Greg's branch.
 
   07.25.22
 
