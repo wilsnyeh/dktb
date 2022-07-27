@@ -1,7 +1,18 @@
+## July 21, 2022
+
+Not a lot of news today - Liam and I continue to make progress on the user authentication; We are both very close to completion with users signing up and users logging in. 
+## July 20, 2022
+
+Today Liam and I worked on user auth. Liam was able to get the user login form rendered, while I worked on rendering sign up form, and we felt it was important to get this part working before we could test users/user auth.
+
 ## July 19, 2022
 
+Today I think we were finally able to resolve the issues with our poller. With a lot of troubleshooting, we have gotten the NPS_API_KEY to be hidden and recognized in our poller dynamically, and is no longer shown when someone pulls the most recent commits. 
+
+*Tomorrow, I believe we can now begin to divide the work - some of us could perhaps go move into the work of user authentication and the others could move into front-end development. 
 ## July 18, 2022
 
+Lots of troubleshooting today, but we made some progress - needed to revert back to an old YAML and test from there. 
 
 ## July 15, 2022
 

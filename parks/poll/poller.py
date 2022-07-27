@@ -10,6 +10,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "parks_project.settings")
 django.setup()
 
 NPS_API_KEY = os.environ["NPS_API_KEY"]
+print("HEEELLLLOOOOOOOOO~!!!!!!", type(NPS_API_KEY))
 
 # Import models from park_rest, here.
 import parks_rest.models
@@ -20,7 +21,7 @@ import os
 
 
 def get_parks():
-    response = requests.get(f'https://developer.nps.gov/api/v1/parks?parkCode=&api_key={["NPS_API_KEY"]}')
+    response = requests.get(f'https://developer.nps.gov/api/v1/parks?parkCode=&api_key={NPS_API_KEY}')
     content = json.loads(response.content)
     for park in content["data"]:
         phoneNumber = ""
@@ -49,7 +50,7 @@ def poll():
             get_parks()
         except Exception as e:
             print( e, file=sys.stderr)
-        time.sleep(86400)
+        time.sleep(20)
 
 if __name__ == "__main__":
     poll()

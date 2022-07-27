@@ -1,12 +1,44 @@
 # Journal entries for MOD 3 group project
 
+## July 26, 2022
+* pair programmed with Wilson and worked on Login/logout and Signup functionality. 
+* Fixed useAuthcontext from Auth cookbook and imported correct react components into login, logout files
+* nested <app/> into an <AuthProvider/> inside index to correctly allow authcontext.
+**issues with token being null, would not track**
+
+## July 25, 2022
+* rerouted paths for login page to accurately match endpoints in back-end.
+* pair programmed with wilson again to help troubleshoot signup page.
+* Started writing paths/endpoint and .js file for logout
+**ran into errors with route paths for singup and login. navigate still causing issues**
+
+## July 22, 2022
+* Got login page to cache JWT tokens and track logged in vs not.
+* pair programmed with Wilson and assisted error handling with signup form page.
+**issues with route paths to redirect for both login and signup pages using navigate**
+
+## July 21, 2022
+* Continued working on Login and Signup authentication with Wilson.
+Implemented JWT token authentication for user sessions and tracking cache memory.
+
+**ran in to multiple errors with Index and App files being inside of <StrictRouter> tags. Also had to install CORS headers.**
+**Login page is currently accepting JWT token and stroing it. Just needs to be finished so it redirects the page to main.**
+
+## July 20, 2022
+* Started working on React pages
+Completed setting up routes and paths for user login and signup pages. Still not completed. pair programmed with Wilson
+used hooks and created an auth.js file to authenticate our JWT tokens and user sessions.
+
+* React parks list
+Siah and Sergey pair programmed to create and populate the main list page with react.
+
 ## July 19, 2022
-*Finished Poller.py file
-
-
+* Finished Poller.py file
+Completed both endpoints for list and detail GET requests for Parks poller.
+**Poller completed successfully** 
 
 ## July 18, 2022
-*Error handled database issues
+* Error handled database issues
 PostgreSQL in our YML file was established incorrectly, reverted back to previous version on my computer and adjusted accordingly. Working now.
 
 * Reformatted Poller.py
