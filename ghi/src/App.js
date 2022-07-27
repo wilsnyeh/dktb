@@ -17,7 +17,6 @@ function App(props) {
     <BrowserRouter>
       <Nav />
       <Header />
-      <Footer />
       <Routes>
         <Route>
           <Route path="/" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} />} />
@@ -26,6 +25,7 @@ function App(props) {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignUpForm />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
