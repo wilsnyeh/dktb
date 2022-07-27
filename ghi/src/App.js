@@ -1,3 +1,7 @@
+
+import './App.css';
+import LoginForm from './users/login';
+import SignUpForm from './users/signup';
 import React from 'react';
 import Nav from "./Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,16 +16,19 @@ function App(props) {
   return (
     <BrowserRouter>
       <Nav />
-      <Header />
+      <Header />          
+      
       <Routes>
         <Route>
-          <Route path="/" element={<ParksList fetchUrl={"http://localhost:8080/parks/list/"}/>} />
-          <Route path="detail/:id" element={<ParkDetails Url={"http://localhost:8080/parks/list/"}/>} />
+          <Route path="/" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} />} />
+          <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} />} />
         </Route>
-      </Routes>      
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignUpForm />} />
+      </Routes>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App;
+export default App; 

@@ -35,6 +35,7 @@ services:
         environment:
             DATABASE_URL: postgresql://users:password@postgres/users
             WAIT_HOSTS: postgres:5432
+            DJWTO_SIGNING_KEY: 834e56c283be647a483a6e161be73589bf0c603be7a697ae5368c3d0a9a8259c
     parks:
         build:
             context: ./parks
@@ -48,6 +49,7 @@ services:
             WAIT_HOSTS: postgres:5432
             NPS_API_KEY: ${NPS_API_KEY}
             WAIT_TIMEOUT: 180
+            DJWTO_SIGNING_KEY: 834e56c283be647a483a6e161be73589bf0c603be7a697ae5368c3d0a9a8259c
 
     parks-poller:
         #  uncommment for production or to repopulate database
@@ -80,3 +82,4 @@ services:
             HOST: "0.0.0.0"
             REACT_APP_USERS: http://localhost:8090
             REACT_APP_PARKS: http://localhost:8080
+            REACT_APP_API_HOST: http://localhost:3000
