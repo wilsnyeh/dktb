@@ -98,7 +98,7 @@ function SignUpForm() {
                         LETS GO OUTSIDE!
                     </button>
                 </form>
-            {/* )} */}
+            {/* some other thing somewhere here */}
         </div>
     );
 }
