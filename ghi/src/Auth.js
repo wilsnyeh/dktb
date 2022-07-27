@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 let internalToken = null;
 
+
 export function getToken() {
     return internalToken;
 }
 
 export async function getTokenInternal() {
-    const url = `${process.env.REACT_APP_API_HOST}/api/accounts/me/token/`;
+    const url = `${process.env.REACT_APP_API_HOST}/api/accounts/mine`;
     try {
         const response = await fetch(url,    {
             credentials: "include",
@@ -121,7 +122,7 @@ export async function getTokenInternal() {
                 },
             });
             if (response.ok) {
-                navigate('/dashboard');
+                // navigate('/dashboard');
                 console.log("IS THIS WORKING?")
                 await login(username, password);
             }

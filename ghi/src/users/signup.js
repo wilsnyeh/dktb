@@ -10,38 +10,65 @@ function SignUpForm() {
     const [password, setPassword] = useState("");
     const [users, setUsers] = useState('null');
     const navigate = useNavigate();
-    const [isSubmitted, setIsSubmitted] = useState(false);
     const [token, , , signup, ] = useToken();
-    
 
 
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
+    //     const data =
+    //     {
+    //         username: "",
+    //         first_name: "",
+    //         last_name: "",
+    //         email: "",
+    //         password: ""
+    //     }
     //     await signup(username, password, email, first_name, last_name)
-    // };
+        // const accountUrl = 'http://localhost:8090/accounts/'
+        // const fetchConfig = {
+        //     method: 'post',
+        //     body: JSON.stringify(data),
+        //     headers: {
+        //         'Content-type': 'application/json',
+        //     }
+        // }
+        // const response = await fetch(accountUrl, fetchConfig)
+        // if (response.ok) {
+        //     const newUser = await response.json()
+        //     setUserName,
+        //     setFirstName,
+        //     setLastName,
+        //     setEmail,
+        //     setPassword,
+        // }
+    //};
 
-    useEffect(() => {
-        async function getCurrUser() {
-            const url = `${process.env.REACT_APP_USERS}/api/accounts/me/`;
-            const response = await fetch(url, {
-                credentials: 'include',
-            });
-            if (response.ok) {
-                const user = await response.json();
-                setUsers(users);
-            }
-        }
-        if (token) {
-            getCurrUser();
-        }
-    }, [token]);
+    // useEffect(() => {
+    //     async function getCurrUser() {
+    //         const url = `${process.env.REACT_APP_USERS}/api/accounts/me/`;
+    //         const response = await fetch(url, {
+    //             credentials: 'include',
+    //         });
+    //         if (response.ok) {
+    //             const user = await response.json();
+    //             setUsers(users);
+    //         }
+    //     }
+    //     if (token) {
+    //         getCurrUser();
+    //     }
+    // }, [token]);
 
     return (
+        console.log('🤣😂', token),
         <div>
-            {token ? (
+            
+            {/* {token ? (
                 navigate('/')
-            ) : (
-                <form>
+            ) : ( */}
+                <form 
+                // onSubmit={handleSubmit} 
+                className='container mt-5 py-5'>
                     <div className="mb-3">
                         <label htmlFor='username' className='form-label'>User Name</label>
                         <input value={username} onChange={(e) => setUserName(e.target.value)} required type='text' className='form-control' id='username' placeholder='Username' />
@@ -71,7 +98,7 @@ function SignUpForm() {
                         LETS GO OUTSIDE!
                     </button>
                 </form>
-            )}
+            {/* )} */}
         </div>
     );
 }

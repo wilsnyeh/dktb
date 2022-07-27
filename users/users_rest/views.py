@@ -16,23 +16,26 @@ def accounts_list(request):
         return JsonResponse(
             {"accounts": accounts},
             encoder=AccountEncoder,
+            safe=False
         )
     else:
         request.method == "POST"
         try:
             content = json.loads(request.body)
             print(content)
-            account = Account.objects.create_user(
-                username=content["username"],
-                password=content["password"],
-                email=content["email"],
-                first_name=content["first_name"],
-                last_name=content["last_name"],
-            )
-            Account.objects.create(account=account)
+            account = Account.objects.create_user(**content)
+            # account = Account.objects.create_user(
+            #     username=content["username"],
+            #     password=content["password"],
+            #     email=content["email"],
+            #     first_name=content["first_name"],
+            #     last_name=content["last_name"],
+            # )
+            # Account.objects.create(account=account)
             return JsonResponse(
                 {"account": account},
                 encoder=AccountEncoder,
+                safe=False
             )
         except IntegrityError:
             response = JsonResponse(

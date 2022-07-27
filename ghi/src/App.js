@@ -8,10 +8,11 @@ import Header from './mainpage/Header';
 import Footer from './mainpage/Footer';
 import ParksList from './parks/ParksList';
 import { useAuthContext} from './Auth'
+import Nav from './Nav';
 
-function App(props) {
-  const {token} = useAuthContext();
-  const [userName, setUserName] = useState('');
+function App() {
+  const {user, token} = useAuthContext();
+  // const [userName, setUserName] = useState('');
 
   // if (user && !userName) {
   //   setUserName(user.username)
@@ -19,13 +20,14 @@ function App(props) {
 
     return (
       <div>
+        <Nav/>
          {/* <Header /> */}
-          <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
+          {/* <ParksList fetchUrl={"http://localhost:8080/parks/list/"} /> */}
         {/* <Footer />  */}
         <div className="container">
           <Routes>
-            <Route path="/login" element={<LoginForm token={token}/>} /> 
-            <Route path="/signup" element={<SignUpForm  token={token}/>} />
+            <Route path="/login" element={<LoginForm />} /> 
+            <Route path="/signup" element={<SignUpForm />} />
           </Routes>
         </div>
       </div>
