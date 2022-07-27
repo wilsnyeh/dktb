@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { useToken } from '../Auth'
 
-function ParksList({fetchUrl}) {
+function ParksList({fetchUrl, token}) {
   const [parks, setParks] = useState([])
 
   useEffect(() => {

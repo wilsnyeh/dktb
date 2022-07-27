@@ -1,5 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
+
+
 let internalToken = null;
 
 export function getToken() {
@@ -74,7 +76,9 @@ export async function getTokenInternal() {
         }, [setToken, token]);
 
         async function logout() {
+
             if (token) {
+              
                 const url = `${process.env.REACT_APP_USERS}/logout/`;
                 await fetch(url, { method: "delete", credentials: "include" });
                 internalToken = null;

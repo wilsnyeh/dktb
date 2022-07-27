@@ -8,12 +8,13 @@ import { Routes, Route } from "react-router-dom";
 import Header from './mainpage/Header';
 import Footer from './mainpage/Footer';
 import ParksList from './parks/ParksList';
-import { useToken } from './Auth'
+import { useAuthContext } from './Auth'
+
 
 function App(props) {
-  const [token, login, logout, signup, user] = useToken();
+  
   const [userName, setUserName] = useState('');
-
+  const { token } = useAuthContext();
   // if (user && !userName) {
   //   setUserName(user.username)
   // }
@@ -21,12 +22,12 @@ function App(props) {
     return (
       <div>
         <Header />
-          <ParksList fetchUrl={"http://localhost:8080/parks/list/"} />
+          <ParksList fetchUrl={"http://localhost:8080/parks/list/"} token={token} />
         <Footer />
         <div className="container">
           <Routes>
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/login" element={<LoginForm token={token} login={login}/>} />
+            <Route path="/logout" element={<Logout/>} />  
+            <Route path="/login" element={<LoginForm token={token}/>} />
             <Route path="/signup" element={<SignUpForm />} />
           </Routes>
         </div>
