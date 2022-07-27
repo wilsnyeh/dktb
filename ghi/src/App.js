@@ -17,8 +17,6 @@ function App(props) {
     <BrowserRouter>
       <Nav />
       <Header />
-      {/*  */}
-
       <Footer />
       <Routes>
         <Route>
