@@ -20,15 +20,15 @@ function ParkDetails({ detailUrl, ...props }) {
   }, [detailUrl, id])
 
   return (
-    <div className='parkslist'>
+    <div className='parks-list'>
       <div key={park.id} className="row">
-        <div className="col-9">
+        <div className="col-5 text-center mx-auto">
           <h2 className="featurette-heading">{park.name}</h2>
           <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
           <p className="lead">{park.description}</p>
         </div>
-        <div className="col-3 photo">
-          <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
+        <div className="text-center">
+          <img className="img-fluid mx-auto"
             src={park.image_url} alt="" />
         </div>
         <hr className="featurette-divider" />

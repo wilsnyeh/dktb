@@ -13,31 +13,31 @@ function Header() {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active " data-bs-interval="5000">
-          <img className='w-100 carouselphoto' src="https://images.pexels.com/photos/259526/pexels-photo-259526.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+          <img className='w-100 carouselphoto' src="https://www.nps.gov/common/uploads/banner_image/pwr/homepage/0FBA9AF8-1DD8-B71B-0BF72F798FF5BC7E.jpg?mode=crop&quality=90&width=1200&height=350" alt="" />
           <div className="container">
             <div className="carousel-caption text-start">
-              <h1>Example headline.</h1>
-              <p>Some representative placeholder content for the first slide of the carousel.</p>
+              <h1>“Be fearless in the pursuit of what sets your soul on fire.” </h1>
+              <p>– JENNIFER LEE</p>
               {/* <p><NavLink className="btn btn-lg btn-primary" to="/">Sign up today</NavLink></p> */}
             </div>
           </div>
         </div>
         <div className="carousel-item">
-          <img className='w-100 carouselphoto' src="https://images.unsplash.com/photo-1541075217473-93119871682d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1159&q=80" alt="" />
+          <img className='w-100 carouselphoto' src="https://www.nps.gov/common/uploads/banner_image/pwr/homepage/36C683FE-1DD8-B71B-0B6B4AE9C34946B8.jpg?mode=crop&quality=90&width=1200&height=350" alt="" />
           <div className="container">
             <div className="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Some representative placeholder content for the second slide of the carousel.</p>
+              <h1>“Not all who wander are lost.”</h1>
+              <p>– J.R.R. TOLKIEN</p>
               {/* <p><NavLink className="btn btn-lg btn-primary" to="/">Learn more</NavLink></p> */}
             </div>
           </div>
         </div>
         <div className="carousel-item">
-          <img className='w-100 carouselphoto' src="https://images.unsplash.com/photo-1602851688358-f72cc9e847a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1711&q=80" alt="" />
+          <img className='w-100 carouselphoto' src="https://www.nps.gov/common/uploads/banner_image/pwr/homepage/D0D65293-1DD8-B71B-0B90C84869AED282.jpg?mode=crop&quality=90&width=1200&height=350" alt="" />
           <div className="container">
             <div className="carousel-caption text-end">
-              <h1>One more for good measure.</h1>
-              <p>Some representative placeholder content for the third slide of this carousel.</p>
+              <h1>“I haven't been everywhere, but it's on my list.”</h1>
+              <p>- SUSAN SONTAG</p>
               {/* <p><NavLink className="btn btn-lg btn-primary" to="/">Browse gallery</NavLink></p> */}
             </div>
           </div>

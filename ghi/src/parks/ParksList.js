@@ -28,7 +28,7 @@ function ParksList({ fetchUrl }) {
 
 
   return (
-    <div className='parkslist'>
+    <div className="parks-list">
       {parks.map((park) => {
         return (
           <div key={park.id} className="row">
@@ -38,7 +38,7 @@ function ParksList({ fetchUrl }) {
               <p className="lead">{park.description}</p>
             </div>
             <div className="col-3 photo">
-              <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
+              <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
                 src={park.image_url} alt="" />
             </div>
             <hr className="featurette-divider" />

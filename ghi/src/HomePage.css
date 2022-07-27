@@ -1,4 +1,3 @@
-
 .photo {
     padding: 2px 0 10px 10px;
 }
@@ -11,18 +10,19 @@
 
 /* HEADER SETTINGS */
 
-#myCarousel {    
-    object-fit: fill;
-    height: 380px;
-}
+/* #myCarousel {
+    width: 100%;
+    height: auto;
+} */
 
 .carouselphoto {
-    max-height: 380px;
+    /* width: 100%; */
+    height: auto;
 }
 
 /* LIST SETTINGS */
 
-.parkslist {
+.parks-list {
     padding: 3% 12% 0%;
 }
 
@@ -50,6 +50,6 @@
     margin: 20px auto 10px;
 }
 
- .footp {
-     padding: 0;
- }
+.footp {
+    padding: 0;
+}
