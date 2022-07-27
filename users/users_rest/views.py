@@ -24,6 +24,7 @@ def accounts_list(request):
             content = json.loads(request.body)
             print(content)
             account = Account.objects.create_user(**content)
+<<<<<<< HEAD
             # account = Account.objects.create_user(
             #     username=content["username"],
             #     password=content["password"],
@@ -32,6 +33,8 @@ def accounts_list(request):
             #     last_name=content["last_name"],
             # )
             # Account.objects.create(account=account)
+=======
+>>>>>>> main
             return JsonResponse(
                 {"account": account},
                 encoder=AccountEncoder,

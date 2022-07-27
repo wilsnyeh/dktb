@@ -6,27 +6,20 @@ import { useAuthContext, useToken } from "../Auth"
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [, login, , , ] = useToken();
-    const { token } = useAuthContext();
-    const navigate = useNavigate();
+    const [, login] = useToken();
 
-    if (token) {
-        console.log('😁😁😁', token)
-        return navigate('/');
+
+    var handleUserName = function (e) {
+        const value = e.target.value;
+        setUsername(value)
     }
 
-    // var handleUserName = function (e) {
-    //     const value = e.target.value;
-    //     setUsername(value)
-    //     // props.setUN(value)
-    // }
 
-    
     const handleSubmit = async e => {
         e.preventDefault()
         // setErrors(validation(values))
         console.log('login inside', login)
-        
+
         await login(username, password).then(message => {
             console.log('😃😅😃')
             if (message !== undefined) {
@@ -34,15 +27,6 @@ function Login() {
             }
         })
     };
-    // useEffect(() => {
-    //     if (token) {
-    //         console.log('🤣🤣🤣🤣')
-    //         navigate('/')
-    //         // redirect
-    //     }
-    // }, [token]);
-    
-
     return (
         <form onSubmit={handleSubmit} className='container mt-5 py-5'>
             <input

@@ -7,32 +7,35 @@ import { Routes, Route } from "react-router-dom";
 import Header from './mainpage/Header';
 import Footer from './mainpage/Footer';
 import ParksList from './parks/ParksList';
-import { useAuthContext} from './Auth'
+import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
 
-function App() {
-  const {user, token} = useAuthContext();
-  // const [userName, setUserName] = useState('');
 
+function App(props) {
+
+  const [userName, setUserName] = useState('');
+  const [, , logout] = useToken();
+  const { token } = useAuthContext();
   // if (user && !userName) {
   //   setUserName(user.username)
   // }
 
-    return (
+  return (
+    <div>
       <div>
-        <Nav/>
-         {/* <Header /> */}
-          {/* <ParksList fetchUrl={"http://localhost:8080/parks/list/"} /> */}
-        {/* <Footer />  */}
-        <div className="container">
-          <Routes>
-            <Route path="/login" element={<LoginForm />} /> 
-            <Route path="/signup" element={<SignUpForm />} />
-          </Routes>
-        </div>
+        <Nav logout={logout} token={token} />
       </div>
-    );
-  }
 
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<h1>Welcome</h1>}/>
+          <Route path="/parks" element={<ParksList fetchUrl={"http://localhost:8080/parks/list/"} token={token} />} />
+          <Route path="/login" element={<LoginForm token={token} />} />
+          <Route path="/signup" element={<SignUpForm />} />
+        </Routes> 
+      </div>
+    </div>
+  );
+}
 
 export default App;
