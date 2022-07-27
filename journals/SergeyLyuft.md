@@ -15,7 +15,12 @@ Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
 
-7.25.22
+07.26.22
+
+- Implement router function to correct park. Use usePARAMS to catch id of park.
+- Have to rebuild detail page to change design.
+
+  07.25.22
 
 - Implement park detail page. Temporary use the same template as list of parks.
 - Can get id of park when click on name of park.
@@ -23,7 +28,7 @@ variable without ca -->
 - Have to figure out how I can send it to another file.
 - Had issues on sign up page with token. Solved this issues close to the end of the day.
 
-  7.22.22
+  07.22.22
 
 - Worked with header style. Adjusted hight of header and add 3 photo for carousel.
   ##Issues

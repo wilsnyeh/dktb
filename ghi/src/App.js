@@ -13,8 +13,12 @@ function App(props) {
     <BrowserRouter>
       <Nav />
       <Header />
-      {/* <ParkDetails Url={"http://localhost:8080/parks/list/7"}/> */}
-      <ParksList fetchUrl={"http://localhost:8080/parks/list/"}/>
+      <Routes>
+        <Route>
+          <Route path="/" element={<ParksList fetchUrl={"http://localhost:8080/parks/list/"}/>} />
+          <Route path="detail/:id" element={<ParkDetails Url={"http://localhost:8080/parks/list/"}/>} />
+        </Route>
+      </Routes>      
       <Footer />
     </BrowserRouter>
   )
