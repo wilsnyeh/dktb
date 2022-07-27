@@ -2,7 +2,12 @@
 
 Today, I worked on:
 
-* 
+* Weather API Pair Programming & adjusting GHI
+
+Found a working alternative for a URL for the OpenWeatherAPI.
+Now we can narrow by city/state in the US. The Footer is now fixed 
+the BrowserRouter/App.js. 
+
 ## July 26, 2022
 
 Today, I worked on:
