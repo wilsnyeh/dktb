@@ -9,6 +9,7 @@ import Header from './mainpage/Header';
 import Footer from './mainpage/Footer';
 import ParksList from './parks/ParksList';
 import { useAuthContext } from './Auth'
+import Nav from './Nav';
 
 
 function App(props) {
@@ -21,9 +22,12 @@ function App(props) {
 
     return (
       <div>
-        <Header />
+        <div>
+          <Nav/>
+        </div>
+        {/* <Header />
           <ParksList fetchUrl={"http://localhost:8080/parks/list/"} token={token} />
-        <Footer />
+        <Footer /> */}
         <div className="container">
           <Routes>
             <Route path="/logout" element={<Logout/>} />  
@@ -34,6 +38,5 @@ function App(props) {
       </div>
     );
   }
-
-
+  
 export default App;

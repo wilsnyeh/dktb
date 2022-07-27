@@ -17,11 +17,11 @@ function Nav() {
             <NavLink className="nav-link" aria-current="page" to='/'>Home</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to='/'>Login</NavLink>
+            <NavLink className="nav-link" to='/login'>Login</NavLink>
             {/* ^^ adjust to field to have specific link ^^ */}
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to='/'>Logout</NavLink>
+            <NavLink className="nav-link" to='/logout'>Logout</NavLink>
             {/* ^^ adjust to field to have specific link ^^ */}
           </li>
         </ul>
