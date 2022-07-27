@@ -9,8 +9,6 @@ export function getToken() {
 
 export async function getTokenInternal() {
     const url = `${process.env.REACT_APP_API_HOST}/api/accounts/me/token/`;
-    console.log('TESTING', url)
-    console.log(process.env.REACT_APP_API_HOST)
     try {
         const response = await fetch(url,    {
             credentials: "include",
@@ -99,7 +97,6 @@ export async function getTokenInternal() {
             if (response.ok) {
                 const token = await getTokenInternal();
                 setToken(token);
-                console.log("😀😀😀😀")
                 navigate("/dashboard")
                 return;
             }

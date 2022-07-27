@@ -63,7 +63,6 @@ function SignUpForm() {
                         <input value={password} onChange={(e) => setPassword(e.target.value)} required type="password" className="form-control" id="password" />
                     </div>
                     <button
-                        type='submit'
                         onClick={async (e) => {
                             e.preventDefault();
                             await signup(username, password, email, first_name, last_name)
