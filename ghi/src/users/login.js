@@ -6,16 +6,12 @@ import {useToken} from "../Auth"
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [, login, logout, signup, update] = useToken();
+  const [, login] = useToken();
 
-  // if (token) {  
-  //   Navigate('/');
-  // }
 
   var handleUserName = function (e) {
     const value = e.target.value;
     setUsername(value)
-    // props.setUN(value)
   }
 
   return (
