@@ -34,6 +34,11 @@ function Nav({ logout, token }) {
                   <Link className="nav-link" onClick={() => logout()} to='/'>Logout</Link>
                   {/* ^^ adjust to field to have specific link ^^ */}
                 </li> : null}
+                
+                {!token ?
+                <li className="nav-item">
+                <NavLink className="nav-link" aria-current="page" to='/signup'>Create an account</NavLink>
+              </li> : null}
 
             </ul>
             
