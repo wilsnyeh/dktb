@@ -1,3 +1,29 @@
+## July 25, 2022
+
+Today, I worked on:
+
+* Authorization Pair Programming
+We had a major merge conflict at the end of last week which broke the 
+sign up form. We managed to get it working. We still have a 500 error
+for the login page. 
+
+## July 21, 2022
+
+Today, I worked on:
+
+* Front-end styling
+
+I managed to get the carousel images to be responsive.
+Learned a bit more about Bootstrap features with padding/margins.
+Need to fix sizing issue with the 3 images on top of the home page.
+## July 20, 2022
+
+Today, I worked on:
+
+* Front-end / Authentication 
+Working on the front end, paired programming with Liam and Wilson 
+to working on the login / sign up forms. Still struggling working with 
+Authentication issues in order for our users to log in, log out, etc. 
 ## July 19, 2022
 
 Today, I worked on:
