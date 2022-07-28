@@ -20,6 +20,12 @@ function Header() {
             <p>Some representative placeholder content for the first slide of the carousel.</p>
             <p><NavLink className="btn btn-lg btn-primary" to="/">Sign up today</NavLink></p>
           </div>
+
+          <div>
+            <button>
+            </button>
+          </div>
+
         </div>
       </div>
       <div className="carousel-item">
