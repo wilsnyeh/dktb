@@ -15,7 +15,14 @@ Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
 
-07.26.22
+07.27.22
+
+- Created hook for weather API and got data.
+- Have to create api variable in .env file and update it in docker.yml file.
+  ##Issues
+- Still have issues with retrieving all needed data. Have to fix it tomorrow.
+
+  07.26.22
 
 - Implement router function to correct park. Use usePARAMS to catch id of park.
 - Have to rebuild detail page to change design.
