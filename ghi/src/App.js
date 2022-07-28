@@ -16,8 +16,7 @@ function App(props) {
   return (
     <BrowserRouter>
       <Nav />
-      <Header />          
-      
+      <Header />      
       <Routes>
         <Route>
           <Route path="/" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} />} />
