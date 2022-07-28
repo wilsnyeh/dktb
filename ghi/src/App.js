@@ -17,9 +17,7 @@ function App(props) {
   const [userName, setUserName] = useState('');
   const [, , logout] = useToken();
   const { token } = useAuthContext();
-  // if (user && !userName) {
-  //   setUserName(user.username)
-  // }
+
 
   return (
 
@@ -30,7 +28,7 @@ function App(props) {
         <Route>
           <Route path="/" element={<h1>Welcome</h1>} />
           <Route path="/parks" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} token={token} />} />
-          <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} token={token} />} />
+          <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} weatherUrl={'https://api.openweathermap.org/data/2.5/weather?q='} token={token} />} />
         </Route>
         <Route path="/login" element={<LoginForm token={token} />} />
         <Route path="/signup" element={<SignUpForm />} />
