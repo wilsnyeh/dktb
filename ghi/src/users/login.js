@@ -27,8 +27,8 @@ function Login() {
             <button onClick={() => login(username, password)} type='button'>
                 Login
             </button>
-        </form>
-    );
+    </form>
+  );
 }
 
 export default Login;

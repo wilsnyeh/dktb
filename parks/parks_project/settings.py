@@ -31,7 +31,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-NPS_API_KEY = os.environ.get('uxgDw6XIywVawiRxM2cbgQhzU9UZEfVrBgFdMtvz')
 
 # Application definition
 
