@@ -9,7 +9,7 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
   const [park, setPark] = useState({})
   const [weather, setWeather] = useState({})
   const { id } = useParams()
-  const apiKey = ''
+  const apiKey = '2f4e32d94a78c9492aa87395ac412181'
 
   useEffect(() => {
     async function fetchData() {

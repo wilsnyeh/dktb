@@ -19,3 +19,23 @@ function GetWeather({fetchUrl}) {
     }, [fetchUrl])
     }
     
+
+    const CurrentDay = ({
+        location, temperature, sunrise, sunset, }) => (
+            #BOOTSTRAP DIV INFO#
+        )
+
+CurrentDay.Proptypes = {
+    location: Proptypes.string.isRequired,
+    temperature: Proptypes.string.isRequired,
+    sunrise: Proptypes.string.isRequired,
+    sunset: Proptypes.string.isRequired,
+}
+
+const Forecast = ({ forecast }) => (
+    #BOOTSTRAP#
+)
+
+Forecast.Proptypes({
+    currentDay: Proptypes.object
+})
