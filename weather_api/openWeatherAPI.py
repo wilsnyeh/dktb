@@ -5,18 +5,18 @@ import os
 import json
 import sys
 
-BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
-# OPENWEATHER_API_KEY = "2f4e32d94a78c9492aa87395ac412181"
-OPENWEATHER_API_KEY = os.environ["OPENWEATHER_API_KEY"]
-CITY = "Charlotte"
 
-def kelvin_to_celsius_fahrenheit(kelvin):
-    celsius = kelvin - 273.15
-    fahrenheit = celsius * (9/5) + 32
-    return celsius, fahrenheit
+BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q="
+OPENWEATHER_API_KEY = "2f4e32d94a78c9492aa87395ac412181"
+# OPENWEATHER_API_KEY = os.environ["OPENWEATHER_API_KEY"]
+QUERY = "Dallas,TX"
 
-url = BASE_URL + "appid=" + OPENWEATHER_API_KEY + "&q=" + CITY
+# def kelvin_to_celsius_fahrenheit(kelvin):
+#     celsius = kelvin - 273.15
+#     fahrenheit = celsius * (9/5) + 32
+#     return celsius, fahrenheit
 
+url = BASE_URL + QUERY + ",US&appid=" + OPENWEATHER_API_KEY + '&units=imperial';
 response = requests.get(url).json()
 
 temp_kelvin = response['main']['temp']
