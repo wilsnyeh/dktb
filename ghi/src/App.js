@@ -19,9 +19,7 @@ function App(props) {
   const [userName, setUserName] = useState('');
   const [, , logout] = useToken();
   const { token } = useAuthContext();
-  // if (user && !userName) {
-  //   setUserName(user.username)
-  // }
+
 
   return (
     <>
