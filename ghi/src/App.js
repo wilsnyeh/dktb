@@ -1,6 +1,6 @@
 
 import './App.css';
-import login from './users/login';
+import LoginForm from './users/login';
 import SignUpForm from './users/signup';
 import React from 'react';
 import Nav from "./Nav";
@@ -16,19 +16,19 @@ function App(props) {
   return (
     <BrowserRouter>
       <Nav />
-      <Header />
-      {/* <ParkDetails Url={"http://localhost:8080/parks/list/7"}/> */}
-      <ParksList fetchUrl={"http://localhost:8080/parks/list/"}/>
+      <Header />          
+      
+      <Routes>
+        <Route>
+          <Route path="/" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} />} />
+          <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} weatherUrl={'https://api.openweathermap.org/data/2.5/weather?q='} />} />
+        </Route>
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignUpForm />} />
+      </Routes>
       <Footer />
-      <div className="container">
-        <Routes>
-          {/* <Route path="/" element={<MainPage/>} /> */}
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/signup" element={<SignUpForm />} />
-        </Routes>
-      </div>
     </BrowserRouter>
   );
 }
 
-export default App;
+export default App; 
