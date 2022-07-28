@@ -16,8 +16,8 @@ function Header() {
           <img className='w-100 carouselphoto' src="https://www.nps.gov/common/uploads/banner_image/pwr/homepage/0FBA9AF8-1DD8-B71B-0BF72F798FF5BC7E.jpg?mode=crop&quality=90&width=1200&height=350" alt="" />
           <div className="container">
             <div className="carousel-caption text-start">
-              <h1>“Be fearless in the pursuit of what sets your soul on fire.” </h1>
-              <p>– JENNIFER LEE</p>
+              <h1>“Make a bucket list and fill it with dreams that have no boundaries.”</h1>
+              <p>— Annette White</p>
               {/* <p><NavLink className="btn btn-lg btn-primary" to="/">Sign up today</NavLink></p> */}
             </div>
           </div>
@@ -26,8 +26,8 @@ function Header() {
           <img className='w-100 carouselphoto' src="https://www.nps.gov/common/uploads/banner_image/pwr/homepage/36C683FE-1DD8-B71B-0B6B4AE9C34946B8.jpg?mode=crop&quality=90&width=1200&height=350" alt="" />
           <div className="container">
             <div className="carousel-caption">
-              <h1>“Not all who wander are lost.”</h1>
-              <p>– J.R.R. TOLKIEN</p>
+              <h1>“Once a year, go someplace you’ve never been before.”</h1>
+              <p>– Dalai Lama</p>
               {/* <p><NavLink className="btn btn-lg btn-primary" to="/">Learn more</NavLink></p> */}
             </div>
           </div>
@@ -37,7 +37,7 @@ function Header() {
           <div className="container">
             <div className="carousel-caption text-end">
               <h1>“I haven't been everywhere, but it's on my list.”</h1>
-              <p>- SUSAN SONTAG</p>
+              <p>- Susan Sontag</p>
               {/* <p><NavLink className="btn btn-lg btn-primary" to="/">Browse gallery</NavLink></p> */}
             </div>
           </div>
