@@ -10,7 +10,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "parks_project.settings")
 django.setup()
 
 NPS_API_KEY = os.environ["NPS_API_KEY"]
-print("HEEELLLLOOOOOOOOO~!!!!!!", type(NPS_API_KEY))
 
 # Import models from park_rest, here.
 import parks_rest.models

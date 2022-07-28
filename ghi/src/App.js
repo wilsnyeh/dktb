@@ -20,10 +20,9 @@ function App(props) {
 
 
   return (
-
     <>
-      <Nav logout={logout} token={token} />
-      <Header />
+      <Nav  logout={logout} token={token} />
+      <Header />      
       <Routes>
         <Route>
           <Route path="/" element={<h1>Welcome</h1>} />
