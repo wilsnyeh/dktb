@@ -23,15 +23,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
     }, [detailUrl, id])
 
 
-<<<<<<< HEAD
-  return (
-    <div className='nat-park-background-container'>    
-      <div key={park.id} className="row">
-        <div className="col-9">
-          <h2 className="featurette-heading">{park.name}</h2>
-          <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
-          <p className="lead">{park.description}</p>
-=======
     useEffect(() => {
         if (Object.keys(park).length) {
             async function fetchData() {
@@ -67,7 +58,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
                 <h1>Humidity: {weather.humidity}%</h1>
 
             </div>
->>>>>>> 5914196174f960ad4d1afe841a1061760360fddd
         </div>
     )
 }

@@ -9,17 +9,14 @@ function Nav({ logout, token }) {
         <div className="navbar-left">
           <NavLink className="navbar-brand" to='/'>Don't Kick The Bucket</NavLink>
             <i className='fas fa-search' />
-            <input 
-              required=''
-              type='search'
-              id='navbar-input'
-              className='navbar-input'
-              placeholder='Find your park' />
             <span className="navbar-toggler-icon"></span>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">
                 <NavLink className="nav-link" aria-current="page" to='/'>Home</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to='/profile'>profile</NavLink>
               </li>
 
               {!token ?
@@ -29,22 +26,10 @@ function Nav({ logout, token }) {
                 </li> : null}
 
               {token ?
-<<<<<<< HEAD
-              <li className="nav-item">
-                <NavLink className="nav-link" to='/parks'>Parks</NavLink>
-                {/* ^^ adjust to field to have specific link ^^ */}
-              </li> : null}
-              {token ?
-              <li className="nav-item">
-                <NavLink className="nav-link" to='/profile'>Parks</NavLink>
-                {/* ^^ adjust to field to have specific link ^^ */}
-              </li> : null}
-=======
                 <li className="nav-item">
                   <NavLink className="nav-link" to='/parks'>Parks</NavLink>
                   {/* ^^ adjust to field to have specific link ^^ */}
                 </li> : null}
->>>>>>> 5914196174f960ad4d1afe841a1061760360fddd
 
               {token ?
                 <li className="nav-item">

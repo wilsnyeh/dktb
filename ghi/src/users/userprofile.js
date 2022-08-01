@@ -1,49 +1,27 @@
-// import React from "react";
+import React, { Component } from 'react'
 
-// class UserProfile extends React.Component {
-//     constructor(props) {
-//       super(props);
-//       this.state = {
-//         name:'',
-//         email:'',
-//         password:'',
-//         id:''
-//       };
-       
-//     }
-//     componentDidMount(){
-//       document.getElementById('addHyperLink').className = "";
-//       document.getElementById('homeHyperlink').className = "";
-//       document.getElementById('profileHyperlink').className = "active";
-//       this.getProfile();
-//     }
-//     updateProfile(){
-       
-//     }
- 
-//     getProfile(){
- 
-//     }
-     
-//     render() {
-//       return (
-//         <div className="col-md-5">
-//           <div className="form-area">  
-//               <form role="form">
-//                 <br styles="clear:both" />
-//                 <div className="form-group">
-//                   <input value={this.state.name} type="text" onChange={this.handleNameChange} className="form-control" placeholder="Name" required />
-//                 </div>
-//                 <div className="form-group">
-//                   <input value={this.state.password} type="password" onChange={this.handlePasswordChange} className="form-control" placeholder="Password" required />
-//                 </div>
-                
-//                 <button type="button" onClick={this.updateProfile} id="submit" name="submit" className="btn btn-primary pull-right">Update</button>
-//               </form>
-//           </div>
-//         </div>
-//       )
-//     }
-// }
+import UserProfile from 'react-user-profile'
 
-// export default UserProfile;
+class UserProfile extends Component {
+  render() {
+    const photo = 'https://api-cdn.spott.tv/rest/v004/image/images/e91f9cad-a70c-4f75-9db4-6508c37cd3c0?width=587&height=599'
+    const userName = 'Harvey Specter'
+    const location = 'New York, USA'
+
+    const comments = [
+      {
+        id: '1',
+        photo: 'https://api-cdn.spott.tv/rest/v004/image/images/e91f9cad-a70c-4f75-9db4-6508c37cd3c0?width=587&height=599',
+        userName: 'Mike Ross',
+        content: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ',
+        createdAt: 1543858000000
+      }
+    ]
+
+    return (
+      <h1>Welcome</h1>
+    )
+  }
+}
+
+export default UserProfile;

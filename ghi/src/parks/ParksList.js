@@ -4,18 +4,6 @@ import "../HomePage.css"
 import { Navigate } from 'react-router-dom';
 import { useToken } from '../Auth'
 
-const App = () => {
-  const [checkedOne, setCheckedOne] = React.useState(false);
-  const [checkedTwo, setCheckedTwo] = React.useState(false);
-
-  const handleChangeOne = () => {
-    setCheckedOne(!checkedOne);
-  };
-
-  const handleChangeTwo = () => {
-    setCheckedTwo(!checkedTwo);
-  };
-
 function ParksList({ fetchUrl, token }) {
   const [parks, setParks] = useState([])
 
@@ -70,8 +58,7 @@ function ParksList({ fetchUrl, token }) {
     <div className='parkslist'>
       {parks.map((park) => {
         return (
-          <><div>
-            <Checkbox label="Value 1" value={checkedOne} onChange={handleChangeOne} /></div>
+          <>
             <div key={park.id} className="row">
               <div className="col-9">
                 <h2 className="featurette-heading"><Link to={'/parks/' + park.id}>{park.name}</Link></h2>
