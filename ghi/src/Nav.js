@@ -5,12 +5,17 @@ import { NavLink, Link } from 'react-router-dom';
 function Nav({ logout, token }) {
   return (
     <div>
-      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div className="container-fluid">
+      <nav className="navbar">
+        <div className="navbar-left">
           <NavLink className="navbar-brand" to='/'>Don't Kick The Bucket</NavLink>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i className='fas fa-search' />
+            <input 
+              required=''
+              type='search'
+              id='navbar-input'
+              className='navbar-input'
+              placeholder='Find your park' />
             <span className="navbar-toggler-icon"></span>
-          </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">
@@ -26,6 +31,11 @@ function Nav({ logout, token }) {
               {token ?
               <li className="nav-item">
                 <NavLink className="nav-link" to='/parks'>Parks</NavLink>
+                {/* ^^ adjust to field to have specific link ^^ */}
+              </li> : null}
+              {token ?
+              <li className="nav-item">
+                <NavLink className="nav-link" to='/profile'>Parks</NavLink>
                 {/* ^^ adjust to field to have specific link ^^ */}
               </li> : null}
 

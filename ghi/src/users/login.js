@@ -9,25 +9,24 @@ function Login() {
 
   return (
     <form className='container mt-5 py-5'>
-            <input
+
+            <input class="form-control"
               onChange={e => setUsername(e.target.value)}
               value={username}
-              placeholder='Username'
+              placeholder='Enter Username'
               type='text'
               required
-            />
-            <input
+            /><br></br>
+            <input class="form-control"
               onChange={e => setPassword(e.target.value)}
               value={password}
               placeholder='Password'
               type='password'
               required
             />
-            <button onClick={() => login(username, password)} type='button'>
-              Login
-            </button>
+            <button onClick={() => login(username, password)} type='button' class="btn btn-primary btn-lg btn-block">Login</button>
+
     </form>
   );
 }
-
 export default Login;

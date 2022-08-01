@@ -39,7 +39,7 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
 
 
   return (
-    <div className='parkslist'>    
+    <div className='nat-park-background-container'>    
       <div key={park.id} className="row">
         <div className="col-9">
           <h2 className="featurette-heading">{park.name}</h2>

@@ -7,7 +7,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from './mainpage/Header';
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
-import ParkDetails from "./parks/ParkDetails"
+import ParkDetails from "./parks/ParkDetails";
+import UserProfile from "./users/UserProfile";
 
 
 import { useAuthContext, useToken } from './Auth'
@@ -37,6 +38,7 @@ function App(props) {
           <Route path="/parks" element={<ParksList fetchUrl={"http://localhost:8080/parks/list/"} token={token} />} />
           <Route path="/login" element={<LoginForm token={token} />} />
           <Route path="/signup" element={<SignUpForm />} />
+          <Route path="/profile" element={<UserProfile />} />
       </Route></Routes>
       <Footer />
       </>
