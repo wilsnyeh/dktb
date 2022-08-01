@@ -29,6 +29,7 @@ function Nav({ logout, token }) {
                 </li> : null}
 
               {token ?
+<<<<<<< HEAD
               <li className="nav-item">
                 <NavLink className="nav-link" to='/parks'>Parks</NavLink>
                 {/* ^^ adjust to field to have specific link ^^ */}
@@ -38,15 +39,25 @@ function Nav({ logout, token }) {
                 <NavLink className="nav-link" to='/profile'>Parks</NavLink>
                 {/* ^^ adjust to field to have specific link ^^ */}
               </li> : null}
+=======
+                <li className="nav-item">
+                  <NavLink className="nav-link" to='/parks'>Parks</NavLink>
+                  {/* ^^ adjust to field to have specific link ^^ */}
+                </li> : null}
+>>>>>>> 5914196174f960ad4d1afe841a1061760360fddd
 
               {token ?
                 <li className="nav-item">
                   <Link className="nav-link" onClick={() => logout()} to='/'>Logout</Link>
                   {/* ^^ adjust to field to have specific link ^^ */}
                 </li> : null}
+                
+                {!token ?
+                <li className="nav-item">
+                <NavLink className="nav-link" aria-current="page" to='/signup'>Create an account</NavLink>
+              </li> : null}
 
             </ul>
-            
             {/* <form className="d-flex" role="search">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button className="btn btn-outline-success" type="submit">Search</button>
