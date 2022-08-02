@@ -1,3 +1,34 @@
+July 28, 2022
+July 27, 2022
+
+Today, Liam and Wilson were able to complete the issue they were encountering the JWOT token and the user login. 
+
+Sergey and I were working on implementing data to show up on the park details page. 
+
+LAT AND LON issue is still on the table.
+-----
+July 26, 2022
+
+In terms of my workload, the openWeatherAPI can succesfully grab the city weather data however some parks span accross multiple cities and are in U.S. terriritores. I believe I'm going to have to implement LAT and LON as the query instead of the city. 
+
+Confirmed with Sergey who will help with this adjustment. Still not able to hide API key sergey suggest we hard code it and figure it out later.. still no push
+-----
+July 25, 2022
+
+Today, I accepted the challenge of implementing the weather API. 
+
+The API i decided to use was the open weather API as teh documentaiton is clear. I was able to complete the openWeatherAPI.py file and can get accurate information per city.
+
+Ran into one issue today not being able to hide openWeatherAPI key.. not pushing to avoid key from being exposed online.
+-----
+July 22, 2022
+-----
+July 21, 2022
+-----
+July 20, 2022
+-----
+July 19, 2022
+-----
 July 18, 2022
 
 "Today was a good day" -- Ice Cube

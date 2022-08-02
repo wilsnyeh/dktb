@@ -1,8 +1,8 @@
 import react from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
-function Nav() {
+function Nav({ logout, token }) {
   return (
     <div>
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -16,14 +16,30 @@ function Nav() {
               <li className="nav-item">
                 <NavLink className="nav-link" aria-current="page" to='/'>Home</NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to='/login'>Login</NavLink>
-                {/* ^^ adjust to field to have specific link ^^ */}
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to='/logout'>Logout</NavLink>
-                {/* ^^ adjust to field to have specific link ^^ */}
-              </li>
+
+              {!token ?
+                <li className="nav-item">
+                  <NavLink className="nav-link" to='/login'>Login</NavLink>
+                  {/* ^^ adjust to field to have specific link ^^ */}
+                </li> : null}
+
+              {token ?
+                <li className="nav-item">
+                  <NavLink className="nav-link" to='/parks'>Parks</NavLink>
+                  {/* ^^ adjust to field to have specific link ^^ */}
+                </li> : null}
+
+              {token ?
+                <li className="nav-item">
+                  <Link className="nav-link" onClick={() => logout()} to='/'>Logout</Link>
+                  {/* ^^ adjust to field to have specific link ^^ */}
+                </li> : null}
+                
+                {!token ?
+                <li className="nav-item">
+                <NavLink className="nav-link" aria-current="page" to='/signup'>Create an account</NavLink>
+              </li> : null}
+
             </ul>
             {/* <form className="d-flex" role="search">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search">

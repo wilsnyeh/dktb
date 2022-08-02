@@ -41,7 +41,18 @@ function Header() {
               {/* <p><NavLink className="btn btn-lg btn-primary" to="/">Browse gallery</NavLink></p> */}
             </div>
           </div>
-        </div>
+          </div>
+          <div className="carousel-item">
+            <img src="https://cdn.getyourguide.com/img/location/5c6a642fa076b.jpeg/99.webp" className="d-block w-100" alt="..." />
+
+            <div className="container">
+              <div className="carousel-caption text-end">
+                <h1 className="text-dark">Yellowstone National Park</h1>
+                <h3 className="text-dark">"Shhh. Listen. Do you hear? That’s the sound of silence. Isn’t it wonderful?"</h3>
+                <p><NavLink className="btn btn-lg btn-primary" to="/">Browse gallery</NavLink></p>
+              </div>
+            </div>
+
         <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Previous</span>
@@ -51,6 +62,7 @@ function Header() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+    </div>
     </div>
   )
 }

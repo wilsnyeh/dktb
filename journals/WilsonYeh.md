@@ -1,3 +1,16 @@
+## July 26, 2022
+*Fixed 500 Server Error
+
+Made some changes in the views and encoders, everything is still working as it was before, except 500 errors have been resolved with /accounts. We are still not able to figure out why the JWT tokens are not showing up - although they are being created with the auth. 
+
+useEffect for user signup is unecessary, as this really should be something for users logging in, and signup inherits from login **which should be the func using the useeffect - we really just need something to handle the submit when users are signing up.
+## July 25, 2022
+Was able to troubleshoot some user signup issues today - signup still returns 500 server error but still posts - tokens are still grandted to users on login, later in the day we were also able to get login to redirect properly. 
+## July 22, 2022
+Still working on users signup/logout - we ran into some conflicts this time around where once Liam and I merged functionality for user sign up stopped working.
+## July 21, 2022
+
+Not a lot of news today - Liam and I continue to make progress on the user authentication; We are both very close to completion with users signing up and users logging in. 
 ## July 20, 2022
 
 Today Liam and I worked on user auth. Liam was able to get the user login form rendered, while I worked on rendering sign up form, and we felt it was important to get this part working before we could test users/user auth.
