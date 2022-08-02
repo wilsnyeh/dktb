@@ -1,4 +1,9 @@
 # Journal entries for MOD 3 group project
+## August 1, 2022
+* worked on css for login and splash page
+* used bootstrap form-control for form containers styling
+**issue with buttons not linking path to signup page correctly. will fix tommorrow.**
+
 
 ## July 26, 2022
 * pair programmed with Wilson and worked on Login/logout and Signup functionality. 
