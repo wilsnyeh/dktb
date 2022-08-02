@@ -1,7 +1,8 @@
+import re
 from django.shortcuts import render
 from django.db import IntegrityError
 from django.http import JsonResponse
-from django.views.decorators.http import require_http_methods 
+from django.views.decorators.http import require_http_methods # tell liam
 from .models import Account, ParkVO
 from .encoders import AccountEncoder, ParkVOEncoder
 import json
@@ -16,18 +17,23 @@ def accounts_list(request):
         return JsonResponse(
             {"accounts": accounts},
             encoder=AccountEncoder,
-            safe=False
         )
     else:
         request.method == "POST"
         try:
             content = json.loads(request.body)
             print(content)
-            account = Account.objects.create_user(**content)
+            account = Account.objects.create_user(
+                username=content["username"],
+                password=content["password"],
+                email=content["email"],
+                first_name=content["first_name"],
+                last_name=content["last_name"],
+            )
+            Account.objects.create(account=account)
             return JsonResponse(
                 {"account": account},
                 encoder=AccountEncoder,
-                safe=False
             )
         except IntegrityError:
             response = JsonResponse(
@@ -38,7 +44,7 @@ def accounts_list(request):
 
 
 
-@require_http_methods(["GET"])
+@require_http_methods(["GET", "POST"])
 def account_detail(request, id):
     if request.method == "GET":
         # content = json.loads(request.body)
@@ -50,6 +56,8 @@ def account_detail(request, id):
                 "email": account.email,
             }
         )
+    else: 
+        account = Account.objects.get(id=id)
 
 
 @require_http_methods(["GET"])

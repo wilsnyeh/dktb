@@ -8,6 +8,14 @@ Started on creating a new feature. The favorite button will
 allow users toi dave parks that they see through the detail 
 page and store it in their "Bucket List". Ran into a wall with 
 saving the state after the button click
+## July 28, 2022
+
+Today, I worked on:
+
+* Merge Conflicts
+
+We successfully handled and finished the Auth file and have a 
+working login and JWT token functionality. The team collectively handled the merged 
 ## July 27, 2022
 
 Today, I worked on:
