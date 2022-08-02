@@ -15,7 +15,6 @@ function SignUpForm() {
         let path = `/login/`
         navigate(path);
     }
-
     return (
         <div>
             <section className='w-100 d-flex justify-content-center pb-4'>
@@ -110,7 +109,6 @@ function SignUpForm() {
 
     );
 }
-
 
 
 

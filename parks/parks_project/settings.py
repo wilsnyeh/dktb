@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+NPS_API_KEY = os.environ.get('uxgDw6XIywVawiRxM2cbgQhzU9UZEfVrBgFdMtvz')
+WEATHER_API_KEY=os.environ.get('2f4e32d94a78c9492aa87395ac412181')
 
 # Application definition
 
