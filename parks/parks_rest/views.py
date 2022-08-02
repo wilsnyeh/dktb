@@ -24,6 +24,7 @@ def parks_list(request):
     else:
         pass
 
+@auth.jwt_login_required
 @require_http_methods(["GET", "DELETE"])
 def park_detail(request, id):
     if request.method == "GET":

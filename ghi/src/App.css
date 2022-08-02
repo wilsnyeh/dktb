@@ -32,7 +32,19 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.2;
+
+}
+
+.image-container {
+  cursor: pointer;
+  transform: scale(1.1);
 }
