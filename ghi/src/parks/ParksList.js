@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import "../HomePage.css"
 import { Navigate } from 'react-router-dom';
 import { useToken } from '../Auth'
+import {Header} from '../mainpage/Header';
 
 function ParksList({ fetchUrl, token }) {
   const [parks, setParks] = useState([])
