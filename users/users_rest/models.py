@@ -17,7 +17,7 @@ class Account(AbstractUser):
     parks = models.ManyToManyField(
         ParkVO,
         related_name= "Accounts",
-        null=True 
+        null=True,
     )
     def get_api_url(self):
         return reverse("accounts_list", kwargs={"pk": self.pk})

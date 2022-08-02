@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import AddFavorite from '../components/AddFavorites'
+import RemoveFavorite from '../components/RemoveFavorite'
 import Header from '../mainpage/Header'
 
 
@@ -42,6 +43,7 @@ function ParkDetails({ detailUrl }) {
             <img className="img-fluid mx-auto" src={park.image_url} alt="" />
             <div onClick={() => addFavoritePark(park)} className='overlay align-items-center justify-content'>
               <AddFavorite />
+              {/* <RemoveFavorite /> */}
             </div>
             <hr className="featurette-divider" />
           </div>
