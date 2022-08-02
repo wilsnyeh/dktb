@@ -10,6 +10,7 @@ import ParksList from './parks/ParksList';
 import ParkDetails from './parks/ParkDetails';
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
+import MainPage from './mainpage/MainPage';
 
 
 function App(props) {
@@ -26,7 +27,7 @@ function App(props) {
       <Header />
       <Routes>
         <Route>
-          <Route path="/" element={<h1>Welcome</h1>} />
+        <Route path="/" element={<MainPage />} />
           <Route path="/parks" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} token={token} />} />
           <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} weatherUrl={'https://api.openweathermap.org/data/2.5/weather?q='} token={token} />} />
         </Route>
