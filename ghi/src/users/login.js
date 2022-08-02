@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useToken } from "../Auth"
 
 
@@ -7,12 +8,18 @@ function Login() {
     const [password, setPassword] = useState("");
     const [, login] = useToken();
 
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = `/signup/`
+        navigate(path);
+    }
     return (
-        <section className='shadow-sm form-control w-100 justify-content-center pb-4'>
+        <section className='w-100 d-flex justify-content-center pb-4'>
             <div className='form-container'>
-                <form className='container-xl w-75 mx-auto px-auto'>
-                    <div className='row mt-2'>
-                    <div className='form-label'>Username</div>
+                <h1 className='p-4 m-auto pb-0 text-light'>Login to your Account</h1>
+                <form className='container w-80 mt-2 py-1'>
+                    <div className='form-outline form-outline-color-success my-4 mx-3'>
+                        <label className='form-label' htmlFor='username'>Username</label>
                         <input
                             className='form-control '
                             onChange={e => setUsername(e.target.value)}
@@ -22,8 +29,8 @@ function Login() {
                             required
                         />
                     </div>
-                    <div className='row mt-2'>
-                    <div className='form-label'>Password</div>
+                    <div className='my-4 mx-3'>
+                        <label className='form-label' htmlFor='password'>Password</label>
                         <input
                             className='form-control'
                             onChange={e => setPassword(e.target.value)}
@@ -33,23 +40,27 @@ function Login() {
                             required
                         />
                     </div>
-                    <div className='row mx-5 my-2'>
+                    <div className='row mx-5 mb-4'>
                         <button
-                            className='form-control btn-success bordered' onClick={() => login(username, password)} type='button'>
+                            className=' btn-success bordered' onClick={() => login(username, password)} type='button'>
                             Login
                         </button>
                     </div>
-                    <div>
-                        <h3>Don't have an account? 
-                            <a href="./signup">
-                                Sign up 
-                            </a>
-                        </h3>
-                    </div>
                 </form>
+                <div className='row mx-2 m-auto'>
+                    <div className='col m-auto'>
+                        <p>Don't have an account?</p>
+                    </div>
+                    <div className='col mb-1'>
+                        <button 
+                        onClick={routeChange}
+                        className="btn btn-success btn-block">
+                            Sign up
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
     );
 }
-
 export default Login;

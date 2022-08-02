@@ -23,7 +23,6 @@ function App(props) {
   return (
     <>
       <Nav logout={logout} token={token} />
-      <Header/>      
       <Routes>
         <Route> 
           <Route path="/" element={homePage}/>

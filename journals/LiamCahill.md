@@ -5,6 +5,18 @@
 **issue with buttons not linking path to signup page correctly. will fix tommorrow.**
 
 
+
+
+## July 28, 2022
+*used the day to catch up with whole team and solve all merge conflicts and merge with main 
+
+
+## July 27, 2022
+* Fixed user auth using authToken function 
+* started to write new logic for front end react files
+**Auth working to full functionality, linking to other files with <navigate> tags**
+
+
 ## July 26, 2022
 * pair programmed with Wilson and worked on Login/logout and Signup functionality. 
 * Fixed useAuthcontext from Auth cookbook and imported correct react components into login, logout files
