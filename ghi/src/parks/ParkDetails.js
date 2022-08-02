@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import id from "./ParksList"
+import AddFavorite from './AddFavorites'
+// import id from "./ParksList;
+
+
 
 const parkUrl = "http://localhost:8080/parks/list/"
 
 function ParkDetails({ detailUrl, ...props }) {
   const [park, setPark] = useState({})
+
   const { id } = useParams()
+  const FavoriteComponent = props.favoriteComponent
+  const HandleFavoritesClick = props.handleFavoritesClick
   console.log(id)
   useEffect(() => {
     async function fetchData() {
@@ -23,15 +29,17 @@ function ParkDetails({ detailUrl, ...props }) {
     <div className='parks-list'>
       <div key={park.id} className="row">
         <div className="col-5 text-center mx-auto">
-          <h2 className="featurette-heading">{park.name}</h2>
+          <h2 className="featurette-heading">{park.name} {AddFavorite}</h2>
           <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
           <p className="lead">{park.description}</p>
         </div>
-        <div className="text-center">
-          <img className="img-fluid mx-auto"
-            src={park.image_url} alt="" />
+        <div className="image-container">
+          <img className="img-fluid mx-auto" src={park.image_url} alt="" />
+          <div onClick={HandleFavoritesClick} className='overlay align-items-center justify-content'>
+            <FavoriteComponent />
+          </div>
+          <hr className="featurette-divider" />
         </div>
-        <hr className="featurette-divider" />
       </div>
     </div>
   )
