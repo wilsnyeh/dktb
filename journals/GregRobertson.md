@@ -1,3 +1,13 @@
+## August 1, 2022
+
+Today, I worked on:
+
+* Favorite Functionality
+
+Started on creating a new feature. The favorite button will 
+allow users toi dave parks that they see through the detail 
+page and store it in their "Bucket List". Ran into a wall with 
+saving the state after the button click
 ## July 27, 2022
 
 Today, I worked on:
