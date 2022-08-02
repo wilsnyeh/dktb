@@ -1,82 +1,66 @@
-import React from 'react';
-import { Navigate, Link } from 'react-router-dom';
-import './login.css';
+import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useToken } from "../Auth"
 
 
-class LoginForm extends React.Component {
-    state = {
-        username: '',
-        password: '',
-        showPassword: false,
-        error: '',
+function Login() {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [, login] = useToken();
+
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = `/signup/`
+        navigate(path);
     }
-
-    handleChange = (e) => {
-        const { name, value } = e.target
-        this.setState({ [name]: value })
-    }
-
-    handleSubmit = async (e) => {
-        e.preventDefault()
-        const error = await this.props.login(this.state.username, this.state.password);
-        this.setState({ error: error })
-        this.setState({
-            username: '',
-            password: '',
-            showPassword: false,
-        });
-    }
-
-    validForm() {
-        return this.state.password.length >= 8 &&
-            this.state.username
-    }
-    render() {
-
-        if (this.props.token) {
-            return <Navigate to="/my_profile" />;
-        }
-
-        return (
-
-            <div className="row_login" >
-                <div className="offset-3 col-6" id="wrapper" >
-                    <div className="shadow p-4 mt-4" id="outbox" >
-                        <form onSubmit={this.handleSubmit} id="login-form" >
-                            <h1>Ready to not kick that bucket?!</h1>
-                            <hr />
-
-                            <div className="form-floating mb-3">
-                                <input type='text' id="loginusername" name='username' placeholder='Username'
-                                    required onChange={this.handleChange} />
-                            </div>
-                            <div className="form-floating mb-3" >
-                                <input type={this.state.showPassword ? "text" : "password"} id="loginpagepass" name='password' placeholder='●●●●●●●●'
-                                    required onChange={this.handleChange} />
-
-                                <button className='input-group-text bg-dark text-light' type="button"
-                                    onClick={() => this.setState({ showPassword: !this.state.showPassword })}>Show Password
-                                </button>
-                            </div>
-                            <hr />
-                            <div>
-                                <button
-                                    type="submit" name='loginbutton'
-                                    className="btn btn-primary" form="login-form">Log In
-                                </button>
-                                <Link to='/login/new'>Forgot Password?</Link>
-                            </div>
-
-                            <p>
-                                Don't have an Account? <Link to='/login/new'>Create Account</Link>
-                            </p>
-                        </form>
+    return (
+        <section className='w-100 d-flex justify-content-center pb-4'>
+            <div className='form-container'>
+                <h1 className='p-4 m-auto pb-0 text-light'>Login to your Account</h1>
+                <form className='container w-80 mt-2 py-1'>
+                    <div className='form-outline form-outline-color-success my-4 mx-3'>
+                        <label className='form-label' htmlFor='username'>Username</label>
+                        <input
+                            className='form-control '
+                            onChange={e => setUsername(e.target.value)}
+                            value={username}
+                            placeholder='Username'
+                            type='text'
+                            required
+                        />
+                    </div>
+                    <div className='my-4 mx-3'>
+                        <label className='form-label' htmlFor='password'>Password</label>
+                        <input
+                            className='form-control'
+                            onChange={e => setPassword(e.target.value)}
+                            value={password}
+                            placeholder='Password'
+                            type='password'
+                            required
+                        />
+                    </div>
+                    <div className='row mx-5 mb-4'>
+                        <button
+                            className=' btn-success bordered' onClick={() => login(username, password)} type='button'>
+                            Login
+                        </button>
+                    </div>
+                </form>
+                <div className='row mx-2 m-auto'>
+                    <div className='col m-auto'>
+                        <p>Don't have an account?</p>
+                    </div>
+                    <div className='col mb-1'>
+                        <button
+                            onClick={routeChange}
+                            className="btn btn-success btn-block">
+                            Sign up
+                        </button>
                     </div>
                 </div>
             </div>
-        )
-    }
+        </section>
+    );
 }
-
-
-export default LoginForm
+export default Login;

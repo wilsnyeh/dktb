@@ -8,7 +8,7 @@ import Header from './mainpage/Header';
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
 import ParkDetails from "./parks/ParkDetails"
-import AddFavorite from './parks/AddFavorites';
+import AddFavorite from './components/AddFavorites';
 import React, { useEffect, useState } from 'react'
 
 

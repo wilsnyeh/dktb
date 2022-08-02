@@ -14,11 +14,11 @@ class Account(AbstractUser):
     email = models.EmailField(max_length=50, unique=True)
     password = models.CharField(max_length=128, null=False, blank=False, default=False)
 
-    # parks = models.ForeignKey(
-    #     ParkVO,
-    #     related_name= "Accounts",
-    #     on_delete= models.CASCADE 
-    # )
+    parks = models.ManyToManyField(
+        ParkVO,
+        related_name= "Accounts",
+        null=True 
+    )
     def get_api_url(self):
         return reverse("accounts_list", kwargs={"pk": self.pk})
 

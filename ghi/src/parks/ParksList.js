@@ -18,12 +18,12 @@ function ParksList({ fetchUrl }) {
 
 
 
-  const handleClick = (park) => {
-    if (park.id) {
-      setId(park.id)
-    }
-  }
-  console.log(id);
+  // const handleClick = (park) => {
+  //   if (park.id) {
+  //     setId(park.id)
+  //   }
+  // }
+  // console.log(id);
 
 
 
@@ -33,7 +33,7 @@ function ParksList({ fetchUrl }) {
         return (
           <div key={park.id} className="row">
             <div className="col-9">
-              <h2 className="featurette-heading" onClick={() => handleClick(park)}><Link to={'/parks/' + park.id}>{park.name}</Link></h2>
+              <h2 className="featurette-heading" ><Link to={'/parks/' + park.id}>{park.name}</Link></h2>
               <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
               <p className="lead">{park.description}</p>
             </div>
