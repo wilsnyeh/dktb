@@ -54,9 +54,8 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
                 <hr className="featurette-divider" />
             </div>
             <div>
-                <h1>Temperature: {weather.temp} C</h1>
-                <h1>Humidity: {weather.humidity}%</h1>
-
+                <h1>Temperature: {weather?.temp} C</h1>
+                <h1>Humidity: {weather?.humidity}%</h1>
             </div>
         </div>
     )
