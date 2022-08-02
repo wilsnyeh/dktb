@@ -16,7 +16,7 @@
 } */
 
 .carouselphoto {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     /* opacity: 0.8 */
 }

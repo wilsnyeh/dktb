@@ -44,7 +44,7 @@ def accounts_list(request):
 
 
 
-@require_http_methods(["GET", "POST"])
+@require_http_methods(["GET", "PUT"])
 def account_detail(request, id):
     if request.method == "GET":
         # content = json.loads(request.body)
@@ -54,10 +54,16 @@ def account_detail(request, id):
                 "id": account.id,
                 "username": account.username,
                 "email": account.email,
+                "parks": account.parks.all()
             }
         )
     else: 
         account = Account.objects.get(id=id)
+        return JsonResponse(
+            {
+                "parks": account.parks.all()
+            }
+        )
 
 
 @require_http_methods(["GET"])
