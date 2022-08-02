@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import AddFavorite from './AddFavorites'
+import App, { } from '../App'
 // import id from "./ParksList;
 
 

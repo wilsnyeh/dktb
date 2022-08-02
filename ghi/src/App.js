@@ -29,7 +29,11 @@ function App(props) {
       <Routes>
         <Route>
           <Route path="/" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} />} />
-          <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} handleFavoriteClick={addFavoritePark} favoriteComponent={AddFavorite} />} />
+          <Route path="parks/:id"
+            element={<ParkDetails
+              detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`}
+              handleFavoriteClick={addFavoritePark}
+              favoriteComponent={AddFavorite} />} />
         </Route>
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignUpForm />} />
