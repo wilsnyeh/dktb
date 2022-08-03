@@ -98,7 +98,7 @@ export function useToken() {
         if (response.ok) {
             const token = await getTokenInternal();
             setToken(token);
-            navigate("/");
+            navigate("/parks");
             return;
         }
         let error = await response.json();
