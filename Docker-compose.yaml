@@ -69,7 +69,7 @@ services:
         environment:
             DATABASE_URL: postgresql://parks:password@postgres:5432/parks
             WAIT_HOSTS: postgres:5432,parks:8000
-            WAIT_TIMEOUT: 240
+            WAIT_TIMEOUT: 60
             NPS_API_KEY: ${NPS_API_KEY}
             WEATHER_API_KEY: ${WEATHER_API_KEY}
     users-poller:
@@ -87,7 +87,7 @@ services:
         environment:
             DATABASE_URL: postgresql://users:password@postgres:5432/users
             WAIT_HOSTS: postgres:5432,users:8000
-            WAIT_TIMEOUT: 240
+            WAIT_TIMEOUT: 60
     ghi:
         image: node:lts-bullseye
         command: /bin/bash run.sh

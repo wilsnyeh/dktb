@@ -7,7 +7,7 @@ import requests
 
 
 sys.path.append("")
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "service_project.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "users_project.settings")
 django.setup()
 
 # import model after setting up database settings

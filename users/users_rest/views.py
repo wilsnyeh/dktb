@@ -7,7 +7,10 @@ from .models import Account, ParkVO
 from .encoders import AccountEncoder, ParkVOEncoder
 import json
 
-
+@require_http_methods(["GET"])
+def park_vo_list(request):
+    if request.method == "GET":
+        pass
 
 # Create your views here.
 @require_http_methods(["GET", "POST"])
