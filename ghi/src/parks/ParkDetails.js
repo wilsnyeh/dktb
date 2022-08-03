@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import "../DetailPage.css"
 import Header from '../mainpage/Header'
+import "../DetailPage.css"
 
 
 function ParkDetails({ detailUrl, weatherUrl, ...props }) {
@@ -36,10 +37,19 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
   }, [park, weatherUrl])
 
   return (
+<<<<<<< HEAD
     <div className='parkdetail'>    
       <div key={park.id} className="row">
         <div className="col-12">
           <h2 className="featurette-heading-detail">{park.name}</h2>
+=======
+    <div> <Header />
+      <div className='parkdetail'>    
+      <div key={park.id} className="row">
+        <div className="col-12">
+          <h2 className="featurette-heading-detail">{park.name}</h2>
+          <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
+>>>>>>> origin
           <p className="lead">{park.description}</p>
         </div>
         <div className="col-12 photo">
@@ -61,6 +71,11 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         <div className="col-6">Contact number: {park.contact_num}</div>
       </div>
       
+<<<<<<< HEAD
+=======
+    </div>
+
+>>>>>>> origin
     </div>
   )
 }

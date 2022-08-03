@@ -3,7 +3,12 @@
 }
 
 .featurette-heading-detail {
+<<<<<<< HEAD
     padding-bottom: 15px;
+=======
+    padding-bottom: 0px;
+    margin-bottom: 3px;
+>>>>>>> origin
 }
 
 .col-6 {

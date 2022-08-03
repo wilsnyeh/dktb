@@ -12,7 +12,6 @@ import ParkDetails from './parks/ParkDetails';
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
 
-
 function App(props) {
 
   const [userName, setUserName] = useState('');
