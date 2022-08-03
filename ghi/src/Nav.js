@@ -1,18 +1,21 @@
 import react from 'react';
 import { NavLink, Link } from 'react-router-dom';
+// import SearchBar from './mainpage/SearchBar';
 
 
 function Nav({ logout, token }) {
   return (
     <div>
-      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav className="navbar navbar-expand-md navbar-dark fixed-top mm-custom">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to='/'>Don't Kick The Bucket</NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
-            <ul className="navbar-nav me-auto mb-2 mb-md-0">
+            <ul className="navbar-nav 
+            me-auto 
+            mb-2 mb-md-0">
               <li className="nav-item">
                 <NavLink className="nav-link" aria-current="page" to='/'>Home</NavLink>
               </li>
@@ -30,21 +33,25 @@ function Nav({ logout, token }) {
                 </li> : null}
 
               {token ?
-                <li className="nav-item">
+                <li className="nav-item mt-2 mt-md-0">
                   <Link className="nav-link" onClick={() => logout()} to='/'>Logout</Link>
                   {/* ^^ adjust to field to have specific link ^^ */}
                 </li> : null}
-                
-                {!token ?
-                <li className="nav-item">
-                <NavLink className="nav-link" aria-current="page" to='/signup'>Create an account</NavLink>
-              </li> : null}
 
+              {!token ?
+                <li className="nav-item">
+                  <NavLink className="nav-link" aria-current="page" to='/signup'>Create an account</NavLink>
+                </li> : null}
             </ul>
+            {/* <SearchBar/> */}
             {/* <form className="d-flex" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button className="btn btn-outline-success" type="submit">Search</button>
-        </form> */}
+              <div className="input-group rounded">
+                <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <button className="input-group-text border-1 " id="search-addon">
+                  <i className="fas fa-search "></i>
+                </button>
+              </div>
+            </form> */}
           </div>
         </div>
       </nav>

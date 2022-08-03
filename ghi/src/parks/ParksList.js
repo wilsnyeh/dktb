@@ -7,6 +7,7 @@ import Header from '../mainpage/Header'
 
 function ParksList({ fetchUrl, token }) {
   const [parks, setParks] = useState([])
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     async function fetchData() {
@@ -23,9 +24,13 @@ function ParksList({ fetchUrl, token }) {
   return (
     <>
     token ?
-      <div> <Header />
+      <div>
+      <Header/>
+        <div className="input-group">
+          <input type="Search" onChange={event => setSearch(event.target.value)} className="form-control rounded " placeholder="State abbreviation" aria-label="Search" aria-describedby="search-addon" />
+        </div>
         <div className='parkslist'>
-          {parks.map((park) => {
+          {parks && parks.filter(park => park.state.includes(search.toUpperCase())).map((park) => {
             return (
               <div key={park.id} className="row">
                 <div className="col-9">

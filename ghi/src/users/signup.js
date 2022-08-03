@@ -8,7 +8,8 @@ function SignUpForm() {
     const [last_name, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [token, , , signup, ] = useToken();
+    const [token, , , signup,] = useToken();
+
     let navigate = useNavigate();
     const routeChange = () => {
         let path = `/login/`
