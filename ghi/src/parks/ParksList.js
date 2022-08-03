@@ -4,6 +4,7 @@ import "../HomePage.css"
 
 function ParksList({ fetchUrl }) {
   const [parks, setParks] = useState([])
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     async function fetchData() {
@@ -16,8 +17,12 @@ function ParksList({ fetchUrl }) {
   }, [fetchUrl])
 
   return (
+    <>
+    <div className="input-group">
+      <input type="search" onChange={event => setSearch(event.target.value)} className="form-control rounded" placeholder="State abbreviation" aria-label="Search" aria-describedby="search-addon" />
+    </div>
     <div className='parkslist'>
-      {parks.map((park) => {
+      {parks && parks.filter(park => park.state.includes(search.toUpperCase())).map((park) => {
         return (
           <div key={park.id} className="row">
             <div className="col-9">
@@ -32,8 +37,9 @@ function ParksList({ fetchUrl }) {
             <hr className="featurette-divider" />
           </div>
         )
-      })}
+      })}     
     </div>
+      </>
   )
 }
 

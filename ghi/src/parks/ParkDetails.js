@@ -29,7 +29,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         const data = await response.json();
         // setWeather(data.main);
         setWeather(data.main);
-        console.log(data);
         return response;
       }
       fetchData();}
