@@ -16,7 +16,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
       const response = await fetch(Url);
       const data = await response.json();
       setPark(data);
-      console.log("Parks------------------------------------>", data)
       return response;
     }
     fetchData();
@@ -30,7 +29,7 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         const data = await response.json();
         // setWeather(data.main);
         setWeather(data.main);
-        console.log("Weather---------------------------->", data)
+        console.log(data);
         return response;
       }
       fetchData();
@@ -71,3 +70,4 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
   )
 }
 export default ParkDetails
+
