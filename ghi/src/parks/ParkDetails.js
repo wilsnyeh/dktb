@@ -20,6 +20,26 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
     fetchData();
   }, [detailUrl, id])
 
+  function addToFavorites(id, token) {
+    const url = `${process.env.REACT_APP_USERS}users/accountDetails/`
+    const fetchConfig = {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        id: id,
+      }),
+    };
+    const response = fetch(url, fetchConfig);
+
+    response
+    .then((res) => res.json())
+    .then((data) => {
+      mutate("users/accountDetails/");
+    });
+  }
 
   useEffect(() => {
     if (Object.keys(park).length) {
