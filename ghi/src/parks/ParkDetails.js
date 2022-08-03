@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import "../DetailPage.css"
+import Header from '../mainpage/Header'
 
 
 function ParkDetails({ detailUrl, weatherUrl, ...props }) {
@@ -19,10 +20,9 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
     }
     fetchData();
   }, [detailUrl, id])
-
   
   useEffect(() => {
-    if (Object.keys(park).length) {    
+    if (Object.keys(park).length) {
       async function fetchData() {
         const Url = weatherUrl + park.city + "," + park.state + ",US&appid=" + apiKey + '&units=imperial';
         const response = await fetch(Url);
@@ -31,9 +31,10 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         setWeather(data.main);
         return response;
       }
-      fetchData();}
+      fetchData();
+    }
   }, [park, weatherUrl])
-  
+
   return (
     <div className='parkdetail'>    
       <div key={park.id} className="row">
