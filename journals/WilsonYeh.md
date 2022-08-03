@@ -1,3 +1,21 @@
+## August 03, 2022
+
+## August 02, 2022
+*Worked on park search functionality 
+
+We were looking for ways to implement some sort of search functionality as we originally intended - we found at least for now, using our ability to filter through search parameters in our parks based on state was our best option of making this work. 
+## August 01, 2022
+*Frontend styling
+
+Liam and I have been working on front-end styling of our signup forms and login forms, and were making a lot of progress on getting things to look how we want and the benefit of us working together ensures our forms are cohesive and look like they belong to the same website. 
+## July 28, 2022
+*Merge conflicts
+
+We were finally able to get everything up and running and we had noticed we were very behind with everyones branches so we spent the day getting all the merge conflicts resolved and everyone up to speed so we could have up to date working branches that included everyones work up to this point. 
+## July 27, 2022
+*AUTH IS WORKING
+
+With some help and guidance we were able to get user logins / signup fully functional and with tokens properly created and deleted up on logout. 
 ## July 26, 2022
 *Fixed 500 Server Error
 
