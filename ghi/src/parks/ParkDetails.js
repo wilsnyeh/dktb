@@ -24,7 +24,7 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
   useEffect(() => {
     if (Object.keys(park).length) {
       async function fetchData() {
-        const Url = weatherUrl + park.city + "," + park.state + ",US&appid=" + apiKey + '&units=metric';
+        const Url = weatherUrl + park.city + "," + park.state + ",US&appid=" + apiKey + '&units=imperial';
         const response = await fetch(Url);
         const data = await response.json();
         // setWeather(data.main);
