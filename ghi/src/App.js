@@ -4,14 +4,13 @@ import LoginForm from './users/login';
 import SignUpForm from './users/signup';
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from './mainpage/Header';
-import homePage from './mainpage/Homepage'
+import HomePage from './mainpage/HomePage';
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
 import ParkDetails from './parks/ParkDetails';
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
-import MainPage from './mainpage/MainPage';
+
 
 
 function App(props) {
@@ -26,7 +25,7 @@ function App(props) {
       <Nav logout={logout} token={token} />
       <Routes>
         <Route> 
-          <Route path="/" element={homePage}/>
+          <Route path="/" element={HomePage}/>
           <Route path="/parks" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} token={token} />} />
           <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} weatherUrl={'https://api.openweathermap.org/data/2.5/weather?q='} token={token} />} />
         </Route>
