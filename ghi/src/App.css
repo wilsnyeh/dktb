@@ -32,19 +32,20 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 .form-label {
-	font-size: 12px;
-	color: #ffffff;
-	margin: 0;
-	display: block;
-	opacity: 1;
-	-webkit-transition: .333s ease top, .333s ease opacity;
-	transition: .333s ease top, .333s ease opacity;
+  font-size: 12px;
+  color: #ffffff;
+  margin: 0;
+  display: block;
+  opacity: 1;
+  -webkit-transition: .333s ease top, .333s ease opacity;
+  transition: .333s ease top, .333s ease opacity;
 }
 
 .form-control:focus {
@@ -59,5 +60,24 @@
   background-color: #84a98c;
   stroke-width: 1rem;
   box-shadow: inset 0px 0px 0px 0px rgba(76, 81, 78, 0.075), 5px 5px 15px 0px rgba(72, 74, 73, 0.6);
-  margin:10% 30% 20% 30%;
+  margin: 10% 30% 20% 30%;
+}
+
+.mm-custom {
+  background-color: #84a98c;
+  color: #84a98c;
+}
+
+.round-cor {
+  border-radius: 25;
+}
+
+.search-hover {
+  background: linear-gradient(45deg,
+      rgba(30, 230, 200, 0.5),
+      rgba(90, 15, 215, 0.5) 100%);
+}
+
+.search-bar {
+  width: 500px;
 }

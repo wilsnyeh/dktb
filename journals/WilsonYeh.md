@@ -1,3 +1,9 @@
+## August 03, 2022
+
+## August 02, 2022
+*Worked on park search functionality 
+
+We were looking for ways to implement some sort of search functionality as we originally intended - we found at least for now, using our ability to filter through search parameters in our parks based on state was our best option of making this work. 
 ## August 01, 2022
 *Frontend styling
 
