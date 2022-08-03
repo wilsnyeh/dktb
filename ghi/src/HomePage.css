@@ -2,27 +2,20 @@
     padding: 2px 0 10px 10px;
 }
 
-/* .carouselPhoto {
-    height: 400px;
-    max-width: 100%;
-} */
-
-
 /* HEADER SETTINGS */
 
-/* #myCarousel {
+#myCarousel {
     width: 100%;
     height: auto;
-} */
+}
 
 .carouselphoto {
-    /* width: 100%; */
-    height: auto;
+    max-height: 380px;
 }
 
 /* LIST SETTINGS */
 
-.parks-list {
+.parkslist {
     padding: 3% 12% 0%;
 }
 
@@ -52,4 +45,44 @@
 
 .footp {
     padding: 0;
+}
+
+
+/* SEARCH BAR */
+
+.input-group {
+    padding: 1% 12% 0%;
+}
+
+/* HOME PAGE */
+
+.hero {
+    background-image: url(./images/MainPage-BG.jpg);
+    background-position: center;
+    background-size: color;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+}
+
+.hero::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #080805d3;
+    z-index: -1; 
+    /* brings forward */
+}
+
+.homepagetext {
+    color: white;
+}
+
+.homebutton {
+    background-color: #84a98c;
+    color: white;
+    margin-top: 20px;
 }
