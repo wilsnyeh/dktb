@@ -21,12 +21,12 @@ function ParksList({ fetchUrl, token }) {
   }, [fetchUrl])
 
   return (
+    <>
     token ?
       <div> <Header />
         <div className='parkslist'>
           {parks.map((park) => {
             return (
-
               <div key={park.id} className="row">
                 <div className="col-9">
                   <h2 className="featurette-heading" ><Link to={'/parks/' + park.id}>{park.name}</Link></h2>
@@ -44,6 +44,7 @@ function ParksList({ fetchUrl, token }) {
         </div>
       </div>
       : <Navigate to="/login" />
+      </>
   )
 }
 export default ParksList;
