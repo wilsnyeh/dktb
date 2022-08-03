@@ -38,7 +38,6 @@
   }
 }
 
-<<<<<<< HEAD
 .image-container {
   position: relative;
   transition: transform 0.2;
@@ -48,7 +47,8 @@
 .image-container {
   cursor: pointer;
   transform: scale(1.1);
-=======
+}
+
 .form-label {
   font-size: 12px;
   color: #ffffff;
@@ -91,5 +91,4 @@
 
 .search-bar {
   width: 500px;
->>>>>>> 368c545b0d5624763e62c219a11083d4fc1ed8a7
 }
