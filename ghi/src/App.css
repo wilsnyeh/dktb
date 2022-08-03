@@ -90,3 +90,22 @@
   box-shadow: inset 0px 0px 0px 0px rgba(76, 81, 78, 0.075), 5px 5px 15px 0px rgba(72, 74, 73, 0.6);
   margin: 10% 30% 20% 30%;
 }
+
+.mm-custom {
+  background-color: #84a98c;
+  color: #84a98c;
+}
+
+.round-cor {
+  border-radius: 25;
+}
+
+.search-hover {
+  background: linear-gradient(45deg,
+      rgba(30, 230, 200, 0.5),
+      rgba(90, 15, 215, 0.5) 100%);
+}
+
+.search-bar {
+  width: 500px;
+}

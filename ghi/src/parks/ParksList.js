@@ -1,47 +1,72 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import "../HomePage.css"
+import { useParams } from 'react-router-dom'
 import Header from '../mainpage/Header'
+import "../DetailPage.css"
 
-function ParksList({ fetchUrl, token }) {
-  const [parks, setParks] = useState([])
-  const [id, setId] = useState('')
+
+function ParkDetails({ detailUrl, weatherUrl, ...props }) {
+  const [park, setPark] = useState({})
+  const [weather, setWeather] = useState({})
+  const { id } = useParams()
+  const apiKey = '2f4e32d94a78c9492aa87395ac412181'
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(fetchUrl, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const data = await response.json()
-      setParks(data.parks);
+      const Url = detailUrl + id;
+      const response = await fetch(Url);
+      const data = await response.json();
+      setPark(data);
       return response;
     }
     fetchData();
-  }, [fetchUrl])
+  }, [detailUrl, id])
 
-
+  useEffect(() => {
+    if (Object.keys(park).length) {
+      async function fetchData() {
+        const Url = weatherUrl + park.city + "," + park.state + ",US&appid=" + apiKey + '&units=imperial';
+        const response = await fetch(Url);
+        const data = await response.json();
+        // setWeather(data.main);
+        setWeather(data.main);
+        console.log(data);
+        return response;
+      }
+      fetchData();
+    }
+  }, [park, weatherUrl])
 
   return (
-    <><Header />
-      <div className="parks-list">
-        {parks.map((park) => {
-          return (
-            <div key={park.id} className="row">
-              <div className="col-9">
-                <h2 className="featurette-heading" ><Link to={'/parks/' + park.id}>{park.name}</Link></h2>
-                <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
-                <p className="lead">{park.description}</p>
-              </div>
-              <div className="col-3 photo">
-                <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-                  src={park.image_url} alt="" />
-              </div>
-              <hr className="featurette-divider" />
-            </div>
-          )
-        })}
+    <div> <Header />
+      <div className='parkdetail'>
+        <div key={park.id} className="row">
+          <div className="col-12">
+            <h2 className="featurette-heading-detail">{park.name}</h2>
+            <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
+            <p className="lead">{park.description}</p>
+          </div>
+          <div className="col-12 photo">
+            <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
+              src={park.image_url} alt="" />
+          </div>
+        </div>
+        <div>
+          {weather
+            ? <div><h5>Weather in {park.city} now: </h5><p>Temperature: {weather?.temp} °F</p><p>Humidity: {weather?.humidity}%</p> </div>
+            : <></>
+          }
+        </div>
+        <div className="col-12">
+          {park.weather_info}
+        </div>
+        <div className='row row-details'>
+          <div className="col-6">Entrance fee: {park.entrance_fee}</div>
+          <div className="col-6">Contact number: {park.contact_num}</div>
+        </div>
+
       </div>
-    </>
+
+    </div>
   )
 }
-export default ParksList;
+export default ParkDetails
