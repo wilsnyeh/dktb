@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "../HomePage.css"
+import { Navigate } from 'react-router-dom';
+import { useToken } from '../Auth'
 
-function ParksList({ fetchUrl }) {
+function ParksList({ fetchUrl, token }) {
   const [parks, setParks] = useState([])
   const [search, setSearch] = useState('')
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(fetchUrl);
-      const data = await response.json()
+      const response = await fetch(fetchUrl, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data = await response.json();
       setParks(data.parks);
       return response;
     }
@@ -21,9 +25,11 @@ function ParksList({ fetchUrl }) {
     <div className="input-group">
       <input type="search" onChange={event => setSearch(event.target.value)} className="form-control rounded" placeholder="State abbreviation" aria-label="Search" aria-describedby="search-addon" />
     </div>
+    token ?
     <div className='parkslist'>
       {parks && parks.filter(park => park.state.includes(search.toUpperCase())).map((park) => {
         return (
+          
           <div key={park.id} className="row">
             <div className="col-9">
               <h2 className="featurette-heading" ><Link to={'/parks/' + park.id}>{park.name}</Link></h2>
@@ -39,10 +45,10 @@ function ParksList({ fetchUrl }) {
         )
       })}     
     </div>
-      </>
+      
+  : <Navigate to="/login" />
+  </>
   )
 }
-
-
 
 export default ParksList;

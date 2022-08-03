@@ -36,6 +36,7 @@ services:
             DATABASE_URL: postgresql://users:password@postgres/users
             WAIT_HOSTS: postgres:5432
             DJWTO_SIGNING_KEY: 834e56c283be647a483a6e161be73589bf0c603be7a697ae5368c3d0a9a8259c
+            OPENWEATHER_API_KEY: ${OPENWEATHER_API_KEY}
     parks:
         build:
             context: ./parks
