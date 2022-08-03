@@ -10,6 +10,12 @@ import json
 @require_http_methods(["GET"])
 def park_vo_list(request):
     if request.method == "GET":
+        parks=ParkVO.objects.all()
+        return JsonResponse(
+            {"parks": parks},
+            encoder=ParkVOEncoder,
+        )
+    else:
         pass
 
 # Create your views here.
