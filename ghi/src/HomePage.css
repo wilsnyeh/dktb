@@ -2,27 +2,20 @@
     padding: 2px 0 10px 10px;
 }
 
-/* .carouselPhoto {
-    height: 400px;
-    max-width: 100%;
-} */
-
-
 /* HEADER SETTINGS */
 
-/* #myCarousel {
+#myCarousel {
     width: 100%;
     height: auto;
-} */
+}
 
 .carouselphoto {
-    /* width: 100%; */
-    height: auto;
+    max-height: 380px;
 }
 
 /* LIST SETTINGS */
 
-.parks-list {
+.parkslist {
     padding: 3% 12% 0%;
 }
 
@@ -52,4 +45,11 @@
 
 .footp {
     padding: 0;
+}
+
+
+/* SEARCH BAR */
+
+.input-group {
+    padding: 1% 12% 0%;
 }

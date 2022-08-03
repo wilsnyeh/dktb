@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "../HomePage.css"
 import { Navigate } from 'react-router-dom';
-import { useToken } from '../Auth'
 import Header from '../mainpage/Header'
 
 function ParksList({ fetchUrl, token }) {
@@ -19,10 +18,9 @@ function ParksList({ fetchUrl, token }) {
       return response;
     }
     fetchData();
-  }, [fetchUrl])
+  }, [fetchUrl, token])
 
-  return (
-    <>
+  return (    
     token ?
       <div>
       <Header/>
@@ -49,7 +47,7 @@ function ParksList({ fetchUrl, token }) {
         </div>
       </div>
       : <Navigate to="/login" />
-      </>
+      
   )
 }
 export default ParksList;
