@@ -30,7 +30,7 @@ DEBUG = True
 
 AUTH_USER_MODEL = "users_rest.Account"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["parks", "localhost"]
 
 DJWTO_MODE = "TWO-COOKIES"
 DJWTO_CSRF = False
