@@ -3,12 +3,10 @@ import './App.css';
 import LoginForm from './users/login';
 import SignUpForm from './users/signup';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from './mainpage/Header';
 import homePage from './mainpage/Homepage'
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
 import ParkDetails from "./parks/ParkDetails"
-import AddFavorite from './components/AddFavorites';
 import React, { useEffect, useState } from 'react'
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
