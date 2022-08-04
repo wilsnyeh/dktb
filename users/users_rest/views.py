@@ -68,14 +68,13 @@ def account_detail(request, id):
         )
     else:
         account=Account.objects.get(id=id)
-        print("---------------------------------->",account) 
-        content = json.loads(request.body)
-        print("---------------------------------->",content) 
-        print("---------------------------------->",account.id) 
-        # account.parks.add(content)
-        # account = Account.objects.filter(id=id).update(parks=content)
+        content=json.loads(request.body)
+        park=ParkVO.objects.get(id=content["park"])
+        account.parks.add(park)
         return JsonResponse(
-            content
+            account,
+            encoder=AccountEncoder,
+            safe=False
         )
 
 
