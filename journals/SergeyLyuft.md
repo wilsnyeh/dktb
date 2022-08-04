@@ -15,7 +15,33 @@ Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
 
-07.27.22
+08.03.22
+
+- Solved merge conflict and update with last version of the code.
+- Adjusted styles for details page, list,nav, header and homepage.
+  ##Issues
+- Had issues with Auth token and with merge.
+
+  08.02.22
+
+- Worked with search option, to sort parks by state.
+  Have to remove search option to nav component.Now is in list file.
+  ##Issues
+- Had issues with filter of the parks list.
+
+  08.01.22
+
+- Fixed issues with limited list of parks. Could get full list of parks.
+- Updated style for park details page.Have to add carousel for park's photos.
+  ##Issues
+- Have issues with images for each park. Issues with retrieved data.Will fix it tomorrow.
+
+  07.28.22
+
+- Worked with merge conflicts and tried to join all data together.
+- Fixed issues with weather data.
+
+  07.27.22
 
 - Created hook for weather API and got data.
 - Have to create api variable in .env file and update it in docker.yml file.

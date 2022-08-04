@@ -19,6 +19,11 @@
     padding: 3% 12% 0%;
 }
 
+.listlink {
+    color: #000;
+    text-decoration: none;
+}
+
 .featurette-divider {
     padding: 1px;
     margin-top: 5px;
@@ -86,3 +91,9 @@
     color: white;
     margin-top: 20px;
 }
+
+.signupbtn {
+    margin-top: -8px;
+    margin-bottom: 5px;
+}
+

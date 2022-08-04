@@ -42,7 +42,7 @@ function Login() {
                     </div>
                     <div className='row mx-5 mb-4'>
                         <button
-                            className=' btn-success bordered' onClick={() => login(username, password)} type='button'>
+                            className='btn btn-success' onClick={() => login(username, password)} type='button'>
                             Login
                         </button>
                     </div>
@@ -54,7 +54,7 @@ function Login() {
                     <div className='col mb-1'>
                         <button 
                         onClick={routeChange}
-                        className="btn btn-success btn-block">
+                        className="btn btn-success btn-block signupbtn">
                             Sign up
                         </button>
                     </div>
