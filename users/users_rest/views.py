@@ -1,12 +1,24 @@
+import re
 from django.shortcuts import render
 from django.db import IntegrityError
 from django.http import JsonResponse
-from django.views.decorators.http import require_http_methods 
+from django.views.decorators.http import require_http_methods
+
+from .serializers import AccountSerializer # tell liam
 from .models import Account, ParkVO
 from .encoders import AccountEncoder, ParkVOEncoder
 import json
 
-
+@require_http_methods(["GET"])
+def park_vo_list(request):
+    if request.method == "GET":
+        parks=ParkVO.objects.all()
+        return JsonResponse(
+            {"parks": parks},
+            encoder=ParkVOEncoder,
+        )
+    else:
+        pass
 
 # Create your views here.
 @require_http_methods(["GET", "POST"])
@@ -16,18 +28,23 @@ def accounts_list(request):
         return JsonResponse(
             {"accounts": accounts},
             encoder=AccountEncoder,
-            safe=False
         )
     else:
         request.method == "POST"
         try:
             content = json.loads(request.body)
             print(content)
-            account = Account.objects.create_user(**content)
+            account = Account.objects.create_user(
+                username=content["username"],
+                password=content["password"],
+                email=content["email"],
+                first_name=content["first_name"],
+                last_name=content["last_name"],
+            )
+            Account.objects.create(account=account)
             return JsonResponse(
                 {"account": account},
                 encoder=AccountEncoder,
-                safe=False
             )
         except IntegrityError:
             response = JsonResponse(
@@ -38,18 +55,19 @@ def accounts_list(request):
 
 
 
-@require_http_methods(["GET"])
+@require_http_methods(["GET", "PUT"])
 def account_detail(request, id):
     if request.method == "GET":
-        # content = json.loads(request.body)
         account = Account.objects.get(id=id)
-        return JsonResponse(
-            {
-                "id": account.id,
-                "username": account.username,
-                "email": account.email,
-            }
-        )
+        serializer=AccountSerializer(account) 
+        return JsonResponse(serializer.data)
+    else:
+        account=Account.objects.get(id=id)
+        content=json.loads(request.body)
+        park=ParkVO.objects.get(id=content["park"])
+        account.parks.add(park)
+        serializer=AccountSerializer(account) 
+        return JsonResponse(serializer.data)
 
 
 @require_http_methods(["GET"])

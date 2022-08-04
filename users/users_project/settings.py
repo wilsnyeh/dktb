@@ -30,7 +30,7 @@ DEBUG = True
 
 AUTH_USER_MODEL = "users_rest.Account"
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["parks", "localhost"]
 
 DJWTO_MODE = "TWO-COOKIES"
 DJWTO_CSRF = False
@@ -39,10 +39,18 @@ DJWTO_ACCESS_TOKEN_LIFETIME = timedelta(days=1)
 # Your DEBUG value MUST be False in production
 DJWTO_SAME_SITE = "LAX" if DEBUG else "NONE"
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # Application definition
 
 INSTALLED_APPS = [
+    "rest_framework",
     "corsheaders",
     "djwto",
     'users_rest.apps.UsersRestConfig',

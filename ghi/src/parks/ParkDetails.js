@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import "../DetailPage.css"
 import Header from '../mainpage/Header'
 import "../DetailPage.css"
+import FavoriteButton from '../components/FavoriteButton'
 
 
 function ParkDetails({ detailUrl, weatherUrl, ...props }) {
@@ -36,6 +37,12 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
     }
   }, [park, weatherUrl])
 
+  const addFavoritePark = (park) => {
+    const favorite = true;
+  }
+
+
+
   return (
     <div> <Header />
       <div className='parkdetail'>
@@ -45,9 +52,15 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
             <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
             <p className="lead">{park.description}</p>
           </div>
-          <div className="col-12 photo">
+          <div className="image-container col-12 photo">
             <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
               src={park.image_url} alt="" />
+            <div onClick={() => addFavoritePark(park)} className='overlay align-items-center justify-content'>
+              {/* <AddFavorite /> */}
+              <FavoriteButton />
+            </div>
+
+
           </div>
         </div>
         <div>
@@ -65,7 +78,8 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         </div>
 
       </div>
-    </div>
+
+      </div>
   )
 }
 export default ParkDetails
