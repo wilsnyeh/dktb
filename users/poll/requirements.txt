@@ -6,6 +6,7 @@ click==8.1.2
 dj-database-url==0.5.0
 django-cors-headers==3.11.0
 Django==4.0.3
+djangorestframework==3.13.1
 djwto @ git+https://github.com/hr-curtissimo/djwto.git
 flake8==4.0.1
 gunicorn==20.1.0

@@ -2,7 +2,9 @@ import re
 from django.shortcuts import render
 from django.db import IntegrityError
 from django.http import JsonResponse
-from django.views.decorators.http import require_http_methods # tell liam
+from django.views.decorators.http import require_http_methods
+
+from .serializers import AccountSerializer # tell liam
 from .models import Account, ParkVO
 from .encoders import AccountEncoder, ParkVOEncoder
 import json
@@ -56,26 +58,16 @@ def accounts_list(request):
 @require_http_methods(["GET", "PUT"])
 def account_detail(request, id):
     if request.method == "GET":
-        # content = json.loads(request.body)
         account = Account.objects.get(id=id)
-        return JsonResponse(
-            {
-                "id": account.id,
-                "username": account.username,
-                "email": account.email,
-                "parks": account.parks
-            }, safe=False
-        )
+        serializer=AccountSerializer(account) 
+        return JsonResponse(serializer.data)
     else:
         account=Account.objects.get(id=id)
         content=json.loads(request.body)
         park=ParkVO.objects.get(id=content["park"])
         account.parks.add(park)
-        return JsonResponse(
-            account,
-            encoder=AccountEncoder,
-            safe=False
-        )
+        serializer=AccountSerializer(account) 
+        return JsonResponse(serializer.data)
 
 
 @require_http_methods(["GET"])
