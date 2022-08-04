@@ -2,13 +2,12 @@
 import './App.css';
 import LoginForm from './users/login';
 import SignUpForm from './users/signup';
-import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from './mainpage/Header';
 import homePage from './mainpage/Homepage'
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
-import ParkDetails from './parks/ParkDetails';
+import ParkDetails from "./parks/ParkDetails"
+import React, { useEffect, useState } from 'react'
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
 import Accounts from './users/accounts';
@@ -35,7 +34,7 @@ function App(props) {
         <Route path="/login" element={<LoginForm token={token} />} />
         <Route path="/signup" element={<SignUpForm />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }

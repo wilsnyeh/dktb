@@ -20,10 +20,10 @@ function ParksList({ fetchUrl, token }) {
     fetchData();
   }, [fetchUrl, token])
 
-  return (    
+  return (
     token ?
       <div>
-      <Header/>
+        <Header />
         <div className="input-group">
           <input type="Search" onChange={event => setSearch(event.target.value)} className="form-control rounded " placeholder="State abbreviation" aria-label="Search" aria-describedby="search-addon" />
         </div>
@@ -47,7 +47,8 @@ function ParksList({ fetchUrl, token }) {
         </div>
       </div>
       : <Navigate to="/login" />
-      
+
   )
 }
 export default ParksList;
+
