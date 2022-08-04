@@ -10,10 +10,18 @@
 }
 
 .carouselphoto {
+    width: 100%;
+    height: auto;
+    /* opacity: 0.8 */
     max-height: 380px;
 }
 
 /* LIST SETTINGS */
+
+.parks-list {
+    padding: 3% 12% 20%;
+    /* position: absolute; */
+}
 
 .parkslist {
     padding: 3% 12% 0%;
@@ -73,7 +81,7 @@
     top: 0;
     left: 0;
     background-color: #080805d3;
-    z-index: -1; 
+    z-index: -1;
     /* brings forward */
 }
 
