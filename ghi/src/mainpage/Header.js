@@ -13,7 +13,7 @@ function Header() {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active " data-bs-interval="5000">
-          <img className='w-100 carouselphoto' src="https://www.nps.gov/common/uploads/banner_image/pwr/homepage/0FBA9AF8-1DD8-B71B-0BF72F798FF5BC7E.jpg?mode=crop&quality=90&width=1200&height=350" alt="" />
+          <img className='w-100 carouselphoto' src="https://images.pexels.com/photos/259526/pexels-photo-259526.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
           <div className="container">
             <div className="carousel-caption text-start">
               <h1>“Make a bucket list and fill it with dreams that have no boundaries.”</h1>
@@ -23,7 +23,7 @@ function Header() {
           </div>
         </div>
         <div className="carousel-item">
-          <img className='w-100 carouselphoto' src="https://www.nps.gov/common/uploads/banner_image/pwr/homepage/36C683FE-1DD8-B71B-0B6B4AE9C34946B8.jpg?mode=crop&quality=90&width=1200&height=350" alt="" />
+          <img className='w-100 carouselphoto' src="https://images.unsplash.com/photo-1541075217473-93119871682d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1159&q=80" alt="" />
           <div className="container">
             <div className="carousel-caption">
               <h1>“Once a year, go someplace you’ve never been before.”</h1>
@@ -33,7 +33,7 @@ function Header() {
           </div>
         </div>
         <div className="carousel-item">
-          <img className='w-100 carouselphoto' src="https://www.nps.gov/common/uploads/banner_image/pwr/homepage/D0D65293-1DD8-B71B-0B90C84869AED282.jpg?mode=crop&quality=90&width=1200&height=350" alt="" />
+          <img className='w-100 carouselphoto' src="https://images.unsplash.com/photo-1602851688358-f72cc9e847a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1711&q=80" alt="" />
           <div className="container">
             <div className="carousel-caption text-end">
               <h1>“I haven't been everywhere, but it's on my list.”</h1>
@@ -42,26 +42,14 @@ function Header() {
             </div>
           </div>
         </div>
-        <div className="carousel-item">
-          <img src="https://cdn.getyourguide.com/img/location/5c6a642fa076b.jpeg/99.webp" className="d-block w-100" alt="..." />
-
-          <div className="container">
-            <div className="carousel-caption text-end">
-              <h1 className="text-dark">Yellowstone National Park</h1>
-              <h3 className="text-dark">"Shhh. Listen. Do you hear? That’s the sound of silence. Isn’t it wonderful?"</h3>
-              <p><NavLink className="btn btn-lg btn-primary" to="/">Browse gallery</NavLink></p>
-            </div>
-          </div>
-
-          <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
   )

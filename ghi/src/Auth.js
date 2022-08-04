@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 let internalToken = null;
@@ -98,7 +98,7 @@ export function useToken() {
         if (response.ok) {
             const token = await getTokenInternal();
             setToken(token);
-            navigate("/");
+            navigate("/parks");
             return;
         }
         let error = await response.json();
