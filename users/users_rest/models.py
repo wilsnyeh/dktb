@@ -4,8 +4,8 @@ from django.urls import reverse
 
 # Create your models here.
 class ParkVO(models.Model):
-    name = models.CharField(max_length=250, unique=True)
-    state = models.CharField(max_length=250)
+    name = models.CharField(max_length=50, unique=True)
+    state = models.CharField(max_length=2)
     parks_visited = models.BooleanField(default=False)
 
 

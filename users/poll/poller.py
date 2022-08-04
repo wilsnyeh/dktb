@@ -15,17 +15,12 @@ from users_rest.models import ParkVO
 
 
 def get_parks():
-    response = requests.get("http://parks:8000/parks/list/")
-    # print("------------------------------------------>",response)
+    response = requests.get("http://parks:8000/parks/list")
+    print("------------------------------------------>",response)
     content = json.loads(response.content)
-    print("------------------------------------------>",len(content["parks"]))
-    for park in content["parks"]:
-        ParkVO.objects.update_or_create(
-            id=park["id"],
-            defaults={
-                "name": park["name"],            
-                "state": park["state"],          
-                }  
+    print("------------------------------------------>",content)
+    for park in content["park"]:
+        ParkVO.objects.update_or_create(id=park["id"],
         )
 
 def poll():
