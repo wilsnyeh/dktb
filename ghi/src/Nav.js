@@ -30,6 +30,11 @@ function Nav({ logout, token }) {
                   <NavLink className="nav-link" to='/parks'>Parks</NavLink>
                   {/* ^^ adjust to field to have specific link ^^ */}
                 </li> : null}
+              {token ?
+                <li className="nav-item mt-2 mt-md-0">
+                  <Link className="nav-link" to='/dashboard/1'>Dashboard</Link>
+                  {/* ^^ adjust to field to have specific link ^^ */}
+                </li> : null}
 
               {token ?
                 <li className="nav-item mt-2 mt-md-0">

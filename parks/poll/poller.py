@@ -23,17 +23,10 @@ def get_parks():
     response = requests.get(f'https://developer.nps.gov/api/v1/parks?limit=467&api_key={NPS_API_KEY}')
     content = json.loads(response.content)
     for park in content["data"]:
+        print('😁😁😀😁', park['id'])
         phoneNumber = ""
         try:
-            phoneNumber = park["contacts"]["phoneNumbers"][0]["phoneNumber"]           
-        except IndexError:
-            pass
-        try:
-            url = park["images"][0]["url"]
-            if url.rfind("(") > -1:
-                image_url = url[2:len(url)-4]
-            else:
-                image_url = url
+            phoneNumber = park["contacts"]["phoneNumbers"][0]["phoneNumber"]
         except IndexError:
             pass
 
@@ -46,11 +39,10 @@ def get_parks():
                 "weather_info": park["weatherInfo"],
                 "entrance_fee": park["entranceFees"][0]["cost"],
                 "contact_num": phoneNumber,
-                "image_url": image_url,
+                "image_url": park["images"][0]["url"],
                 }
             )
-        print("Second",image_url)
-
+    print('🤣🤣🤣🤣',park['id'])
 def poll():
     while True:
         print('Service poller polling for data')
