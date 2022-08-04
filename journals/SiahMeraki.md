@@ -1,3 +1,17 @@
+August 4, 2022
+------
+August 3, 2022
+*OUT EMERGENCY*
+------
+August 2, 2022
+    Today after class I did a deep dive into CSS and HTML. I always liked it but never "learned" the language like python and javascript. I was pretty impressed that I was able to create the landing page exactly how i invisioned in it my head. I also learned some cool stuff about indexes for CSS.
+
+    (-) Issue:
+        I want to have the login/signup form pop up in a mini screen when you click the actual login button on the landing page. 
+            - I need to figure out how to create the "pop up" and hold the sign up form styling.
+                (+) Resolution: Off the top of my head i can think of throwing it inside a container that lyes "on to"  of the pop up window
+------
+August 1, 2022
 July 28, 2022
 July 27, 2022
 
@@ -28,6 +42,11 @@ July 21, 2022
 July 20, 2022
 -----
 July 19, 2022
+
+The NPS API is giving us a weird issue. I can confirm it's properly set up as insomnia is returning the correct data for out endpoints BUT its not returning all of the data. It's only returning 50 parks. We couldn't figure this out right now and left it on the backburner as we can continue building since we are getting data. 
+
+We do need a weather API which I would like to take ownership of. 
+
 -----
 July 18, 2022
 
@@ -43,7 +62,7 @@ Today we began discussing how the poller will be handled. We also began working 
 
 July 14, 2022
 
-Moswla
+Today I worked on the views for Users and Parks. We ran into slight issues but nothing major. We then discussed as a team how to tackle the USer Authentication part which none of us have expierence with. There was some info dropped via slack on how to tackle this. We all reviewed it and then Liam and Wilson decided to tackle this so we all wouldn't be working on the same exact thing.  
 
 
 July 13, 2022
