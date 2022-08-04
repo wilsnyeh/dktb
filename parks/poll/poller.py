@@ -25,7 +25,15 @@ def get_parks():
     for park in content["data"]:
         phoneNumber = ""
         try:
-            phoneNumber = park["contacts"]["phoneNumbers"][0]["phoneNumber"]
+            phoneNumber = park["contacts"]["phoneNumbers"][0]["phoneNumber"]           
+        except IndexError:
+            pass
+        try:
+            url = park["images"][0]["url"]
+            if url.rfind("(") > -1:
+                image_url = url[2:len(url)-4]
+            else:
+                image_url = url
         except IndexError:
             pass
 
@@ -41,8 +49,7 @@ def get_parks():
                 "contact_num": phoneNumber,                
                 }
             )
-        print(park)
-            
+
 
 def poll():
     while True:

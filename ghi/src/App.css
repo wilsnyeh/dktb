@@ -38,6 +38,34 @@
   }
 }
 
+.image-container {
+  position: relative;
+  transition: transform 1.5s ease;
+
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  /* background: rgba(0, 0, 0, 0.8); */
+  width: 100%;
+  transition: 1.0s ease;
+  opacity: 0;
+  font-size: 30px;
+  padding: 20px;
+  font-weight: 110;
+  color: lightslategrey;
+  text-align: right;
+}
+
 .form-label {
   font-size: 12px;
   color: #ffffff;

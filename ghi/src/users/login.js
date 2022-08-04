@@ -52,9 +52,9 @@ function Login() {
                         <p>Don't have an account?</p>
                     </div>
                     <div className='col mb-1'>
-                        <button 
-                        onClick={routeChange}
-                        className="btn btn-success btn-block signupbtn">
+                        <button
+                            onClick={routeChange}
+                            className="btn btn-success btn-block">
                             Sign up
                         </button>
                     </div>
