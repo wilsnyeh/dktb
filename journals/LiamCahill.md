@@ -1,10 +1,22 @@
 # Journal entries for MOD 3 group project
+
+## August 3, 2022
+* paired programmed with Greg again to try and solve issue with account detail favorites list
+* created ParkVO poller that polls data
+* will be pursuing REACT client side rendering for favorites list for a specific user tomorrow.
+**issue with parkVO poller not being hosted to the correct port in the project settings**
+
+
+## August 2, 2022
+* pair programmed with Greg on account detail page pulling list of ParkVO's list.
+* parks list filter by state working currently, just needs to be styled.
+**issues with not being able to post to list of ParkVO's but able to retrieve them from JSONResponse.**
+
+
 ## August 1, 2022
 * worked on css for login and splash page
 * used bootstrap form-control for form containers styling
 **issue with buttons not linking path to signup page correctly. will fix tommorrow.**
-
-
 
 
 ## July 28, 2022
