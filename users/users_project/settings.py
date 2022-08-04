@@ -43,11 +43,7 @@ DJWTO_SAME_SITE = "LAX" if DEBUG else "NONE"
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
     "rest_framework",
-=======
-    'rest_framework',
->>>>>>> eff4dd3654d8bc75b6b8a78d87a0c889b28c8bd4
     "corsheaders",
     "djwto",
     'users_rest.apps.UsersRestConfig',
