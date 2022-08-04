@@ -43,7 +43,11 @@ DJWTO_SAME_SITE = "LAX" if DEBUG else "NONE"
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
     "rest_framework",
+=======
+    'rest_framework',
+>>>>>>> eff4dd3654d8bc75b6b8a78d87a0c889b28c8bd4
     "corsheaders",
     "djwto",
     'users_rest.apps.UsersRestConfig',
@@ -143,3 +147,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

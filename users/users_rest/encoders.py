@@ -9,6 +9,10 @@ class ParkVOEncoder(ModelEncoder):
         "state",
         "image_url",
     ]
+    def get_extra_data(self, o):
+        return {
+            "id": o.id
+        }
 
 class AccountEncoder(ModelEncoder):
     model = Account
@@ -18,14 +22,13 @@ class AccountEncoder(ModelEncoder):
         "last_name",
         "email",
         "password",
-        "parks",
     ]
 
-    def get_extra_data(self, o):
-        return {
-            "name": o.parks.name,
-            "state": o.parks.state
-        }
+    # def get_extra_data(self, o):
+    #     return {
+    #         "name": o.parks.name,
+    #         "state": o.parks.state
+    #     }
 
     encoder = {
         "parks" : ParkVOEncoder(),

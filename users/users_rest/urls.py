@@ -7,4 +7,5 @@ urlpatterns = [
     path('accounts/<int:id>/',account_detail, name='accounts_detail'),
     path("accounts/tokens/mine/", api_user_token, name='api_user_token'),
     path("accounts/parks/", park_vo_list, name='park_vo_list'),
+    
 ]
