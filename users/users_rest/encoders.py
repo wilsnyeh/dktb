@@ -17,15 +17,8 @@ class AccountEncoder(ModelEncoder):
         "last_name",
         "email",
         "password",
-        "parks",
+        # "parks",
     ]
-
-    def get_extra_data(self, o):
-        return {
-            "name": o.parks.name,
-            "state": o.parks.state
-        }
-
-    encoder = {
-        "parks" : ParkVOEncoder(),
-    }
+    # encoder = {
+    #     "parks" : ParkVOEncoder(),
+    # }

@@ -44,29 +44,27 @@ def accounts_list(request):
 
 
 
-@require_http_methods(["GET", "PUT"])
+@require_http_methods(["GET", "POST"])
 def account_detail(request, id):
     if request.method == "GET":
         # content = json.loads(request.body)
         account = Account.objects.get(id=id)
+        print("FUUUUUUUUUUUUUUUUUUUUUUUUUCK",account.parks)
+        print("FUUUUUUUUUUUUUUUUUUUUUUUUUCK",list(account.parks.values()))
         return JsonResponse(
             {
                 "id": account.id,
                 "username": account.username,
                 "email": account.email,
-                "parks": account.parks
+                "parks": list(account.parks.values())
             }, safe=False
         )
-    else:
-        account=Account.objects.get(id=id)
-        print("---------------------------------->",account) 
-        content = json.loads(request.body)
-        print("---------------------------------->",content) 
-        print("---------------------------------->",account.id) 
-        # account.parks.add(content)
-        # account = Account.objects.filter(id=id).update(parks=content)
+    else: 
+        account = Account.objects.get(id=id)
         return JsonResponse(
-            content
+            {
+                "parks": list(account.parks.values())
+            }
         )
 
 

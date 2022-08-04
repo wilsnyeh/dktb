@@ -32,14 +32,7 @@ class ModelEncoder(DateEncoder, QuerySetEncoder, JSONEncoder):
                     pass
             for property in self.properties:
                 value = getattr(o, property)
-                if hasattr(value, "all") and not isinstance(value, QuerySet):
-                    values=value.all()
-                    value = []
-                    for item in values:
-                        if property in self.encoders:
-                            encoder = self.encoders[property]
-                            value.append(encoder.default(item))
-                elif property in self.encoders:
+                if property in self.encoders:
                     encoder = self.encoders[property]
                     value = encoder.default(value)
                 d[property] = value
