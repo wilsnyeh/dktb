@@ -6,7 +6,6 @@ from django.urls import reverse
 class ParkVO(models.Model):
     name = models.CharField(max_length=250, unique=True)
     state = models.CharField(max_length=250)
-    parks_visited = models.BooleanField(default=False)
 
 
 class Account(AbstractUser):

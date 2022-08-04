@@ -18,13 +18,14 @@ def get_parks():
     response = requests.get("http://parks:8000/parks/list/")
     # print("------------------------------------------>",response)
     content = json.loads(response.content)
-    print("------------------------------------------>",len(content["parks"]))
+    print("------------------------------------------>",content["parks"])
     for park in content["parks"]:
         ParkVO.objects.update_or_create(
             id=park["id"],
             defaults={
                 "name": park["name"],            
                 "state": park["state"],          
+                "parks_visited": park["parks_visited"],          
                 }  
         )
 
@@ -35,7 +36,7 @@ def poll():
             get_parks(),
             pass
         except Exception as e:
-            print(e, file=sys.stderr)
+            print("IS THIS THE ERROR-------------------->",e, file=sys.stderr)
         time.sleep(20)
 
 if __name__ == "__main__":
