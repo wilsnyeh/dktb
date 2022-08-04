@@ -5,8 +5,9 @@ class ParkVOEncoder(ModelEncoder):
     model = ParkVO
     properties = [
         "name",
+        "city",
         "state",
-        "parks_visited",
+        "image_url",
     ]
 
 class AccountEncoder(ModelEncoder):

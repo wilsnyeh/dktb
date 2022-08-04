@@ -18,14 +18,15 @@ def get_parks():
     response = requests.get("http://parks:8000/parks/list/")
     # print("------------------------------------------>",response)
     content = json.loads(response.content)
-    print("------------------------------------------>",content["parks"])
+    print("------------------------------------------>",len(content["parks"]))
     for park in content["parks"]:
         ParkVO.objects.update_or_create(
             id=park["id"],
             defaults={
                 "name": park["name"],            
+                "city": park["city"],            
                 "state": park["state"],          
-                "parks_visited": park["parks_visited"],          
+                "image_url": park["image_url"],          
                 }  
         )
 
