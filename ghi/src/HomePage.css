@@ -24,6 +24,10 @@
     text-decoration: none;
 }
 
+.listlink:hover {
+    color: #84a98c;
+}
+
 .featurette-divider {
     padding: 1px;
     margin-top: 5px;

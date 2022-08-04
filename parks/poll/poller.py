@@ -36,11 +36,13 @@ def get_parks():
                 "city": park["addresses"][0]["city"],
                 "description": park["description"],
                 "weather_info": park["weatherInfo"],
-                "entrance_fee": park["entranceFees"][0]["cost"],
-                "contact_num": phoneNumber,
+                "entrance_fee": (park["entranceFees"])[0]["cost"],
                 "image_url": park["images"][0]["url"],
+                "contact_num": phoneNumber,                
                 }
             )
+        print(park)
+            
 
 def poll():
     while True:

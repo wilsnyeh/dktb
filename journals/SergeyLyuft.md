@@ -15,6 +15,8 @@ Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
 
+08.04.22
+
 08.03.22
 
 - Solved merge conflict and update with last version of the code.

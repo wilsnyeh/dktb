@@ -29,7 +29,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         const data = await response.json();
         // setWeather(data.main);
         setWeather(data.main);
-        console.log(data);
         return response;
       }
       fetchData();
@@ -47,8 +46,12 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         </div>
         <div className="col-12 photo">
           <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
-            src={park.image_url} alt="" />
+            src={park.image_url}  alt="" />
         </div>
+        {/* {(park.image_url).startsWith("(")
+        ? <h1>Yes</h1>
+        : <h1>NO</h1>
+         } */}
       </div>
       <div>
       {weather
