@@ -33,15 +33,7 @@ def accounts_list(request):
         request.method == "POST"
         try:
             content = json.loads(request.body)
-            print(content)
-            account = Account.objects.create_user(
-                username=content["username"],
-                password=content["password"],
-                email=content["email"],
-                first_name=content["first_name"],
-                last_name=content["last_name"],
-            )
-            Account.objects.create(account=account)
+            account = Account.objects.create_user(**content)
             return JsonResponse(
                 {"account": account},
                 encoder=AccountEncoder,

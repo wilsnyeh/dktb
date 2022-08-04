@@ -10,6 +10,7 @@ import ParkDetails from "./parks/ParkDetails"
 import React, { useEffect, useState } from 'react'
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
+import AccountDetails from './users/AccountPage';
 
 function App(props) {
 
@@ -29,6 +30,8 @@ function App(props) {
         </Route>
         <Route path="/login" element={<LoginForm token={token} />} />
         <Route path="/signup" element={<SignUpForm />} />
+        <Route path="/account" element={<AccountDetails />} />
+
       </Routes>
       <Footer />
     </>
