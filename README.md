@@ -64,6 +64,7 @@ Users have a convenient application at their finger tips that keeps track of the
     - If there are live feeds from an area available, such as a ranger station camera; We would like to provide that feed for users to utilize a live/current visual representation of the area they plan on visiting 
 
 ## Wireframes & Instructions
+![APP](docs\wireframes\APP.png)
 ### Upon clicking 'enter' guests will be prompted to login or they can create an account
 ![MainPage_NL_NS](docs\wireframes\MainPage_NL_NS.png)
 ![DKTB_Login](docs\wireframes\.png)
