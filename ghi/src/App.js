@@ -15,7 +15,15 @@ import jwt_decode from "jwt-decode";
 function App(props) {
   const [, , logout] = useToken();
   const { token, decoded } = useAuthContext();  
-  const id = decoded?.user?.id
+  const userId = decoded?.user?.id
+  const [favorites, setFavorites] = useState();
+
+  const updateFavorites = () => {
+    fetch(`http://localhost:8090/accounts/${userId}/`)
+      .then(response => response.json())
+      .then(response => setFavorites(response.parks))
+  }
+  useEffect(updateFavorites, []);
 
   return (
     <>
@@ -24,8 +32,8 @@ function App(props) {
         <Route>
           <Route path="/" element={homePage} />
           <Route path="/parks" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} token={token} />} />
-          <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} weatherUrl={'https://api.openweathermap.org/data/2.5/weather?q='} token={token} />} />
-          <Route path="/account" element={<AccountDetails accountUrl ={`http://localhost:8090/accounts/${id}`}/>} />
+          <Route path="parks/:id" element={<ParkDetails updateFavorites={updateFavorites} userId={userId} detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} weatherUrl={'https://api.openweathermap.org/data/2.5/weather?q='} token={token} />} />
+          <Route path="/account" element={<AccountDetails accountUrl ={`http://localhost:8090/accounts/${userId}/`}/>} />
         </Route>
         <Route path="/login" element={<LoginForm token={token} />} />
         <Route path="/signup" element={<SignUpForm />} />
