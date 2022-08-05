@@ -1,4 +1,3 @@
-
 import './App.css';
 import LoginForm from './users/login';
 import SignUpForm from './users/signup';
@@ -15,12 +14,8 @@ import jwt_decode from "jwt-decode";
 
 function App(props) {
   const [, , logout] = useToken();
-  const { token, decoded } = useAuthContext();
-  
+  const { token, decoded } = useAuthContext();  
   const id = decoded?.user?.id
-  console.log(id);
-
-
 
   return (
     <>
