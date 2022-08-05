@@ -66,13 +66,13 @@ Users have a convenient application at their finger tips that keeps track of the
 ## Wireframes & Instructions
 ![APP](docs/wireframes/APP.png)
 ### Upon clicking 'enter' guests will be prompted to login or they can create an account
-![MainPage_NL_NS](docs\wireframes\MainPage_NL_NS.png)
-![DKTB_Login](docs\wireframes\.png)
-![DKTB_Signup](docs\wireframes\DKTB_Signup.png)
+![MainPage_NL_NS](docs/wireframes/MainPage_NL_NS.png)
+![DKTB_Login](docs/wireframes/.png)
+![DKTB_Signup](docs/wireframes/DKTB_Signup.png)
 ### Users can filter through various parks within state parameters
-![ParksList](docs\wireframes\ParksList.png)
-![ParkList_search](docs\wireframes\ParkList_search.png)
+![ParksList](docs/wireframes/ParksList.png)
+![ParkList_search](docs/wireframes/ParkList_search.png)
 ### Users can click on the park photo to add this park to their favorites
-![ParkDetails](docs\wireframes\ParkDetails.png)
-![ParkFavorite](docs\wireframes\ParkFavorite.png)
+![ParkDetails](docs/wireframes/ParkDetails.png)
+![ParkFavorite](docs/wireframes/ParkFavorite.png)
 
