@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import AddFavorite from '../components/AddFavorites'
 
 
-
 const accountUrl = "http://localhost:8090/accounts/"
 
 function AccountDetails({ accountlUrl, ...props }) {
@@ -12,16 +11,15 @@ function AccountDetails({ accountlUrl, ...props }) {
             async function fetchData() {
                 const response = await fetch(accountUrl);
                 const data = await response.json();
-                setFavorites(data);
+                setFavorites(data.accounts);
                 return response;
             }
-            console.log(favorites)
             fetchData();
         }, [accountUrl])
-
+        console.log(favorites)
     return (
         <div className='parks-list'>
-
+            <h1>helllooo</h1>
         </div>
     )
 }
