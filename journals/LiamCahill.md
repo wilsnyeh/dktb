@@ -1,5 +1,13 @@
 # Journal entries for MOD 3 group project
 
+## August 4, 2022
+* resolved issues with requirements.txt files and depenancies not being found.
+* set up pgadmin to find exact manyTomany relationship between parkVO and account.
+* back end with account detail and parkVO polling completley functional. 
+* will be completing react rendering functionality tomorrow before we commit for submition.
+**completely pruned all images and volumes due to users info being stored in images after volume was destroyed**
+
+
 ## August 3, 2022
 * paired programmed with Greg again to try and solve issue with account detail favorites list
 * created ParkVO poller that polls data
