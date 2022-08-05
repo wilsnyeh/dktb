@@ -6,7 +6,7 @@ import "../DetailPage.css"
 import FavoriteButton from '../components/FavoriteButton'
 
 
-function ParkDetails({ detailUrl, weatherUrl, updateFavorites, userId, ...props }) {
+function ParkDetails({ detailUrl, weatherUrl, userId, ...props }) {
   const [park, setPark] = useState({})
   const [weather, setWeather] = useState({})
   const { id } = useParams()
@@ -15,14 +15,11 @@ function ParkDetails({ detailUrl, weatherUrl, updateFavorites, userId, ...props 
   const addFavoritePark = (park) => {
     const fetchConfig = {
       method: "put",
-      body: JSON.stringify({"park": "park.id"}),
+      body: JSON.stringify({"park": park}),
       headers: { "Content-Type": "application/json" }
     }
-    console.log(id)
-    console.log(userId)
-    fetch(`http://localhost:8090/accounts/${userId}/`)
-    .then(()=> updateFavorites())
-    .catch((e) => console.error(e))
+    fetch(`http://localhost:8090/accounts/${userId}/`, fetchConfig)
+    .catch((console.error))
   }
 
   useEffect(() => {
@@ -64,7 +61,7 @@ function ParkDetails({ detailUrl, weatherUrl, updateFavorites, userId, ...props 
           <div className="image-container col-12 photo">
             <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
               src={park.image_url} alt="" />
-            <div onClick={() => addFavoritePark(park.id)} className='overlay align-items-center justify-content'>
+            <div onClick={() => addFavoritePark(id)} className='overlay align-items-center justify-content'>
               <FavoriteButton />
             </div>
           </div>
