@@ -21,7 +21,7 @@ function ParksList({ fetchUrl, token }) {
   }, [fetchUrl, token])
 
   return (
-    // token ?
+    token ?
     
       <div>
         <Header />
@@ -31,34 +31,20 @@ function ParksList({ fetchUrl, token }) {
         <div className='cards'>
           {parks && parks.filter(park => park.state.includes(search.toUpperCase())).map((park) => {
             return (
-//               <div class="card">
-//   <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-//   <div class="card-body">
-//     <h5 class="card-title">Card title</h5>
-//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <a href="#!" class="btn btn-primary">Button</a>
-//   </div>
-// </div> {park.name}
+              <div key={park.id} className="row">
+                <div className="col-9">
+                  <h2 className="featurette-heading" ><Link className='listlink' to={'/parks/' + park.id}>{park.name}</Link></h2>
+                  <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
+                  <p className="lead">{park.description}</p>
+                </div>
+                </div>
 
-<div class="row g-3">
-<div class="col-12 col-md-6 cold-lg-4">
-
-              <div className="card" key={park.id}>
-              <img src={park.image_url} alt="" class="card-img" />
-              <div class="card-body">
-                    <h5><span className="card-title">{park.name}</span></h5>
-                  <p>{park.description}</p>
-                  <a class="btn btn-primary" to={'/parks/' + park.id}>Read More</a>
-                </div>
-                </div>
-                </div>
-                </div>
 
             )
           })}
         </div>
       </div>
-      // : <Navigate to="/login" />
+      : <Navigate to="/" />
 
   )
 }

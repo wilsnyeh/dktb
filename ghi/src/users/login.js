@@ -46,7 +46,7 @@ function Login() {
                     </div>
                     <div className='container-fluid flex'>
                         <button
-                            className='btn homebutton' onClick={() => login(username, password)} type='button'>
+                            className='btn btn-success' onClick={() => login(username, password)} type='button'>
                             Login
                         </button>
                     </div>

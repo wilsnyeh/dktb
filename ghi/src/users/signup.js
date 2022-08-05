@@ -99,7 +99,7 @@ function SignUpForm() {
                         <div className='col mb-1'>
                             <button
                                 onClick={routeChange}
-                                className="btn btn-success btn-block">
+                                className="btn btn-success btn-block signupbtn">
                                 Login
                             </button>
                         </div>

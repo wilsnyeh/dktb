@@ -44,12 +44,12 @@ def get_parks():
                 "city": park["addresses"][0]["city"],
                 "description": park["description"],
                 "weather_info": park["weatherInfo"],
-                "entrance_fee": park["entranceFees"][0]["cost"],
-                "contact_num": phoneNumber,
-                "image_url": image_url,
+                "entrance_fee": (park["entranceFees"])[0]["cost"],
+                "image_url": park["images"][0]["url"],
+                "contact_num": phoneNumber,                
                 }
             )
-        print("Second",image_url)
+
 
 def poll():
     while True:

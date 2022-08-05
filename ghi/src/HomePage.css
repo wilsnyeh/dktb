@@ -75,6 +75,15 @@ a {
     padding: 3% 12% 0%;
 }
 
+.listlink {
+    color: #000;
+    text-decoration: none;
+}
+
+.listlink:hover {
+    color: #84a98c;
+}
+
 .featurette-divider {
     padding: 1px;
     margin-top: 5px;
@@ -141,4 +150,16 @@ a {
     background-color: #84a98c;
     color: white;
     margin-top: 20px;
+}
+
+.signupbtn {
+    margin-top: -8px;
+    margin-bottom: 5px;
+}
+
+/* ACCOUNT DETAILS */
+
+.accountdetail {
+    margin: 200px;
+    background-color: red;
 }

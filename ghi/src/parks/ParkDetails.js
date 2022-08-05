@@ -30,7 +30,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         const data = await response.json();
         // setWeather(data.main);
         setWeather(data.main);
-        console.log(data);
         return response;
       }
       fetchData();
@@ -40,9 +39,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
   const addFavoritePark = (park) => {
     const favorite = true;
   }
-
-
-
   return (
     <div> <Header />
       <div className='parkdetail'>
@@ -59,8 +55,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
               {/* <AddFavorite /> */}
               <FavoriteButton />
             </div>
-
-
           </div>
         </div>
         <div>
@@ -76,7 +70,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
           <div className="col-6">Entrance fee: {park.entrance_fee}</div>
           <div className="col-6">Contact number: {park.contact_num}</div>
         </div>
-
       </div>
 
     </div>
