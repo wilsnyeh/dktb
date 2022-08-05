@@ -29,10 +29,7 @@ SECRET_KEY = 'django-insecure-$#$o8zej$9vrf&-75j#tgo77l*u!ujv7qgtkmfv-_612h4rkkt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-NPS_API_KEY = os.environ.get('uxgDw6XIywVawiRxM2cbgQhzU9UZEfVrBgFdMtvz')
-WEATHER_API_KEY=os.environ.get('2f4e32d94a78c9492aa87395ac412181')
+ALLOWED_HOSTS = ["users:8000", "localhost", "parks"]
 
 # Application definition
 

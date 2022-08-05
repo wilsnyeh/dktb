@@ -2,16 +2,14 @@
 import './App.css';
 import LoginForm from './users/login';
 import SignUpForm from './users/signup';
-import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './mainpage/HomePage';
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
-import ParkDetails from './parks/ParkDetails';
+import ParkDetails from "./parks/ParkDetails"
+import React, { useEffect, useState } from 'react'
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
-
-
 
 function App(props) {
 
@@ -21,9 +19,7 @@ function App(props) {
 
 
   return (
-    
-      <>
-      <Nav logout={logout} token={token} /><Routes>
+      <><Nav logout={logout} token={token} /><Routes>
       <Route>
         <Route path="/" element={HomePage} />
         <Route path="/parks" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} token={token} />} />
@@ -31,8 +27,7 @@ function App(props) {
       </Route>
       <Route path="/login" element={<LoginForm token={token} />} />
       <Route path="/signup" element={<SignUpForm />} />
-    </Routes><Footer />
-    </>
+    </Routes><Footer /></>
     
   )
 }
