@@ -1,5 +1,12 @@
-## August 03, 2022
+## August 05, 2022
+*Worked on tidying up the README with wireframes and more detailed info about our project
+*Worked on getting some unit tests for testing various parts of our project
 
+Cleaned up our README, since this hasnt been changed since our initial inception of this project and updated the information to better reflect what works/ what doesnt/ and what we hope to continue to develop.
+## August 04, 2022
+*The project is finally able to append to a users list through insomnia, there were some changes that needed to be made for our views to handle this information for accounts - and spend the rest half of the day to get everyone else up to speed, because since there were MAJOR changes in our models, previously cached data from our containers were throwing many errors. 
+## August 03, 2022
+*We did not anticpate how users account would handle the information to add them to their list; and thus we needed to create a poller that would handle the polling from our parks api, which polls from NPS. Essentially, we needed something on the users side to poll this information and needed a poller from users to poll parkvo data. 
 ## August 02, 2022
 *Worked on park search functionality 
 
