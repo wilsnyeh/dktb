@@ -21,3 +21,13 @@
 #         response= client.get(reverse("parks_list"))
 #         self.assertEquals(response.status_code, 200)
 
+<<<<<<< HEAD
+# Create your tests here.
+class FeatureTestCase(TestCase):
+    def test_park_model(self):
+        try:
+            from .models import Park
+        except ModuleNotFoundError:
+            self.fail("Model not found")
+=======
+>>>>>>> origin

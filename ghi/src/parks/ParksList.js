@@ -50,4 +50,3 @@ function ParksList({ fetchUrl, token }) {
   )
 }
 export default ParksList;
-
