@@ -10,7 +10,7 @@ import React, {  useState } from 'react'
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
 import AccountDetails from './users/AccountPage';
-import jwt_decode from "jwt-decode";
+import jwt from "jwt-decode";
 
 
 function App(props) {
