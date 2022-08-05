@@ -4,16 +4,6 @@
 
 /* HEADER SETTINGS */
 
-/* #myCarousel {
-    width: 100%;
-    height: auto;
-}
-
-.carouselphoto {
-    width: 200%;
-    height: auto;
-    max-height: 380px;
-} */
 
 /* LIST SETTINGS */
 
@@ -30,6 +20,13 @@
     max-width: 400px;
     max-height: 300px;
 } */
+.header-pic {
+    background-position: center;
+    background-size: color;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+}
 
 /* FOOTER SETTINGS */
 
@@ -94,11 +91,11 @@
 }
 
 .off_white {
-    background-color: rgb(219, 246, 218);
+    background-color: rgb(213, 242, 212);
 }
 
 .background-list {
-    background-color: #a8c5a7;
+    background-color: #a0cd9e;
 }
 
 .list-border {

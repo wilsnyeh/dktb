@@ -11,6 +11,9 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
   const { id } = useParams()
   const apiKey = '2f4e32d94a78c9492aa87395ac412181'
 
+  const free = Math.round(park.entrance_fee) === 0
+  const fee = `$${Math.round(park.entrance_fee)}`
+
   useEffect(() => {
     async function fetchData() {
       const Url = detailUrl + id;
@@ -42,7 +45,6 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
   }
 
 
-
   return (
     <div> <Header />
       <div className='parkdetail shad_bottom'>
@@ -55,7 +57,7 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
               <p className="lead text-center">{park.description}</p>
             </div>
             <div className="col-12 mb-5 text-center">
-              <img width="90%" className="img-fluid list-border-inner"
+              <img width="90%" className="img-fluid list-border-inner image-container"
                 src={park.image_url} alt="" />
               <div onClick={() => addFavoritePark(park)} className='overlay align-items-center justify-content'>
                 <FavoriteButton />
@@ -67,7 +69,7 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         </div>
         <div>
           {weather
-            ? <div><h5>Weather in {park.city} now: </h5><p>Temperature: {weather?.temp} °F</p><p>Humidity: {weather?.humidity}%</p> </div>
+            ? <div><h5>Weather in {park.city} now: </h5><h6>Temperature: {Math.round(weather?.temp)} °F</h6><h6>Humidity: {weather?.humidity}%</h6> </div>
             : <></>
           }
         </div>
@@ -75,13 +77,13 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
           {park.weather_info}
         </div>
         <div className='row row-details'>
-          <div className="col-6">Entrance fee: {park.entrance_fee}</div>
-          <div className="col-6">Contact number: {park.contact_num}</div>
+          <h5 className="col-6">Entrance fee:  {free ? 'Free' : fee}</h5>
+          <h5 className="col-6">Contact number: {park.contact_num}</h5>
         </div>
 
       </div>
 
-    </div>
+    </div >
   )
 }
 export default ParkDetails
