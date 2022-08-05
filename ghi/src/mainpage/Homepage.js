@@ -4,10 +4,14 @@ import Login from '../users/login';
 
 
 function HomePage(){
-
-    const [openLogin, setOpenLogin] = useState(false)
     
-    return (
+    const [openLoginModal, setOpenLoginModal] = useState(true)
+    const openModel = () => {
+        setOpenLoginModal(visible => !visible);
+    };
+    
+    return ( 
+        
         <div class="hero vh-100 d-flex align-items-center">
             <div class="container">
             <span className="font-link">
@@ -18,12 +22,15 @@ function HomePage(){
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
                             ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                             <div class="container">
-                            <button type="button" class="openLoginbtn btn-info btn-round" 
-                            onClick={()=>{setOpenLogin(true)}} 
-                            data-toggle="modal" data-target="/login">
-                            Login
-                            </button>  
-                            {openLogin && <Login closeLogin={setOpenLogin}/>}
+                            <button class="btn-info btn-round" 
+                            onClick={() => setOpenLoginModal(true)}>Login</button>
+                            {/* // data-toggle="modal" data-target="/login">
+                            // Login
+                            // </button>
+                            // onClose={() => setOpenLoginModel(false)} /> 31  
+                            // {openLogin && <Login closeLogin={setOpenLogin}/>} */}
+                            <Login open={openLoginModal} setOpenLoginModal={setOpenLoginModal} /> 
+                            
                             </div>
                         
                     </div>
@@ -33,7 +40,6 @@ function HomePage(){
             
         </div>
 
-        
 )
     }
 

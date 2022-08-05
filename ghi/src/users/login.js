@@ -1,21 +1,26 @@
 import React, { useState } from "react";
 import { useToken } from "../Auth"
 
-// const Modal = ({open}) => {
-//     if (!open) return null
-// }
-function Login({closeLogin}) {
+export const Login = () => {
+
+
+
+function Login(open,onClose) {
+    
+    
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [, login] = useToken();
 
+    if (!open) return null;
 
     return (
         <div className="loginoverlay">
             <div className="loginContainer">
                 <img src="" alt="" />
         <form className='container mt-5 py-5'>
-            <button onClick={()=>closeLogin(false)}>Click Me to Close</button>
+            <button onClick={onClose} className="closebtn">Click Me to Close</button>
             <input
                 onChange={e => setUsername(e.target.value)}
                 value={username}
@@ -36,5 +41,5 @@ function Login({closeLogin}) {
     </form>
     </div></div>
   );
-}
+}}
 export default Login;
