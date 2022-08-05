@@ -64,7 +64,7 @@ Users have a convenient application at their finger tips that keeps track of the
     - If there are live feeds from an area available, such as a ranger station camera; We would like to provide that feed for users to utilize a live/current visual representation of the area they plan on visiting 
 
 ## Add your files
-
+![MainPage_NL_NS](docs\wireframes\MainPage_NL_NS.png)
 
 👀👀👀👀
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
