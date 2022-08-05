@@ -66,6 +66,21 @@ class FeatureTests(TestCase):
     def test_unique_email(self):
         email = Account.email
         self.assertTrue(email.field.unique)
+    
+    def test_username_field(self):
+        try:
+            username = Account.username
+            self.assertIsInstance(
+                username.field,
+                models.CharField,
+                msg="Account.username should be a character field",
+            )
+        except ModuleNotFoundError:
+            self.fail("Could not find 'account.models'")
+        except ImportError:
+            self.fail("Could not find '..models.Acccount'")
+        except AttributeError:
+            self.fail("Could not find 'Account.username'")
 
 
 # class TestViews(TestCase):

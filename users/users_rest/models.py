@@ -8,7 +8,7 @@ class ParkVO(models.Model):
     city = models.CharField(max_length=250, default="")
     state = models.CharField(max_length=250)
     image_url = models.CharField(max_length=250, default="")
-
+    
 
 class Account(AbstractUser):
     username = models.CharField(max_length=30, unique=True)
