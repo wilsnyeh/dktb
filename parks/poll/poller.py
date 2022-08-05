@@ -23,7 +23,6 @@ def get_parks():
     response = requests.get(f'https://developer.nps.gov/api/v1/parks?limit=467&api_key={NPS_API_KEY}')
     content = json.loads(response.content)
     for park in content["data"]:
-        print('😁😁😀😁', park['id'])
         phoneNumber = ""
         try:
             phoneNumber = park["contacts"]["phoneNumbers"][0]["phoneNumber"]           
