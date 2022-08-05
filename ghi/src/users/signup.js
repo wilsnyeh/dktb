@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, NavLink, useNavigate } from "react-router-dom"
 import { useToken } from '../Auth'
+import "../HomePage.css"
+
 
 function SignUpForm() {
     const [username, setUserName] = useState("");
@@ -16,27 +18,28 @@ function SignUpForm() {
         navigate(path);
     }
     return (
-        <div>
-            <section className='w-100 d-flex justify-content-center pb-4'>
-                <div className='form-container'>
+        <div className="hero vh-100 d-flex align-items-center">
+            <div className="container">
+            <span className="font-link">
+                <div className="row"></div>
                     <h1 className='p-4 m-auto pb-0 text-light'>Create an account  </h1>
                     <form className='container w-80 mt-2 py-1 needs-validation' noValidate>
                         <div className="form-outline form-outline-color-success mb-2">
                             <label htmlFor='username'
-                                className='form-label '>Username</label>
+                                className='form-label '><font size="+2">Username</font></label>
                             <input value={username}
                                 onChange={(e) => setUserName(e.target.value)}
                                 required type='text'
                                 className='form-control'
                                 id='username'
                                 placeholder='Username' />
-                            <div className="valid-feedback">Looks Good!</div>
-                            <div className="invalid-feedback">Please choose another username</div>
+                            <div className="valid-feedback"><font size="+2">Looks Good!</font></div>
+                            <div className="invalid-feedback"><font size="+2">Please choose another username</font></div>
                         </div>
                         <div className='row mb-2'>
                             <div className="col">
                                 <label htmlFor='first_name'
-                                    className='form-label'>First Name</label>
+                                    className='form-label'><font size="+2">First Name</font></label>
                                 <input value={first_name}
                                     onChange={(e) => setFirstName(e.target.value)}
                                     required type='text'
@@ -46,7 +49,7 @@ function SignUpForm() {
                             </div>
                             <div className="col">
                                 <label htmlFor='last_name'
-                                    className='form-label'>Last Name</label>
+                                    className='form-label'><font size="+2">Last Name</font></label>
                                 <input value={last_name}
                                     onChange={(e) => setLastName(e.target.value)}
                                     required type='text'
@@ -57,7 +60,7 @@ function SignUpForm() {
                         </div>
                         <div className="mb-2">
                             <label htmlFor="email"
-                                className="form-label">Email address</label>
+                                className="form-label"><font size="+2">Email address</font></label>
                             <input value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required type="email"
@@ -68,7 +71,7 @@ function SignUpForm() {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="password"
-                                className="form-label">Password</label>
+                                className="form-label"><font size="+2">Password</font></label>
                             <input value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required type="password"
@@ -103,10 +106,7 @@ function SignUpForm() {
                     </div>
                     {/* </section> */}
                     {/*form used to end here */}
-                </div>
-            </section>
-        </div>
-
+</span></div></div>
     );
 }
 

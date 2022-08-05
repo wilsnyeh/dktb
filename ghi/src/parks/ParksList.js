@@ -28,7 +28,7 @@ function ParksList({ fetchUrl, token }) {
         <div className="input-group">
           <input type="Search" onChange={event => setSearch(event.target.value)} className="form-control rounded " placeholder="State abbreviation" aria-label="Search" aria-describedby="search-addon" />
         </div>
-        <div className='parkslist'>
+        <div className='cards'>
           {parks && parks.filter(park => park.state.includes(search.toUpperCase())).map((park) => {
             return (
 //               <div class="card">
@@ -39,21 +39,21 @@ function ParksList({ fetchUrl, token }) {
 //     <a href="#!" class="btn btn-primary">Button</a>
 //   </div>
 // </div> {park.name}
-<div class="container">
+
 <div class="row g-3">
 <div class="col-12 col-md-6 cold-lg-4">
 
               <div className="card" key={park.id}>
-              <img src={park.image_url} alt="" class="card-img-top" />
+              <img src={park.image_url} alt="" class="card-img" />
               <div class="card-body">
-                    <h5><span className="card-title">{"   " + park.city + ", " + park.state}</span></h5>
-                  <p className="card-text">{park.description}</p>
+                    <h5><span className="card-title">{park.name}</span></h5>
+                  <p>{park.description}</p>
                   <a class="btn btn-primary" to={'/parks/' + park.id}>Read More</a>
                 </div>
                 </div>
                 </div>
                 </div>
-                </div>
+
             )
           })}
         </div>
