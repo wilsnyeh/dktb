@@ -4,7 +4,7 @@
 ### Register a server with the following
 ![PGAdmin_01](users/users_rest/tests/images/PGAdmin_01.png)
 ![PGAdmin_02](users/users_rest/tests/images/PGAdmin_02.png)
-### The password here is *** and save password
+### The password here is "test-database" and save password
 ![PGAdmin_03](users/users_rest/tests/images/PGAdmin_03.png)
 ### Select the properties in your user
 ![PGAdmin_04](users/users_rest/tests/images/PGAdmin_04.png)
