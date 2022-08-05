@@ -15,7 +15,6 @@ function ParkDetails({ detailUrl, ...props }) {
         setFavorites(newFavoriteList);
     }
     const { id } = useParams()
-    console.log(id)
 
     useEffect(() => {
         async function fetchData() {

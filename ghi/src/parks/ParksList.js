@@ -14,7 +14,6 @@ function ParksList({ fetchUrl, token }) {
       });
       const data = await response.json();
       setParks(data.parks);
-      console.log(data.parks)
       return response;
     }
     fetchData();
