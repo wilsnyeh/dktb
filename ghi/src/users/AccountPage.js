@@ -17,7 +17,6 @@ function AccountDetails({ accountlUrl, ...props }) {
             }
             fetchData();
         }, [accountUrl])
-        console.log(favorites)
     return (
         <div className='parks-list'>
             <h1>helllooo</h1>
