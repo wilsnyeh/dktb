@@ -2,7 +2,7 @@ import './App.css';
 import LoginForm from './users/login';
 import SignUpForm from './users/signup';
 import { Routes, Route } from "react-router-dom";
-import HomePage from './mainpage/HomePage'
+import Homepage from './mainpage/Homepage'
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
 import ParkDetails from "./parks/ParkDetails"
@@ -25,7 +25,7 @@ function App(props) {
       <Nav logout={logout} token={token} />
       <Routes>
         <Route> 
-          <Route path="/" element={HomePage} />
+          <Route path="/" element={Homepage} />
           <Route path="/parks" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} token={token} />} />
           <Route path="parks/:id" element={<ParkDetails userId={userId} detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} weatherUrl={'https://api.openweathermap.org/data/2.5/weather?q='} token={token} />} />
           <Route path="/account" element={<AccountDetails accountUrl ={`http://localhost:8090/accounts/${userId}/`}/>} />

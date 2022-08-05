@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import "../HomePage.css"
 
-function HomePage(){
+function Homepage(){
     return (
         <div className="hero vh-100 d-flex align-items-center">
             <div className="container">
@@ -21,4 +21,4 @@ and discover historic landmarks across the United States and territories.<br/>St
 )
     }
 
-export default HomePage();
+export default Homepage();
