@@ -10,10 +10,9 @@ import ParkDetails from "./parks/ParkDetails"
 import React, { useEffect, useState } from 'react'
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
+import AccountDetails from './users/AccountPage';
 
 function App(props) {
-
-  const [userName, setUserName] = useState('');
   const [, , logout] = useToken();
   const { token } = useAuthContext();
 
@@ -26,6 +25,7 @@ function App(props) {
           <Route path="/" element={homePage} />
           <Route path="/parks" element={<ParksList fetchUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} token={token} />} />
           <Route path="parks/:id" element={<ParkDetails detailUrl={`${process.env.REACT_APP_PARKS}/parks/list/`} weatherUrl={'https://api.openweathermap.org/data/2.5/weather?q='} token={token} />} />
+          <Route path="account/:id" element={<AccountDetails accountUrl ={"http://localhost:8090/accounts/1"}/>} />
         </Route>
         <Route path="/login" element={<LoginForm token={token} />} />
         <Route path="/signup" element={<SignUpForm />} />

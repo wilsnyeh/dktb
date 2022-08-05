@@ -109,3 +109,9 @@
     margin-bottom: 5px;
 }
 
+/* ACCOUNT DETAILS */
+
+.accountdetail {
+    margin: 200px;
+    background-color: red;
+}
