@@ -40,7 +40,7 @@ Once users find any areas of interest, theyre able add these to their "Bucket li
     - Splash page that includes a button to prompt users to login
     - Otherwise links are found in the nav for user account signup
 
-## Future Development
+# Future Development
 WIP
 Users have a convenient application at their finger tips that keeps track of their places they'd like to visit and allow them to check off places they've visited throughout their explorations. 
 
@@ -62,15 +62,15 @@ Users have a convenient application at their finger tips that keeps track of the
     - This could encourage users to opt-outside more often and setting goals for users to reach; promoting more and continued application activity
 - Live feed
     - If there are live feeds from an area available, such as a ranger station camera; We would like to provide that feed for users to utilize a live/current visual representation of the area they plan on visiting 
-## Wireframes & Instructions
+# Wireframes & Instructions
 ![APP](docs/wireframes/APP.png)
-### Upon clicking 'enter' guests will be prompted to login or they can create an account
+## Upon clicking 'enter' guests will be prompted to login or they can create an account
 ![MainPage_NL_NS](docs/wireframes/MainPage_NL_NS.png)
 ![DKTB_Login](docs/wireframes/.png)
 ![DKTB_Signup](docs/wireframes/DKTB_Signup.png)
-### Users can filter through various parks within state parameters
+## Users can filter through various parks within state parameters
 ![ParksList](docs/wireframes/ParksList.png)
 ![ParkList_search](docs/wireframes/ParkList_search.png)
-### Users can click on the park photo to add this park to their favorites
+## Users can click on the park photo to add this park to their favorites
 ![ParkDetails](docs/wireframes/ParkDetails.png)
 ![ParkFavorite](docs/wireframes/ParkFavorite.png)
