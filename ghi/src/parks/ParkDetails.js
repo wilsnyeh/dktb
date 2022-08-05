@@ -50,12 +50,12 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
 
           <div key={park.id} className="row">
             <div className="col-12">
-              <h2 className=" h1c">{park.name}</h2>
-              <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
-              <p className="lead">{park.description}</p>
+              <h2 className=" h1c text-center">{park.name}</h2>
+              <h4 className=" text-center"><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
+              <p className="lead text-center">{park.description}</p>
             </div>
-            <div className="col-12 mb-3 text-center">
-              <img width="97%" className="img-fluid"
+            <div className="col-12 mb-5 text-center">
+              <img width="90%" className="img-fluid list-border-inner"
                 src={park.image_url} alt="" />
               <div onClick={() => addFavoritePark(park)} className='overlay align-items-center justify-content'>
                 <FavoriteButton />

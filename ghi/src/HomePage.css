@@ -107,6 +107,12 @@
     border-color: #906d53
 }
 
+.list-border-inner {
+    border: 3px solid;
+    border-style: inset;
+    border-color: #906d53
+}
+
 .h1c {
     color: #198754;
 }
