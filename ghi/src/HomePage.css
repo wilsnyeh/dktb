@@ -17,11 +17,14 @@ a {
     color: var(--dark);
     text-decoration: none;
 }
+a:hover {
+    color:#84a98c
+}
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
 
 :root {
     --primary: #595736;
-    --dark: #121212;
+    --dark: #cc1f1f;
     --body: #F8F9F0;
     --box-shadow: 0 8px 22px rgba(0,0,0,0.1);
 }

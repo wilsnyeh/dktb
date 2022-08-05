@@ -22,7 +22,7 @@ function Login() {
                 <div className="row"></div>
                 <h1 className='p-4 m-auto pb-0 text-light'>Login to your Account</h1>
                 <form className='container w-80 mt-2 py-1'>
-                    <div className='form-outline form-outline-color-success my-4 mx-3'>
+                    <div className='form-outline form-outline-color-success my-4 mx-3 '>
                         <label className='form-label' htmlFor='username'><font size="+2">Username</font></label>
                         <input
                             className='form-control '
@@ -46,23 +46,19 @@ function Login() {
                     </div>
                     <div className='container-fluid flex'>
                         <button
-                            className='btn btn-success' onClick={() => login(username, password)} type='button'>
+                            className='btn btn-success float-end' onClick={() => login(username, password)} type='button'>
                             Login
                         </button>
                     </div>
                 </form>
-                <div className='row mx-2 m-auto'>
-                    <div className='col m-auto'>
-                        <p>Don't have an account?</p>
+                
+                    <div className='row'>
+                        <a href="/signup"
+                        className="text-center text-light">
+                    Don't have an account?</a>
                     </div>
-                    <div className='col mb-1'>
-                        <button
-                            onClick={routeChange}
-                            className="btn btn-success btn-block">
-                            Sign up
-                        </button>
-                    </div>
-                </div>
+                    
+                
 </span>
 </div></div>
     );

@@ -80,7 +80,7 @@ function SignUpForm() {
                                 placeholder='password' />
                         </div>
                         {/* <section className='justify-content-center'> */}
-                        <div className='row mb-2  w-100 m-auto p-3'>
+                        <div className='row mb-2 m-auto p-3'>
                             <button
                                 onClick={async (e) => {
                                     e.preventDefault();
@@ -92,18 +92,13 @@ function SignUpForm() {
                         </div>
                     </form>
                     {/* </section> */}
-                    <div className='row mb-2 m-auto'>
-                        <div className='col m-auto'>
-                            <p>Already have an account?</p>
-                        </div>
-                        <div className='col mb-1'>
-                            <button
-                                onClick={routeChange}
-                                className="btn btn-success btn-block signupbtn">
-                                Login
-                            </button>
-                        </div>
+                    
+                    <div className='row'>
+                        <a href="/login"
+                        className="text-center text-light">
+                    Already have an account?</a>
                     </div>
+                        
                     {/* </section> */}
                     {/*form used to end here */}
 </span></div></div>
