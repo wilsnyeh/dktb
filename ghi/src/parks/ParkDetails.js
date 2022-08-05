@@ -59,10 +59,10 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
             <div className="col-12 mb-5 text-center">
               <img width="90%" className="img-fluid list-border-inner image-container"
                 src={park.image_url} alt="" />
+
               <div onClick={() => addFavoritePark(park)} className='overlay align-items-center justify-content'>
                 <FavoriteButton />
               </div>
-
 
             </div>
           </div>
