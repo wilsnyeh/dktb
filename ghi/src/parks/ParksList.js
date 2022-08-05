@@ -24,25 +24,29 @@ function ParksList({ fetchUrl, token }) {
       <div>
         <Header />
         <div className="input-group">
-          <input type="Search" onChange={event => setSearch(event.target.value)} className="form-control rounded " placeholder="State abbreviation" aria-label="Search" aria-describedby="search-addon" />
+          <input type="Search" onChange={event => setSearch(event.target.value)} className="form-control rounded " placeholder="Search State ex. (CA, AZ)" aria-label="Search" aria-describedby="search-addon" />
         </div>
-        <div className='parkslist'>
-          {parks && parks.filter(park => park.state.includes(search.toUpperCase())).map((park) => {
-            return (
-              <div key={park.id} className="row">
-                <div className="col-9">
-                  <h2 className="featurette-heading" ><Link to={'/parks/' + park.id}>{park.name}</Link></h2>
-                  <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
-                  <p className="lead">{park.description}</p>
+        <span></span>
+        <div className='m-5'>
+          <div style={{ justifyContent: "space-around" }} className='row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 g-1'>
+            {parks && parks.filter(park => park.state.includes(search.toUpperCase())).map((park) => {
+              return (
+                <div key={park.id} className="card mb-5 mx-2 shad_bottom off_white list-border">
+                  <div className="col">
+                    <div className="card-body">
+                      <h2 className="card-title "><Link className='link-success' to={'/parks/' + park.id}>{park.name}</Link></h2>
+                      <h4 className="card-subtitle mb-2 text-muted"><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
+                      <p className="card-text">{park.description}</p>
+                      <Link to={'/parks/' + park.id}>
+                        <img className="card-img-bottom"
+                          src={park.image_url} alt="" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-3 photo">
-                  <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
-                    src={park.image_url} alt="" />
-                </div>
-                <hr className="featurette-divider" />
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
       : <Navigate to="/login" />
