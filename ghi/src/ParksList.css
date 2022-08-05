@@ -19,10 +19,10 @@ a {
 }
 
 
-img {
+/* img {
     width: 100%;
     object-fit: cover;
-}
+} */
 
 .states-list {
     position: relative;
@@ -56,3 +56,16 @@ img {
 .states-list:hover img {
     transform: scale (1.1);
 }
+
+.card-text {
+    white-space: nowrap;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+.card-img-top {
+        width: 100px;
+        height: 100px;
+
+    }

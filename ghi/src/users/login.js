@@ -44,9 +44,9 @@ function Login() {
                             required
                         />
                     </div>
-                    <div className='container-fluid flex right'>
+                    <div className='container-fluid flex'>
                         <button
-                            className='btn homebutton' onClick={() => login(username, password)} to={'/parks/list'}type='button'>
+                            className='btn homebutton' onClick={() => login(username, password)} type='button'>
                             Login
                         </button>
                     </div>
