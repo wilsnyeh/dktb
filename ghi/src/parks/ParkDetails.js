@@ -45,20 +45,19 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
 
   return (
     <div> <Header />
-      <div className='parkdetail'>
-        <div className="card mb-3 shadow">
+      <div className='parkdetail shad_bottom'>
+        <div className="card mb-3 shadow off_white list-border">
 
           <div key={park.id} className="row">
             <div className="col-12">
-              <h2 className="featurette-heading-detail">{park.name}</h2>
+              <h2 className=" h1c">{park.name}</h2>
               <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
               <p className="lead">{park.description}</p>
             </div>
-            <div className="image-container col-12 photo">
-              <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
+            <div className="col-12 mb-3 text-center">
+              <img width="97%" className="img-fluid"
                 src={park.image_url} alt="" />
               <div onClick={() => addFavoritePark(park)} className='overlay align-items-center justify-content'>
-                {/* <AddFavorite /> */}
                 <FavoriteButton />
               </div>
 

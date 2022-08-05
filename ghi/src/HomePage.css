@@ -98,10 +98,15 @@
 }
 
 .background-list {
-    background-color: #b4caba;
+    background-color: #a8c5a7;
 }
 
 .list-border {
-    border: 2px solid;
-    border-color: #8B4513
+    border: 10px solid;
+    border-style: inset;
+    border-color: #906d53
+}
+
+.h1c {
+    color: #198754;
 }
