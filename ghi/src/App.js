@@ -19,6 +19,7 @@ function App(props) {
 
 
   return (
+
       <><Nav logout={logout} token={token} /><Routes>
       <Route>
         <Route path="/" element={HomePage} />
@@ -29,6 +30,8 @@ function App(props) {
       <Route path="/signup" element={<SignUpForm />} />
     </Routes><Footer /></>
     
+    
   )
-}
+};
+
 export default App; 

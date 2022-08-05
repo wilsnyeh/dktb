@@ -21,8 +21,8 @@ function ParksList({ fetchUrl, token }) {
   }, [fetchUrl, token])
 
   return (
+    
     token ?
-<<<<<<< HEAD
       // <div> <Header />
         <div className='container-fluid'>
           {/* {parks.map((park) => {
@@ -47,7 +47,6 @@ function ParksList({ fetchUrl, token }) {
                 
                   <h4 className="parks-list" >
                   <img
-=======
       <div>
         <Header />
         <div className="input-group">
@@ -64,7 +63,6 @@ function ParksList({ fetchUrl, token }) {
                 </div>
                 <div className="col-3 photo">
                   <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
->>>>>>> 520411201051bfc2f5988435e3216a89a03e8240
                     src={park.image_url} alt="" />
                     <div className="overlay">
                     <Link to={'/parks/' + park.id}>{park.name}</Link>

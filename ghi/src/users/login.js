@@ -1,27 +1,29 @@
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useToken } from "../Auth"
-
-export const Login = () => {
-
+import "../HomePage.css"
 
 
-function Login(open,onClose) {
-    
-    
-
+function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [, login] = useToken();
 
-    if (!open) return null;
-
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = `/signup/`
+        navigate(path);
+    }
     return (
-        <section className='w-100 d-flex justify-content-center pb-4'>
-            <div className='form-container'>
+
+        <div className="hero vh-100 d-flex align-items-center">
+            <div className="container">
+            <span className="font-link">
+                <div className="row"></div>
                 <h1 className='p-4 m-auto pb-0 text-light'>Login to your Account</h1>
                 <form className='container w-80 mt-2 py-1'>
                     <div className='form-outline form-outline-color-success my-4 mx-3'>
-                        <label className='form-label' htmlFor='username'>Username</label>
+                        <label className='form-label' htmlFor='username'><font size="+2">Username</font></label>
                         <input
                             className='form-control '
                             onChange={e => setUsername(e.target.value)}
@@ -32,7 +34,7 @@ function Login(open,onClose) {
                         />
                     </div>
                     <div className='my-4 mx-3'>
-                        <label className='form-label' htmlFor='password'>Password</label>
+                        <label className='form-label' htmlFor='password'><font size="+2">Password</font></label>
                         <input
                             className='form-control'
                             onChange={e => setPassword(e.target.value)}
@@ -42,9 +44,9 @@ function Login(open,onClose) {
                             required
                         />
                     </div>
-                    <div className='row mx-5 mb-4'>
+                    <div className='container-fluid flex right'>
                         <button
-                            className=' btn-success bordered' onClick={() => login(username, password)} type='button'>
+                            className='btn homebutton' onClick={() => login(username, password)} to={'/parks/list'}type='button'>
                             Login
                         </button>
                     </div>
@@ -61,8 +63,8 @@ function Login(open,onClose) {
                         </button>
                     </div>
                 </div>
-            </div>
-        </section>
+</span>
+</div></div>
     );
 }
 export default Login;

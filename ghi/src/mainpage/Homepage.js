@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import "../HomePage.css"
 
-function homePage(){
+function HomePage(){
     return (
         <div className="hero vh-100 d-flex align-items-center">
             <div className="container">
