@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import jwt from "jwt-decode";
 
 
 let internalToken = null;
@@ -46,14 +47,18 @@ function handleErrorMessage(error) {
 
 export const AuthContext = createContext({
     token: null,
+    decoded: null,
+    setDecoded: () => null,
     setToken: () => null,
 });
 
 export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(null);
+    const [decoded, setDecoded] = useState(null);
+
 
     return (
-        <AuthContext.Provider value={{ token, setToken }}>
+        <AuthContext.Provider value={{ token, setToken, decoded, setDecoded }}>
             {children}
         </AuthContext.Provider>
     );
@@ -62,18 +67,28 @@ export const AuthProvider = ({ children }) => {
 export const useAuthContext = () => useContext(AuthContext);
 
 export function useToken() {
-    const { token, setToken } = useAuthContext();
+    const { token, setToken, setDecoded } = useAuthContext();
     const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchToken() {
             const token = await getTokenInternal();
             setToken(token);
+            
         }
         if (!token) {
             fetchToken();
         }
     }, [setToken, token]);
+
+    useEffect(() => {
+        if (token) {
+            setDecoded(jwt(token));
+        } else {
+            setDecoded(null);
+        }
+
+    },[token, setDecoded])
 
     async function logout() {
         if (token) {

@@ -3,47 +3,51 @@ import { useParams } from 'react-router-dom'
 import AddFavorite from '../components/AddFavorites'
 
 
-
-const parkUrl = "http://localhost:8080/parks/list/"
-
-function ParkDetails({ detailUrl, ...props }) {
-    const [park, setPark] = useState({})
-    const [favorites, setFavorites] = useState([])
-
-    const addFavoritePark = (parks) => {
-        const newFavoriteList = [...favorites, parks]
-        setFavorites(newFavoriteList);
-    }
+function AccountDetails({ accountUrl, ...props }) {
+    const [favorites, setFavorites] = useState({})
     const { id } = useParams()
 
     useEffect(() => {
-        async function fetchData() {
-            const Url = detailUrl + id;
-            const response = await fetch(Url);
-            const data = await response.json();
-            setPark(data);
-            return response;
-        }
-        fetchData();
-    }, [detailUrl, id])
+      async function fetchData() {
+        const response = await fetch(accountUrl)
+        const data = await response.json();
+        setFavorites(data)
+        return response
+      }
+      fetchData();
+    },[accountUrl, id])    
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",favorites);
 
     return (
-        <div className='parks-list'>
-            <div key={park.id} className="row">
-                <div className="col-5 text-center mx-auto">
-                    <h2 className="featurette-heading">{park.name}</h2>
-                    <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
-                    <p className="lead">{park.description}</p>
-                </div>
-                <div className="image-container">
-                    <img className="img-fluid mx-auto" src={park.image_url} alt="" />
-                    <div onClick={ } className='overlay align-items-center justify-content'>
-                        <FavoriteComponent />
+        <>
+        <div key={favorites.email} className='accountdetail'>
+            <h1>{favorites.email}</h1>
+            {favorites.parks
+            ? <div>{favorites.parks.map((park) => {
+                return (
+                    <div key={park.id}>
+                        <h1>{park.id}</h1>
+                        <h1>{park.name}</h1>
+                        <h1>{park.state}</h1>
                     </div>
-                    <hr className="featurette-divider" />
-                </div>
-            </div>
+                    )       
+            })}</div>
+            : null
+            }
+            
+
         </div>
+            {/* {favorites.map((f) => {
+                return (
+                    <div key={favorites.email} className='accountdetail'>
+                        <h1>{f.username}</h1>
+                        <h2>{f.first_name}</h2>
+                        <h2>{f.last_name}</h2>
+                        <h2>{f.email}</h2>
+                        <h2>{f.id}</h2>
+                    </div>)                
+            })} */}
+        </>
     )
 }
-export default ParkDetails
+export default AccountDetails;
