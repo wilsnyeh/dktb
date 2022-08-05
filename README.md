@@ -65,6 +65,12 @@ Users have a convenient application at their finger tips that keeps track of the
 
 ## Add your files
 ![MainPage_NL_NS](docs\wireframes\MainPage_NL_NS.png)
+![DKTB_Login](docs\wireframes\.png)
+![DKTB_Signup](docs\wireframes\DKTB_Signup.png)
+![ParksList](docs\wireframes\ParksList.png)
+![ParkList_search](docs\wireframes\ParkList_search.png)
+![ParkDetails](docs\wireframes\ParkDetails.png)
+![ParkFavorite](docs\wireframes\ParkFavorite.png)
 
 👀👀👀👀
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
