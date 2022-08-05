@@ -10,6 +10,8 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
   const [weather, setWeather] = useState({})
   const { id } = useParams()
   const apiKey = '2f4e32d94a78c9492aa87395ac412181'
+  const [favorite, setFavorite] = useState(["123"])
+  const [favoritesList, setFavoritesList] = useState([])
 
   useEffect(() => {
     async function fetchData() {
@@ -66,6 +68,9 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         <div className="col-12">
           {park.weather_info}
         </div>
+        {/* <div className="col-12 photo">
+          <img onClick={event => setFavorite(event.target.value)} className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
+            src={park.image_url} alt="" /> */}
         <div className='row row-details'>
           <div className="col-6">Entrance fee: {park.entrance_fee}</div>
           <div className="col-6">Contact number: {park.contact_num}</div>
