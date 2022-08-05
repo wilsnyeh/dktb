@@ -2,7 +2,7 @@ import './App.css';
 import LoginForm from './users/login';
 import SignUpForm from './users/signup';
 import { Routes, Route } from "react-router-dom";
-import HomePage from './mainpage/Homepage'
+import HomePage from './mainpage/HomePage'
 import Footer from "./mainpage/Footer";
 import ParksList from './parks/ParksList';
 import ParkDetails from "./parks/ParkDetails"

@@ -21,10 +21,10 @@ function SignUpForm() {
         <div className="hero vh-100 d-flex align-items-center">
             <div className="container">
             <span className="font-link">
-                <div className="row"></div>
+                <div className="row">
                     <h1 className='p-4 m-auto pb-0 text-light'>Create an account  </h1>
                     <form className='container w-80 mt-2 py-1 needs-validation' noValidate>
-                        <div className="form-outline form-outline-color-success mb-2">
+                        <div className="form-outline form-outline-color-success my-4 mx-3 ">
                             <label htmlFor='username'
                                 className='form-label '><font size="+2">Username</font></label>
                             <input value={username}
@@ -80,23 +80,24 @@ function SignUpForm() {
                                 placeholder='password' />
                         </div>
                         {/* <section className='justify-content-center'> */}
-                        <div className='row mb-2 m-auto p-3'>
+                        <div className='container-fluid flex'>
                             <button
                                 onClick={async (e) => {
                                     e.preventDefault();
                                     await signup(username, password, email, first_name, last_name)
                                 }}
-                                className="btn btn-success btn-block">
+                                className='btn btn-success float-end'>
                                 LETS GET OUTSIDE
                             </button>
                         </div>
                     </form>
                     {/* </section> */}
-                    
+                    <br></br>
                     <div className='row'>
                         <a href="/login"
                         className="text-center text-light">
                     Already have an account?</a>
+                    </div>
                     </div>
                         
                     {/* </section> */}
