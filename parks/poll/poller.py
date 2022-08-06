@@ -28,12 +28,9 @@ def get_parks():
             phoneNumber = park["contacts"]["phoneNumbers"][0]["phoneNumber"]           
         except IndexError:
             pass
+        url = ""
         try:
-            url = park["images"][0]["url"]
-            if url.rfind("(") > -1:
-                image_url = url[2:len(url)-4]
-            else:
-                image_url = url
+            url = park["images"][0]["url"]            
         except IndexError:
             pass
 
@@ -45,7 +42,7 @@ def get_parks():
                 "description": park["description"],
                 "weather_info": park["weatherInfo"],
                 "entrance_fee": (park["entranceFees"])[0]["cost"],
-                "image_url": park["images"][0]["url"],
+                "image_url": url,
                 "contact_num": phoneNumber,                
                 }
             )
@@ -58,7 +55,7 @@ def poll():
             get_parks()
         except Exception as e:
             print( e, file=sys.stderr)
-        time.sleep(20)
+        time.sleep(2)
 
 if __name__ == "__main__":
     poll()

@@ -18,6 +18,7 @@ function ParksList({ fetchUrl, token }) {
     }
     fetchData();
   }, [fetchUrl, token])
+  console.log(parks);
 
   return (
     token ?

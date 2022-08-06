@@ -15,9 +15,22 @@ Today, I found the F2/Rename symbol functionality
 in Visual Studio Code! It allows me to rename a
 variable without ca -->
 
-08.04.22
+08.05.22
 
-08.03.22
+- Worked with jwt token to get unique user id to use it in personal cabinet.
+- Got bucket list for individual user.
+- Fixed button to add data to bucket list.
+  ##Issues
+- Issues with with understanding how to get user's id.
+
+  08.04.22
+
+- Updated models and views functions for ParkVO part.
+- Created another container with poller inside to get parks for each user.
+  ##Issues
+- Issues with correct view function to get correct information.
+
+  08.03.22
 
 - Solved merge conflict and update with last version of the code.
 - Adjusted styles for details page, list,nav, header and homepage.
