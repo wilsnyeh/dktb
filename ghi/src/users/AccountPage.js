@@ -25,9 +25,10 @@ function AccountDetails({ accountUrl, updateFavorites, ...props }) {
                     ? <div>{favorites.parks.map((park) => {
                         return (
                             <div key={park.id}>
-                                <h1>{park.id}</h1>
                                 <h1>{park.name}</h1>
-                                <h1>{park.state}</h1>
+                                <h2>{park.state}</h2>
+                                <img width="25%" className="img-fluid list-border-inner "
+                                    src={park.image_url} alt="national park" />
                             </div>
                         )
                     })}</div>
