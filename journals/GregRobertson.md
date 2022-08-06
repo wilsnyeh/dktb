@@ -19,6 +19,28 @@ Today, I worked on:
 Spent the whole day on the the favorite feature, to little avail.
 Having issues with poller.py file. Attempting to pull data from the
 ParksVO.
+
+## August 3, 2022
+
+Today, I worked on:
+
+* Favorite Functionality Day 3
+
+Managed to get the poller.py for Users to work today, spent 
+most of the day trying to find a solution to the favorite feature
+The whole team split up into groups to tackle the problem from
+different sides. Still struggling with the feature. At the end of the 
+day, all my branches no longer work when trying to sign in. Something 
+is wrong with my Auth/Tokens but cannot pin point the issue.
+## August 2, 2022
+
+Today, I worked on:
+
+* Favorite Functionality Day 2
+
+Spent the whole day on the the favorite feature, to little avail.
+Having issues with poller.py file. Attempting to pull data from the
+ParksVO.
 ## August 1, 2022
 
 Today, I worked on:
