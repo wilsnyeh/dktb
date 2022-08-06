@@ -97,13 +97,13 @@ function SignUpForm() {
                                 <p>Already have an account?</p>
                             </div>
                             <div className='col mb-1'>
-                                <div></div>
+                            
                                 <button
                                     onClick={routeChange}
                                     className="btn btn-success btn-block signupbtn">
                                     Login
                                 </button>
-                                <div></div>
+                                
                             </div>
                         </div>
                         </span>
