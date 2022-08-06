@@ -5,83 +5,72 @@
 * [GHI](docs/ghi.md)
 * [Integrations](docs/integrations.md)
 
-Website that utilizes National State Park(NPS) API and allows users to peruse parks and make a list of locations that they want to visit with all the information that comes along with them.
-
-😁😁😁😁😁
+# Team Members
 - Sergey Lyuft
 - Liam Cahill
 - Greg Robertson
 - Siah Meraki
 - Wilson Yeh
 
-The ultimate shopping list for your bucket list
-
 ## Intended Market
+Anyone who is looking to get outside more - instead of being stuck in front of a computer screen all day.
 
-outdoorsy people - or those that want to get outside more - instead of being stuck in front of a computer all day...
-Our intended market of users for this would be 'weekend warriors' or travelers who are looking to enjoy adventures that are more outdoors oriented - here they are able to look up places of interest and possibly find others who have visited and see their comments on a park. On each page they-re able to check valuable information on a states park such as weather, activities, and amenities. 
-
-
-* possible ad revenue from vendors - REI/ outdoor retailers/ travel sites/ 
-* travelers looking to visit state park areas
-* 
-
+Our users would be 'weekend warriors' or just travelers who are looking to enjoy adventures at any of our beautiful state parks. 
+ 
 ## Functionality 
-** uses NPS API to retrieve data for parks **
-** uses Weather API to retrieve weather data for parks **
-** Users are those who have created an account ** 
+"Users": anyone who has created an account for this application.
+"Bucket List": places of interest a user has found for themselves. 
 
-* anyone can create an account
-    * users can edit their profile/account
-    * add pinned parks to your account - create their 'bucket list' of places they want to/ intend on visiting
-    * pinned parks can be 'checked off' after you've made your visit to the park 
-    * users will have a history of parks they've visited/checked off their bucket list 
-* search states for parks - to list parks in the state  
-    * unlock additional info from parks after login/signing up to encourage users to create an account
-    * include weather conditions for parks
-* users can leave comments on a park/ park rating system?
-* amenities - parking/ restrooms/ food/ camping
-* activities to do at the parks
-* articles of the park/ info? 
+Our application utilizes National State Park (NPS) API and Open Weather API to retrieve park data and real-time weather data at these parks. 
+With this data, users can browse National Parks, or landmarks found in NPS through searches in a US state and some US territories.
+Once users find any areas of interest, theyre able add these to their "Bucket list." 
 
-*** achievements - something used to track how many parks a user has visited; at some thresholds users gain medals or accolades
-*** social aspect 
-*** live feed from area if cam is available - some parks have ranger cameras if we are able to find a way to tap into their feeds we can include these as part of a parks page information (can also make this available for users after sign-up)
+- Create account/ profile
+    - "Users" can create an account and start their bucket list.
+- Login/ Logout
+    - Users are able to login/ logout of their account
+    - Users data (bucket list) is only visible to that user during their session. 
+- Parks list
+    - All registered parks are returned here that include a photo, and a short description of the park
+- Park search
+    - Users are able to filter through a list of parks within a state or view an unordered list of parks
+- Park details
+    - Upon clicking on a park, the user can find more details on the park such as contact phone number,  and park fees, in addition to real-time weather data that includes temperature and humidity. 
+- Homepage
+    - Splash page that includes a button to prompt users to login
+    - Otherwise links are found in the nav for user account signup
 
-## Add your files
+# Future Development
+WIP
+Users have a convenient application at their finger tips that keeps track of their places they'd like to visit and allow them to check off places they've visited throughout their explorations. 
 
+- Bucket list
+    - users are able to 'favorite' places of interest and add them to their bucket list
+    - bucket list items can be checked off and history kept for users to view 
+    - to favorite park, users can simply click the photo to add them to their list
+- Users can edit their profile/account
 
-👀👀👀👀
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/modzilla-mafia/dont-kick-the-bucket.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/modzilla-mafia/dont-kick-the-bucket/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
+- Creating usability of the application available for users without an account, and instead hide some of the applications features to encourage guests to sign up and become users. 
+- Users can leave comments on parks 
+- Users can rate a park
+- Park details to include more information such as amenities: parking, restrooms, food, camping, etc. 
+- Park activities
+- Include any additional information on a park: articles from other sources
+- Thank you Zynh
+- Achievements 
+    - This would function off of the bucket list history; where a user has checked off bucket list items and have a 'ranking system' for how 'outdoorsy' a user is 
+    - This could encourage users to opt-outside more often and setting goals for users to reach; promoting more and continued application activity
+- Live feed
+    - If there are live feeds from an area available, such as a ranger station camera; We would like to provide that feed for users to utilize a live/current visual representation of the area they plan on visiting 
+# Wireframes & Instructions
+![APP](docs/wireframes/APP.png)
+## Upon clicking 'enter' guests will be prompted to login or they can create an account
+![MainPage_NL_NS](docs/wireframes/MainPage_NL_NS.png)
+![DKTB_Login](docs/wireframes/DKTB_Login.png)
+![DKTB_Signup](docs/wireframes/DKTB_Signup.png)
+## Users can filter through various parks within state parameters
+![ParksList](docs/wireframes/ParksList.png)
+![ParkList_search](docs/wireframes/ParkList_search.png)
+## Users can click on the park photo to add this park to their favorites
+![ParkDetails](docs/wireframes/ParkDetails.png)
+![ParkFavorite](docs/wireframes/ParkFavorite.png)

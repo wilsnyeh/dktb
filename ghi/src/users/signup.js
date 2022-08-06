@@ -8,12 +8,12 @@ function SignUpForm() {
     const [last_name, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [token, , , signup,] = useToken();
-
+    const [token, , , signup, ] = useToken();
+    
     let navigate = useNavigate();
     const routeChange = () => {
         let path = `/login/`
-        navigate(path);
+        navigate(path); 
     }
     return (
         <div>
@@ -96,7 +96,7 @@ function SignUpForm() {
                         <div className='col mb-1'>
                             <button
                                 onClick={routeChange}
-                                className="btn btn-success btn-block">
+                                className="btn btn-success btn-block signupbtn">
                                 Login
                             </button>
                         </div>

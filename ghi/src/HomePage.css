@@ -4,11 +4,27 @@
 
 /* HEADER SETTINGS */
 
+#myCarousel {
+    width: 100%;
+    height: auto;
+}
+
+.carouselphoto {
+    width: 100%;
+    height: auto;
+    /* opacity: 0.8 */
+    max-height: 380px;
+}
 
 /* LIST SETTINGS */
 
+.parks-list {
+    padding: 3% 12% 20%;
+    /* position: absolute; */
+}
+
 .parkslist {
-    padding: 5% 12% 0%;
+    padding: 3% 12% 0%;
 }
 
 .featurette-divider {
@@ -20,13 +36,6 @@
     max-width: 400px;
     max-height: 300px;
 } */
-.header-pic {
-    background-position: center;
-    background-size: color;
-    background-attachment: fixed;
-    position: relative;
-    z-index: 2;
-}
 
 /* FOOTER SETTINGS */
 

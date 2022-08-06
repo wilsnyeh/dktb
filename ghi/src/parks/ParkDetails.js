@@ -1,15 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import "../DetailPage.css"
 import Header from '../mainpage/Header'
 import "../DetailPage.css"
 import FavoriteButton from '../components/FavoriteButton'
 
 
-function ParkDetails({ detailUrl, weatherUrl, ...props }) {
+function ParkDetails({ detailUrl, weatherUrl, userId, ...props }) {
   const [park, setPark] = useState({})
   const [weather, setWeather] = useState({})
   const { id } = useParams()
   const apiKey = '2f4e32d94a78c9492aa87395ac412181'
+  const [favorite, setFavorite] = useState(["123"])
+  const [favoritesList, setFavoritesList] = useState([])
+
+  const addFavoritePark = (park) => {
+    const fetchConfig = {
+      method: "put",
+      body: JSON.stringify({ "park": park }),
+      headers: { "Content-Type": "application/json" }
+    }
+    fetch(`http://localhost:8090/accounts/${userId}/`, fetchConfig)
+      .catch((console.error))
+  }
 
   const free = Math.round(park.entrance_fee) === 0
   const fee = `$${Math.round(park.entrance_fee)}`
@@ -33,16 +46,11 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         const data = await response.json();
         // setWeather(data.main);
         setWeather(data.main);
-        console.log(data);
         return response;
       }
       fetchData();
     }
   }, [park, weatherUrl])
-
-  const addFavoritePark = (park) => {
-    const favorite = true;
-  }
 
 
   return (
