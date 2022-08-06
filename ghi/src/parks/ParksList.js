@@ -38,8 +38,10 @@ function ParksList({ fetchUrl, token }) {
                   <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
                   <p className="lead">{park.description}</p>
                 </div>
-              </div><hr className="featurette-divider" /></>
-              </div>
+              </div><hr className="featurette-divider" />
+              </>
+              
+              
             )
           })}
         </div>
