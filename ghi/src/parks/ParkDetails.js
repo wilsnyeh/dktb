@@ -52,15 +52,15 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
 
           <div key={park.id} className="row">
             <div className="col-12">
-              <h2 className=" h1c text-center">{park.name}</h2>
+              <h2 className=" h1c text-center mt-3">{park.name}</h2>
               <h4 className=" text-center"><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
               <p className="lead text-center">{park.description}</p>
             </div>
             <div className="col-12 mb-5 text-center">
-              <img width="90%" className="img-fluid list-border-inner image-container"
-                src={park.image_url} alt="" />
+              <img width="90%" className="img-fluid list-border-inner "
+                src={park.image_url} alt="national park" />
 
-              <div onClick={() => addFavoritePark(park)} className='overlay align-items-center justify-content'>
+              <div onClick={() => addFavoritePark(park)} className=' align-items-center justify-content '>
                 <FavoriteButton />
               </div>
 
@@ -69,15 +69,21 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
         </div>
         <div>
           {weather
-            ? <div><h5>Weather in {park.city} now: </h5><h6>Temperature: {Math.round(weather?.temp)} °F</h6><h6>Humidity: {weather?.humidity}%</h6> </div>
+            ? <div className='col-12'><h5 className='text-center '>Current weather in {park.city}:  </h5>
+              <div className='row row-details text-center mb-3'>
+                <h6 className='col-6'>Temperature: {Math.round(weather?.temp)} °F</h6>
+                <h6 className='col-6'>Humidity: {weather?.humidity}%</h6>
+                <hr className='mt-2' />
+              </div>
+            </div>
             : <></>
           }
         </div>
         <div className="col-12">
           {park.weather_info}
         </div>
-        <div className='row row-details'>
-          <h5 className="col-6">Entrance fee:  {free ? 'Free' : fee}</h5>
+        <div className='row row-details '>
+          <h5 className="col-6 mb-4">Entrance fee:  {free ? 'Free' : fee}</h5>
           <h5 className="col-6">Contact number: {park.contact_num}</h5>
         </div>
 
