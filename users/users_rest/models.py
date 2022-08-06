@@ -5,8 +5,9 @@ from django.urls import reverse
 # Create your models here.
 class ParkVO(models.Model):
     name = models.CharField(max_length=250, unique=True)
+    city = models.CharField(max_length=250, default="")
     state = models.CharField(max_length=250)
-    parks_visited = models.BooleanField(default=False)
+    image_url = models.CharField(max_length=250, default="")
 
 
 class Account(AbstractUser):
