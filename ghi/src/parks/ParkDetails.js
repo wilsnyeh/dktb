@@ -69,7 +69,7 @@ function ParkDetails({ detailUrl, weatherUrl, ...props }) {
           {weather
             ? <div><h5>Weather in {park.city} now: </h5><p>Temperature: {weather?.temp} °F</p><p>Humidity: {weather?.humidity}%</p> </div>
             :
-          }<></>
+          }
         </div>
         <div className="col-12">
           {park.weather_info}
