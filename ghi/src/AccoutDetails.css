@@ -1,0 +1,13 @@
+.hero {
+    background-image: url(../src/MainPage-BG.jpg);
+    background-position: center;
+    background-size: color;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+}
+
+.container-fluid {
+    width: 100%
+}
+

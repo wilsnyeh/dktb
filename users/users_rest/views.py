@@ -47,19 +47,27 @@ def accounts_list(request):
 
 
 
-@require_http_methods(["GET", "PUT"])
+@require_http_methods(["GET", "POST"])
 def account_detail(request, id):
     if request.method == "GET":
         account = Account.objects.get(id=id)
-        serializer=AccountSerializer(account) 
-        return JsonResponse(serializer.data)
-    else:
-        account=Account.objects.get(id=id)
-        content=json.loads(request.body)
-        park=ParkVO.objects.get(id=content["park"])
-        account.parks.add(park)
-        serializer=AccountSerializer(account) 
-        return JsonResponse(serializer.data)
+        print("FUUUUUUUUUUUUUUUUUUUUUUUUUCK",account.parks)
+        print("FUUUUUUUUUUUUUUUUUUUUUUUUUCK",list(account.parks.values()))
+        return JsonResponse(
+            {
+                "id": account.id,
+                "username": account.username,
+                "email": account.email,
+                "parks": list(account.parks.values())
+            }, safe=False
+        )
+    else: 
+        account = Account.objects.get(id=id)
+        return JsonResponse(
+            {
+                "parks": list(account.parks.values())
+            }
+        )
 
 
 @require_http_methods(["GET"])

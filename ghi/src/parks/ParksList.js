@@ -5,6 +5,7 @@ import Header from '../mainpage/Header'
 
 function ParksList({ fetchUrl, token }) {
   const [parks, setParks] = useState([])
+  const [id, setId] = useState('')
   const [search, setSearch] = useState('')
 
   useEffect(() => {
@@ -31,20 +32,19 @@ function ParksList({ fetchUrl, token }) {
         <div className='cards'>
           {parks && parks.filter(park => park.state.includes(search.toUpperCase())).map((park) => {
             return (
-              <div key={park.id} className="row">
+              <><div key={park.id} className="row">
                 <div className="col-9">
-                  <h2 className="featurette-heading" ><Link className='listlink' to={'/parks/' + park.id}>{park.name}</Link></h2>
+                  <h2 className="featurette-heading"><Link className='listlink' to={'/parks/' + park.id}>{park.name}</Link></h2>
                   <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
                   <p className="lead">{park.description}</p>
                 </div>
-                </div>
-
-
+              </div><hr className="featurette-divider" /></>
+              </div>
             )
           })}
         </div>
       </div>
-      : <Navigate to="/" />
+      : <Navigate to="/login" />
 
   )
 }

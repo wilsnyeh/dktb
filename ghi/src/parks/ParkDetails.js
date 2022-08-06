@@ -6,7 +6,7 @@ import "../DetailPage.css"
 import FavoriteButton from '../components/FavoriteButton'
 
 
-function ParkDetails({ detailUrl, weatherUrl, userId, ...props }) {
+function ParkDetails({ detailUrl, weatherUrl, ...props }) {
   const [park, setPark] = useState({})
   const [weather, setWeather] = useState({})
   const { id } = useParams()
@@ -60,33 +60,29 @@ function ParkDetails({ detailUrl, weatherUrl, userId, ...props }) {
             <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
             <p className="lead">{park.description}</p>
           </div>
-          <div className="image-container col-12 photo">
+          <div className="col-12 photo">
             <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
               src={park.image_url} alt="" />
-            <div onClick={() => addFavoritePark(id)} className='overlay align-items-center justify-content'>
-              <FavoriteButton />
-            </div>
           </div>
         </div>
         <div>
           {weather
             ? <div><h5>Weather in {park.city} now: </h5><p>Temperature: {weather?.temp} °F</p><p>Humidity: {weather?.humidity}%</p> </div>
-            : <></>
-          }
+            :
+          }<></>
         </div>
         <div className="col-12">
           {park.weather_info}
         </div>
-        {/* <div className="col-12 photo">
-          <img onClick={event => setFavorite(event.target.value)} className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
-            src={park.image_url} alt="" /> */}
         <div className='row row-details'>
           <div className="col-6">Entrance fee: {park.entrance_fee}</div>
           <div className="col-6">Contact number: {park.contact_num}</div>
         </div>
-      </div>
 
       </div>
+
+    </div>
   )
 }
 export default ParkDetails
+
