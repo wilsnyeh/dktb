@@ -68,7 +68,7 @@ function ParkDetails({ detailUrl, weatherUrl, userId, ...props }) {
               <img width="90%" className="img-fluid list-border-inner "
                 src={park.image_url} alt="national park" />
 
-              <div onClick={() => addFavoritePark(park)} className=' align-items-center justify-content '>
+              <div onClick={() => addFavoritePark(id)} className=' align-items-center justify-content '>
                 <FavoriteButton />
               </div>
 
