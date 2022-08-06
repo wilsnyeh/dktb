@@ -36,64 +36,6 @@ function SignUpForm() {
                                 <div className="valid-feedback"><font size="+2">Looks Good!</font></div>
                                 <div className="invalid-feedback"><font size="+2">Please choose another username</font></div>
                             </div>
-<<<<<<< HEAD
-                            <div className="col">
-                                <label htmlFor='last_name'
-                                    className='form-label'><font size="+2">Last Name</font></label>
-                                <input value={last_name}
-                                    onChange={(e) => setLastName(e.target.value)}
-                                    required type='text'
-                                    className='form-control'
-                                    id='last_name'
-                                    placeholder='Last' />
-                            </div>
-                        </div>
-                        <div className="mb-2">
-                            <label htmlFor="email"
-                                className="form-label"><font size="+2">Email address</font></label>
-                            <input value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required type="email"
-                                className="form-control"
-                                id="email"
-                                placeholder='email@example.com'
-                                aria-describedby="email" />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="password"
-                                className="form-label"><font size="+2">Password</font></label>
-                            <input value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required type="password"
-                                className="form-control"
-                                id="password"
-                                placeholder='password' />
-                        </div>
-                        {/* <section className='justify-content-center'> */}
-                        <div className='container-fluid flex'>
-                            <button
-                                onClick={async (e) => {
-                                    e.preventDefault();
-                                    await signup(username, password, email, first_name, last_name)
-                                }}
-                                className='btn btn-success float-end'>
-                                LETS GET OUTSIDE
-                            </button>
-                        </div>
-                    </form>
-                    {/* </section> */}
-                    <br></br>
-                    <div className='row'>
-                        <a href="/login"
-                        className="text-center text-light">
-                    Already have an account?</a>
-                    </div>
-                    </div>
-                        
-                    {/* </section> */}
-                    {/*form used to end here */}
-</span></div></div>
-=======
                             <div className='row mb-2'>
                                 <div className="col">
                                     <label htmlFor='first_name'
@@ -166,7 +108,6 @@ function SignUpForm() {
                 </div>
         </div>
         </div>
->>>>>>> main
     );
 }
 
