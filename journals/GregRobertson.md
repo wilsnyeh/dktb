@@ -1,3 +1,20 @@
+## August 5, 2022
+
+Today, I worked on:
+
+* CSS/Bootstrap Styling & MERGING TO MAIN FOR SUBMISSION
+
+Finished up with styling on the Detail page and List page.
+Spent the rest of the day to merge with everyone on the team.
+## August 4, 2022
+
+Today, I worked on:
+
+* CSS/Bootstrap Styling
+
+Finished up with styling on the Detail page and List page.
+Created columns withing the list page and borders and styling 
+to the detail page.
 ## August 3, 2022
 
 Today, I worked on:
