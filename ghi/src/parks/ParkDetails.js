@@ -17,12 +17,15 @@ function ParkDetails({ detailUrl, weatherUrl, userId, ...props }) {
   const addFavoritePark = (park) => {
     const fetchConfig = {
       method: "put",
-      body: JSON.stringify({"park": park}),
+      body: JSON.stringify({ "park": park }),
       headers: { "Content-Type": "application/json" }
     }
     fetch(`http://localhost:8090/accounts/${userId}/`, fetchConfig)
-    .catch((console.error))
+      .catch((console.error))
   }
+
+  const free = Math.round(park.entrance_fee) === 0
+  const fee = `$${Math.round(park.entrance_fee)}`
 
   useEffect(() => {
     async function fetchData() {
@@ -50,43 +53,52 @@ function ParkDetails({ detailUrl, weatherUrl, userId, ...props }) {
   }, [park, weatherUrl])
 
 
-
   return (
     <div> <Header />
-      <div className='parkdetail'>
-        <div key={park.id} className="row">
-          <div className="col-12">
-            <h2 className="featurette-heading-detail">{park.name}</h2>
-            <h4><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
-            <p className="lead">{park.description}</p>
-          </div>
-          <div className="image-container col-12 photo">
-            <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
-              src={park.image_url} alt="" />
-            <div onClick={() => addFavoritePark(id)} className='overlay align-items-center justify-content'>
-              <FavoriteButton />
+      <div className='parkdetail shad_bottom'>
+        <div className="card mb-3 shadow off_white list-border">
+
+          <div key={park.id} className="row">
+            <div className="col-12">
+              <h2 className=" h1c text-center mt-3">{park.name}</h2>
+              <h4 className=" text-center"><span className="text-muted">{"   " + park.city + ", " + park.state}</span></h4>
+              <p className="lead text-center">{park.description}</p>
+            </div>
+            <div className="col-12 mb-5 text-center">
+              <img width="90%" className="img-fluid list-border-inner "
+                src={park.image_url} alt="national park" />
+
+              <div onClick={() => addFavoritePark(id)} className=' align-items-center justify-content '>
+                <FavoriteButton />
+              </div>
+
             </div>
           </div>
         </div>
         <div>
           {weather
-            ? <div><h5>Weather in {park.city} now: </h5><p>Temperature: {weather?.temp} °F</p><p>Humidity: {weather?.humidity}%</p> </div>
+            ? <div className='col-12'><h5 className='text-center '>Current weather in {park.city}:  </h5>
+              <div className='row row-details text-center mb-3'>
+                <h6 className='col-6'>Temperature: {Math.round(weather?.temp)} °F</h6>
+                <h6 className='col-6'>Humidity: {weather?.humidity}%</h6>
+                <hr className='mt-2' />
+              </div>
+            </div>
             : <></>
           }
         </div>
         <div className="col-12">
           {park.weather_info}
         </div>
-        {/* <div className="col-12 photo">
-          <img onClick={event => setFavorite(event.target.value)} className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto parksphoto"
-            src={park.image_url} alt="" /> */}
-        <div className='row row-details'>
-          <div className="col-6">Entrance fee: {park.entrance_fee}</div>
-          <div className="col-6">Contact number: {park.contact_num}</div>
+        <div className='row row-details '>
+          <h5 className="col-6 mb-4">Entrance fee:  {free ? 'Free' : fee}</h5>
+          <h5 className="col-6">Contact number: {park.contact_num}</h5>
         </div>
-      </div>
 
       </div>
+
+    </div >
   )
 }
 export default ParkDetails
+
