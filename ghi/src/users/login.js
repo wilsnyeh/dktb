@@ -45,13 +45,13 @@ function Login() {
                         </div>
                         <div className='container-fluid flex'>
                             <button
-                                className='btn btn-success float-end' onClick={() => login(username, password)} type='button'>
+                                className='btn btn-success float-center' onClick={() => login(username, password)} type='button'>
                                 Login
                             </button>
                         </div>
                     </form>
                     <div className='row mx-2 m-auto'>
-                        <div className='col m-auto'>
+                        <div className='col m-auto text-light float-center'>
                             <p>Don't have an account?</p>
                         </div>
                         <div className='col mb-1'>
