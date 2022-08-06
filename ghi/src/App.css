@@ -109,3 +109,12 @@
 .search-bar {
   width: 500px;
 }
+
+.center {
+  columns: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  /* border: 3px solid green; */
+}

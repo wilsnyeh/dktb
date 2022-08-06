@@ -24,7 +24,7 @@ function SignUpForm() {
                     <span className="font-link">
                         <h1 className='p-4 m-auto pb-0 text-light'>Create an account  </h1>
                         <form className='container w-80 mt-2 py-1 needs-validation' noValidate>
-                            <div className="form-outline form-outline-color-success my-4 mx-3 ">
+                            <div className="form-outline form-outline-color-success mb-2 ">
                                 <label htmlFor='username'
                                     className='form-label '><font size="+2">Username</font></label>
                                 <input value={username}
@@ -86,7 +86,7 @@ function SignUpForm() {
                                         e.preventDefault();
                                         await signup(username, password, email, first_name, last_name)
                                     }}
-                                    className="btn btn-success btn-block">
+                                    className="btn btn-success btn-block center">
                                     LETS GET OUTSIDE
                                 </button>
                             </div>
@@ -97,11 +97,13 @@ function SignUpForm() {
                                 <p>Already have an account?</p>
                             </div>
                             <div className='col mb-1'>
+                                <div></div>
                                 <button
                                     onClick={routeChange}
                                     className="btn btn-success btn-block signupbtn">
                                     Login
                                 </button>
+                                <div></div>
                             </div>
                         </div>
                         </span>
