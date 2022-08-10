@@ -16,12 +16,27 @@
 # This specific template is located at:
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
-stages:          # List of stages for jobs, and their order of execution
-  - build
+stages:
   - test
+  - build
   - deploy
 
-ghi-build-job:       # This job runs in the build stage, which runs first.
+unit-test-job:   
+  image: python:3.10-bullseye
+  stage: test
+  script:
+    - cd users
+    - pip install -r requirements.txt
+    - python manage.py runtest
+
+lint-python-projects-job:
+  image: python:3.10-bullseye
+  stage: test
+  script:
+    - pip install flake8
+    - flake8 django
+
+ghi-build-job:
   stage: build
   image: node:lts-bullseye
   script:
@@ -29,17 +44,8 @@ ghi-build-job:       # This job runs in the build stage, which runs first.
     - npm install
     - npm run install
 
-
-
-lint-python-projects-job:   # This job runs in the test stage.
-  image: python:3.10-bullseye
-  stage: test    # It only starts when the job in the build stage completes successfully.
-  script:
-    - pip install flake8
-    - flake8 django
-    
-deploy-job:      # This job runs in the deploy stage.
-  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+deploy-job:
+  stage: deploy
   environment: production
   script:
     - echo "Deploying application..."
