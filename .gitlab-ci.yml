@@ -81,3 +81,33 @@ build-parks-job:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker push ${CI_REGISTRY_IMAGE}/parks:$CI_JOB_ID
     - docker push ${CI_REGISTRY_IMAGE}/parks:latest
+
+build-users-poller-job:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  stage: build
+  image: dont-kick-the-bucket_users-poller
+  services:
+    - users-poller-1
+  script:
+    - cd users/poll
+    - docker build -t ${CI_REGISTRY_IMAGE}/users/poll:latest .
+    - docker tag ${CI_REGISTRY_IMAGE}/users/poll:latest ${CI_REGISTRY_IMAGE}/users/poll:$CI_JOB_ID
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push ${CI_REGISTRY_IMAGE}/users/poll:$CI_JOB_ID
+    - docker push ${CI_REGISTRY_IMAGE}/users/poll:latest
+
+build-parks-poller-job:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  stage: build
+  image: dont-kick-the-bucket_parks-poller
+  services:
+    - parks-poller-1
+  script:
+    - cd parks/poll
+    - docker build -t ${CI_REGISTRY_IMAGE}/users/poll:latest .
+    - docker tag ${CI_REGISTRY_IMAGE}/parks/poll:latest ${CI_REGISTRY_IMAGE}/parks/poll:$CI_JOB_ID
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push ${CI_REGISTRY_IMAGE}/parks/poll:$CI_JOB_ID
+    - docker push ${CI_REGISTRY_IMAGE}/parks/poll:latest
