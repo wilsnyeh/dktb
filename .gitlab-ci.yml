@@ -27,7 +27,7 @@ unit-test-job:
   script:
     - cd users
     - pip install -r requirements.txt
-    - python manage.py runtest
+    - python -m pytest
 
 lint-python-projects-job:
   image: python:3.10-bullseye
@@ -36,13 +36,29 @@ lint-python-projects-job:
     - pip install flake8
     - flake8 users parks ghi
 
-ghi-build-job:
+build-ghi-job:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   stage: build
   image: node:lts-bullseye
+  needs:
+    - unit-test-job  
+    - lint-python-projects-job      
   script:
     - cd ghi
     - npm install
-    - npm run install
+    - npm run build  # Build the React application
+  artifacts:
+    paths:
+      - ghi/build/  # Save all of the files in the build path
+
+# ghi-build-job:
+#   stage: build
+#   image: node:lts-bullseye
+#   script:
+#     - cd ghi
+#     - npm install
+#     - npm run install
 
 deploy-job:
   stage: deploy
