@@ -27,14 +27,14 @@ unit-test-job:
   script:
     - cd users
     - pip install -r requirements.txt
-    - python -m pytest
+    - python -m 
 
 lint-python-projects-job:
   image: python:3.10-bullseye
   stage: test
   script:
     - pip install flake8
-    - flake8 users parks ghi
+    - flake8 --ignore E501,F401 users parks ghi
 
 build-ghi-job:
   rules:
@@ -47,22 +47,37 @@ build-ghi-job:
   script:
     - cd ghi
     - npm install
-    - npm run build  # Build the React application
+    - npm run build
   artifacts:
     paths:
-      - ghi/build/  # Save all of the files in the build path
+      - ghi/build/
 
-# ghi-build-job:
-#   stage: build
-#   image: node:lts-bullseye
-#   script:
-#     - cd ghi
-#     - npm install
-#     - npm run install
-
-deploy-job:
-  stage: deploy
-  environment: production
+build-users-job:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  stage: build
+  image: dont-kick-the-bucket_users
+  services:
+    - users-1
   script:
-    - echo "Deploying application..."
-    - echo "Application successfully deployed."
+    - cd users
+    - docker build -t ${CI_REGISTRY_IMAGE}/users:latest .
+    - docker tag ${CI_REGISTRY_IMAGE}/users:latest ${CI_REGISTRY_IMAGE}/users:$CI_JOB_ID
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push ${CI_REGISTRY_IMAGE}/users:$CI_JOB_ID
+    - docker push ${CI_REGISTRY_IMAGE}/users:latest
+
+build-parks-job:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  stage: build
+  image: dont-kick-the-bucket_parks
+  services:
+    - parks-1
+  script:
+    - cd users
+    - docker build -t ${CI_REGISTRY_IMAGE}/parks:latest .
+    - docker tag ${CI_REGISTRY_IMAGE}/parks:latest ${CI_REGISTRY_IMAGE}/parks:$CI_JOB_ID
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push ${CI_REGISTRY_IMAGE}/parks:$CI_JOB_ID
+    - docker push ${CI_REGISTRY_IMAGE}/parks:latest
