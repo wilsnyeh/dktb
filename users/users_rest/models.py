@@ -8,7 +8,7 @@ class ParkVO(models.Model):
     city = models.CharField(max_length=250, default="")
     state = models.CharField(max_length=250)
     image_url = models.CharField(max_length=250, default="")
-    
+
 
 class Account(AbstractUser):
     username = models.CharField(max_length=30, unique=True)
@@ -17,9 +17,9 @@ class Account(AbstractUser):
 
     parks = models.ManyToManyField(
         ParkVO,
-        related_name= "Accounts",
+        related_name="Accounts",
         null=True,
     )
+
     def get_api_url(self):
         return reverse("accounts_list", kwargs={"pk": self.pk})
-

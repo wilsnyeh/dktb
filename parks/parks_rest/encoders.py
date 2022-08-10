@@ -1,6 +1,7 @@
 from .common.json import ModelEncoder
 from .models import Park
 
+
 class ParkEncoder(ModelEncoder):
     model = Park
     properties = [

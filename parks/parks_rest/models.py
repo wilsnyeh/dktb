@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Park(models.Model):
     name = models.CharField(max_length=250, unique=True)
     state = models.CharField(max_length=250)

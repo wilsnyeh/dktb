@@ -3,6 +3,7 @@ from django.urls import NoReverseMatch
 from django.db.models import QuerySet
 from datetime import datetime
 
+
 class DateEncoder(JSONEncoder):
     def default(self, o):
         if isinstance(o, datetime):
@@ -33,7 +34,7 @@ class ModelEncoder(DateEncoder, QuerySetEncoder, JSONEncoder):
             for property in self.properties:
                 value = getattr(o, property)
                 if hasattr(value, "all") and not isinstance(value, QuerySet):
-                    values=value.all()
+                    values = value.all()
                     value = []
                     for item in values:
                         if property in self.encoders:

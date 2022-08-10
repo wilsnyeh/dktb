@@ -30,7 +30,7 @@ class FeatureTests(TestCase):
             import djwto
         except ModuleNotFoundError:
             self.fail("Could not find 'djwto' installed in the environment")
-            
+
     def test_psycopg2_installed(self):
         try:
             import psycopg2
@@ -58,15 +58,16 @@ class FeatureTests(TestCase):
     def test_unique_username(self):
         try:
             from ..models import Account
+
             username = Account.username
             self.assertTrue(username.field.unique)
         except ModuleNotFoundError:
             self.fail("username is not unique")
-    
+
     def test_unique_email(self):
         email = Account.email
         self.assertTrue(email.field.unique)
-    
+
     def test_username_field(self):
         try:
             username = Account.username

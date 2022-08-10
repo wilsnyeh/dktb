@@ -4,21 +4,23 @@ from django.db import IntegrityError
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 
-from .serializers import AccountSerializer # tell liam
+from .serializers import AccountSerializer  # tell liam
 from .models import Account, ParkVO
 from .encoders import AccountEncoder, ParkVOEncoder
 import json
 
+
 @require_http_methods(["GET"])
 def park_vo_list(request):
     if request.method == "GET":
-        parks=ParkVO.objects.all()
+        parks = ParkVO.objects.all()
         return JsonResponse(
             {"parks": parks},
             encoder=ParkVOEncoder,
         )
     else:
         pass
+
 
 # Create your views here.
 @require_http_methods(["GET", "POST"])
@@ -46,19 +48,18 @@ def accounts_list(request):
             return response
 
 
-
 @require_http_methods(["GET", "PUT"])
 def account_detail(request, id):
     if request.method == "GET":
         account = Account.objects.get(id=id)
-        serializer=AccountSerializer(account) 
+        serializer = AccountSerializer(account)
         return JsonResponse(serializer.data)
     else:
-        account=Account.objects.get(id=id)
-        content=json.loads(request.body)
-        park=ParkVO.objects.get(id=content["park"])
+        account = Account.objects.get(id=id)
+        content = json.loads(request.body)
+        park = ParkVO.objects.get(id=content["park"])
         account.parks.add(park)
-        serializer=AccountSerializer(account) 
+        serializer = AccountSerializer(account)
         return JsonResponse(serializer.data)
 
 

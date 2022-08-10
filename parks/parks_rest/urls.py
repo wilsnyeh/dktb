@@ -6,6 +6,6 @@ from .views import (
 )
 
 urlpatterns = [
-    path("list/", parks_list, name="parks_list" ),
-    path("list/<int:id>", park_detail, name="park_detail" )
+    path("list/", parks_list, name="parks_list"),
+    path("list/<int:id>", park_detail, name="park_detail"),
 ]

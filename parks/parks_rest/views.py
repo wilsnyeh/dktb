@@ -9,6 +9,7 @@ from .encoders import ParkEncoder
 import json
 from django.conf import settings
 import djwto.authentication as auth
+
 # Create your views here.
 
 
@@ -24,6 +25,7 @@ def parks_list(request):
     else:
         pass
 
+
 @require_http_methods(["GET", "DELETE"])
 def park_detail(request, id):
     if request.method == "GET":
@@ -34,8 +36,8 @@ def park_detail(request, id):
             response = JsonResponse({"message": "Park does not exist"})
             response.status_code = 404
             return response
-    else: 
-        try: 
+    else:
+        try:
             park = Park.objects.get(id=id)
             park.delete()
             return JsonResponse(

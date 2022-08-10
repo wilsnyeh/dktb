@@ -7,23 +7,30 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Park',
+            name="Park",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, unique=True)),
-                ('state', models.CharField(max_length=2)),
-                ('city', models.CharField(blank=True, max_length=50, null=True)),
-                ('address', models.CharField(max_length=50, unique=True)),
-                ('description', models.TextField()),
-                ('weather_info', models.TextField()),
-                ('entrance_fee', models.IntegerField(max_length=6)),
-                ('contact_num', models.IntegerField(max_length=11)),
-                ('image_url', models.URLField(blank=True, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100, unique=True)),
+                ("state", models.CharField(max_length=2)),
+                ("city", models.CharField(blank=True, max_length=50, null=True)),
+                ("address", models.CharField(max_length=50, unique=True)),
+                ("description", models.TextField()),
+                ("weather_info", models.TextField()),
+                ("entrance_fee", models.IntegerField(max_length=6)),
+                ("contact_num", models.IntegerField(max_length=11)),
+                ("image_url", models.URLField(blank=True, null=True)),
             ],
         ),
     ]
