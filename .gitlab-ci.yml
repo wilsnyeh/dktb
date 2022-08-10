@@ -34,7 +34,7 @@ lint-python-projects-job:
   stage: test
   script:
     - pip install flake8
-    - flake8 django
+    - flake8 DONT-KICK-THE-BUCKET
 
 ghi-build-job:
   stage: build
