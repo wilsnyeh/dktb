@@ -35,7 +35,7 @@ lint-python-projects-job:
   script:
     - pip install flake8
     - flake8 --ignore E501,F401 users parks ghi
-
+#----------------------BUILD----------------------
 build-ghi-job:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
@@ -56,9 +56,9 @@ build-users-job:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   stage: build
-  image: dont-kick-the-bucket_users
+  image: docker:20.10.16
   services:
-    - users-1
+    - docker:20.10.16-dind
   script:
     - cd users
     - docker build -t ${CI_REGISTRY_IMAGE}/users:latest .
@@ -71,9 +71,9 @@ build-parks-job:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   stage: build
-  image: dont-kick-the-bucket_parks
+  image: docker:20.10.16
   services:
-    - parks-1
+    - docker:20.10.16-dind
   script:
     - cd users
     - docker build -t ${CI_REGISTRY_IMAGE}/parks:latest .
@@ -86,9 +86,9 @@ build-users-poller-job:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   stage: build
-  image: dont-kick-the-bucket_users-poller
+  image: docker:20.10.16
   services:
-    - users-poller-1
+    - docker:20.10.16-dind
   script:
     - cd users/poll
     - docker build -t ${CI_REGISTRY_IMAGE}/users/poll:latest .
@@ -101,9 +101,8 @@ build-parks-poller-job:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   stage: build
-  image: dont-kick-the-bucket_parks-poller
-  services:
-    - parks-poller-1
+  image: docker:20.10.16
+    - docker:20.10.16-dind
   script:
     - cd parks/poll
     - docker build -t ${CI_REGISTRY_IMAGE}/users/poll:latest .
@@ -111,3 +110,54 @@ build-parks-poller-job:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker push ${CI_REGISTRY_IMAGE}/parks/poll:$CI_JOB_ID
     - docker push ${CI_REGISTRY_IMAGE}/parks/poll:latest
+#--------------------DEPLOY--------------------------
+deploy-back-end-job-heroku:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  stage: deploy
+  needs:
+    - build-back-end-job
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE:latest
+    - docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+
+    # Adds the name of your Heroku app to the image
+    - docker tag ${CI_REGISTRY_IMAGE}/api:latest registry.heroku.com/$HEROKU_STAGING_APP/web:latest
+
+    # Pushes the image to the Heroku image registry
+    - docker push registry.heroku.com/$HEROKU_STAGING_APP/web:latest
+
+
+#--------------------DEPLOY and RELEASE--------------------------
+
+heroku-release:
+  stage: deploy
+  image: node:10.17-alpine
+    # Only run if pushing to the main branch
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  needs:
+    - heroku-transfer
+  before_script:
+    - apk add curl bash
+    - curl https://cli-assets.heroku.com/install.sh | sh
+  script:
+    - heroku container:release web --app $HEROKU_STAGING_APP
+#---------------------GITLAB.IO Pages------------------------------
+pages:
+  stage: deploy
+  rules:
+    # Only run if pushing to the main branch
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  dependencies:
+    - build-ghi-job
+  needs:
+    - build-ghi-job
+  script:
+    - mv ghi/build public
+  artifacts:
+    paths:
+      public
