@@ -1,5 +1,4 @@
-from django.urls import path, include
-from rest_framework import routers, serializers, viewsets
+from rest_framework import serializers
 from .models import ParkVO, Account
 
 class ParkVOSerializer(serializers.ModelSerializer):

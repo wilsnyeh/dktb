@@ -10,14 +10,13 @@ import React from 'react'
 import { useAuthContext, useToken } from './Auth'
 import Nav from './Nav';
 import AccountDetails from './users/AccountPage';
-// import jwt from "jwt-decode";
+
 
 
 function App(props) {
   const [, , logout] = useToken();
   const { token, decoded } = useAuthContext();
   const userId = decoded?.user?.id
-  // const [favorites, setFavorites] = useState();
 
 
   return (

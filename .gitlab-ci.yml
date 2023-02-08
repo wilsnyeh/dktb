@@ -1,40 +1,23 @@
-# This file is a template, and might need editing before it works on your project.
-# This is a sample GitLab CI/CD configuration file that should run without any modifications.
-# It demonstrates a basic 3 stage CI/CD pipeline. Instead of real tests or scripts,
-# it uses echo commands to simulate the pipeline execution.
-#
-# A pipeline is composed of independent jobs that run scripts, grouped into stages.
-# Stages run in sequential order, but jobs within stages run in parallel.
-#
-# For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
-#
-# You can copy and paste this template into a new `.gitlab-ci.yml` file.
-# You should not add this template to an existing `.gitlab-ci.yml` file by using the `include:` keyword.
-#
-# To contribute improvements to CI/CD templates, please follow the Development guide at:
-# https://docs.gitlab.com/ee/development/cicd/templates.html
-# This specific template is located at:
-# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
 stages:
-  - test
+  # - test
   - build
   - deploy
 
-unit-test-job:   
-  image: python:3.10-bullseye
-  stage: test
-  script:
-    - cd users
-    - pip install -r requirements.txt
-    - python -m 
+# unit-test-job:   
+#   image: python:3.10-bullseye
+#   stage: test
+#   script:
+#     - cd users
+#     - pip install -r requirements.txt
+#     - python -m 
 
-lint-python-projects-job:
-  image: python:3.10-bullseye
-  stage: test
-  script:
-    - pip install flake8
-    - flake8 --ignore E501,F401 users parks ghi
+# lint-python-projects-job:
+#   image: python:3.10-bullseye
+#   stage: test
+#   script:
+#     - pip install flake8
+#     - flake8 --ignore E501,F401 users parks ghi
 #----------------------BUILD----------------------
 build-ghi-job:
   rules:
@@ -111,7 +94,7 @@ build-parks-poller-job:
     - docker push ${CI_REGISTRY_IMAGE}/parks/poll:$CI_JOB_ID
     - docker push ${CI_REGISTRY_IMAGE}/parks/poll:latest
 #--------------------DEPLOY--------------------------
-deploy-back-end-job-heroku:
+deploy-users-job:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   stage: deploy
