@@ -16,19 +16,9 @@ from users_rest.models import ParkVO
 
 def get_parks():
     response = requests.get("http://parks:8000/parks/list/")
-    # print("------------------------------------------>",response)
     content = json.loads(response.content)
-    print("------------------------------------------>",len(content["parks"]))
-    for park in content["parks"]:
-        ParkVO.objects.update_or_create(
-            id=park["id"],
-            defaults={
-                "name": park["name"],            
-                "city": park["city"],            
-                "state": park["state"],          
-                "image_url": park["image_url"],          
-                }  
-        )
+    print("------------UsersPoller--------------->",len(content["parks"]))
+    
 
 def poll():
     while True:

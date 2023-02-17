@@ -14,6 +14,7 @@ services:
             PGADMIN_DEFAULT_EMAIL: person@gmail.com
             PGADMIN_DEFAULT_PASSWORD: password
     postgres:
+        hostname: banana
         build:
             context: ./db
             dockerfile: ./Dockerfile.dev

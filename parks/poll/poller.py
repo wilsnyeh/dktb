@@ -20,10 +20,12 @@ import os
 
 
 def get_parks():
-    response = requests.get(f'https://developer.nps.gov/api/v1/parks?limit=467&api_key={NPS_API_KEY}')
+    response = requests.get(f'https://developer.nps.gov/api/v1/parks?limit=467&start=0&api_key={NPS_API_KEY}')
     content = json.loads(response.content)
+    print("-------------------------------->",len(content['data']))
     for park in content["data"]:
         phoneNumber = ""
+        image_url = ""
         try:
             phoneNumber = park["contacts"]["phoneNumbers"][0]["phoneNumber"]           
         except IndexError:
@@ -36,6 +38,8 @@ def get_parks():
                 image_url = url
         except IndexError:
             pass
+        if park["fullName"] == "Abraham Lincoln Birthplace National Historical Park":
+            print('<<<---------------------->>>', park["addresses"][0]["city"])          
 
         Park.objects.update_or_create(
             name=park["fullName"], ## unique identifier
@@ -45,11 +49,11 @@ def get_parks():
                 "description": park["description"],
                 "weather_info": park["weatherInfo"],
                 "entrance_fee": (park["entranceFees"])[0]["cost"],
-                "image_url": park["images"][0]["url"],
+                "image_url": image_url,
                 "contact_num": phoneNumber,                
                 }
             )
-
+    return content
 
 def poll():
     while True:

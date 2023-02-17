@@ -1,18 +1,11 @@
-from json import JSONDecoder
-from selectors import EpollSelector
-from urllib.robotparser import RequestRate
-from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from .models import Park
 from .encoders import ParkEncoder
-import json
-from django.conf import settings
 import djwto.authentication as auth
-# Create your views here.
 
 
-@auth.jwt_login_required
+# @auth.jwt_login_required
 @require_http_methods(["GET", "POST"])
 def parks_list(request):
     if request.method == "GET":
