@@ -20,9 +20,9 @@ import os
 
 
 def get_parks():
-    response = requests.get(f'https://developer.nps.gov/api/v1/parks?limit=467&start=0&api_key={NPS_API_KEY}')
+    response = requests.get(f'https://developer.nps.gov/api/v1/parks?id=&limit=467&start=0&api_key={NPS_API_KEY}')
     content = json.loads(response.content)
-    print("-------------------------------->",len(content['data']))
+    # print('------PARKS POLLER-------', len(content['data']))
     for park in content["data"]:
         phoneNumber = ""
         image_url = ""
@@ -40,20 +40,24 @@ def get_parks():
             pass
         if park["fullName"] == "Abraham Lincoln Birthplace National Historical Park":
             print('<<<---------------------->>>', park["addresses"][0]["city"])          
+    # for key, value in content['data'].items():
+    #     if value == 'Washington Monument' and key == 'fullName':
+    #         print('-----TESTIJGNG--------', park['addresses'][0]['city'])
 
         Park.objects.update_or_create(
             name=park["fullName"], ## unique identifier
+            
             defaults={
                 "state": park["states"],
                 "city": park["addresses"][0]["city"],
                 "description": park["description"],
-                "weather_info": park["weatherInfo"],
+                # "weather_info": park["weatherInfo"],
                 "entrance_fee": (park["entranceFees"])[0]["cost"],
-                "image_url": image_url,
-                "contact_num": phoneNumber,                
+                "image_url": park["images"][0]["url"],
+                # "contact_num": phoneNumber,                
                 }
             )
-    return content
+    
 
 def poll():
     while True:
@@ -62,7 +66,7 @@ def poll():
             get_parks()
         except Exception as e:
             print( e, file=sys.stderr)
-        time.sleep(20)
+        time.sleep(600)
 
 if __name__ == "__main__":
     poll()
