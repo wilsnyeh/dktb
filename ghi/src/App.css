@@ -109,3 +109,22 @@
 .search-bar {
   width: 500px;
 }
+
+.list-column-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr)
+}
+.list-column {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  /* display: flex; */
+  /* columns: 3; */
+  gap: 10px 20px; 
+  row-gap: 10px;
+  column-gap: 20px;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  /* flex-basis: 16%; */
+  max-width:100%
+}
