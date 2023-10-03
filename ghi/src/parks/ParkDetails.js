@@ -92,7 +92,7 @@ function ParkDetails({ detailUrl, weatherUrl, userId, ...props }) {
         </div>
         <div className='row row-details '>
           <h5 className="col-6 mb-4">Entrance fee:  {free ? 'Free' : fee}</h5>
-          <h5 className="col-6">Contact number: {park.contact_num}</h5>
+          <h5 className="col-6">Park Contact number: {park.contact_num}</h5>
         </div>
 
       </div>
