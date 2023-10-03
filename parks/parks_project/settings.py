@@ -29,9 +29,7 @@ SECRET_KEY = 'django-insecure-$#$o8zej$9vrf&-75j#tgo77l*u!ujv7qgtkmfv-_612h4rkkt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-NPS_API_KEY = os.environ.get('uxgDw6XIywVawiRxM2cbgQhzU9UZEfVrBgFdMtvz')
+ALLOWED_HOSTS = ['localhost','parks']
 
 # Application definition
 

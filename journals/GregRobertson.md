@@ -1,3 +1,130 @@
+## August 5, 2022
+
+Today, I worked on:
+
+* CSS/Bootstrap Styling & MERGING TO MAIN FOR SUBMISSION
+
+Finished up with styling on the Detail page and List page.
+Spent the rest of the day to merge with everyone on the team.
+## August 4, 2022
+
+Today, I worked on:
+
+* CSS/Bootstrap Styling
+
+Finished up with styling on the Detail page and List page.
+Created columns withing the list page and borders and styling 
+to the detail page.
+## August 3, 2022
+
+Today, I worked on:
+
+* Favorite Functionality Day 3
+
+Managed to get the poller.py for Users to work today, spent 
+most of the day trying to find a solution to the favorite feature
+The whole team split up into groups to tackle the problem from
+different sides. Still struggling with the feature. At the end of the 
+day, all my branches no longer work when trying to sign in. Something 
+is wrong with my Auth/Tokens but cannot pin point the issue.
+## August 2, 2022
+
+Today, I worked on:
+
+* Favorite Functionality Day 2
+
+Spent the whole day on the the favorite feature, to little avail.
+Having issues with poller.py file. Attempting to pull data from the
+ParksVO.
+
+## August 3, 2022
+
+Today, I worked on:
+
+* Favorite Functionality Day 3
+
+Managed to get the poller.py for Users to work today, spent 
+most of the day trying to find a solution to the favorite feature
+The whole team split up into groups to tackle the problem from
+different sides. Still struggling with the feature. At the end of the 
+day, all my branches no longer work when trying to sign in. Something 
+is wrong with my Auth/Tokens but cannot pin point the issue.
+## August 2, 2022
+
+Today, I worked on:
+
+* Favorite Functionality Day 2
+
+Spent the whole day on the the favorite feature, to little avail.
+Having issues with poller.py file. Attempting to pull data from the
+ParksVO.
+## August 1, 2022
+
+Today, I worked on:
+
+* Favorite Functionality
+
+Started on creating a new feature. The favorite button will 
+allow users toi dave parks that they see through the detail 
+page and store it in their "Bucket List". Ran into a wall with 
+saving the state after the button click
+## July 28, 2022
+
+Today, I worked on:
+
+* Merge Conflicts
+
+We successfully handled and finished the Auth file and have a 
+working login and JWT token functionality. The team collectively handled the merged 
+## July 27, 2022
+
+Today, I worked on:
+
+* Weather API Pair Programming & adjusting GHI
+
+Found a working alternative for a URL for the OpenWeatherAPI.
+Now we can narrow by city/state in the US. The Footer is now fixed 
+the BrowserRouter/App.js. 
+
+## July 26, 2022
+
+Today, I worked on:
+
+* NavLinks and Routing
+
+Routing was very disorganized, so today was spent refactoring
+the routes and reassigning some variables tpo make the code dry.
+Had some trouble tracing a URL path for the list & detail park pages.
+Implemented useParams() to get the id for each park and hyperlink the 
+name as a clickable event.
+
+## July 25, 2022
+
+Today, I worked on:
+
+* Authorization Pair Programming
+
+We had a major merge conflict at the end of last week which broke the 
+sign up form. We managed to get it working. We still have a 500 error
+for the login page. 
+
+## July 21, 2022
+
+Today, I worked on:
+
+* Front-end styling
+
+I managed to get the carousel images to be responsive.
+Learned a bit more about Bootstrap features with padding/margins.
+Need to fix sizing issue with the 3 images on top of the home page.
+## July 20, 2022
+
+Today, I worked on:
+
+* Front-end / Authentication 
+Working on the front end, paired programming with Liam and Wilson 
+to working on the login / sign up forms. Still struggling working with 
+Authentication issues in order for our users to log in, log out, etc. 
 ## July 19, 2022
 
 Today, I worked on:

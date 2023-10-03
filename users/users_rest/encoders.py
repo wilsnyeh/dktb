@@ -5,9 +5,14 @@ class ParkVOEncoder(ModelEncoder):
     model = ParkVO
     properties = [
         "name",
+        "city",
         "state",
-        "parks_visited",
+        "image_url",
     ]
+    def get_extra_data(self, o):
+        return {
+            "id": o.id
+        }
 
 class AccountEncoder(ModelEncoder):
     model = Account
@@ -16,9 +21,9 @@ class AccountEncoder(ModelEncoder):
         "first_name",
         "last_name",
         "email",
+        "password",
     ]
-    #     "park",
-    # ]
-    # encoder = {
-    #     "park" : ParkVOEncoder(),
-    # }
+
+    encoder = {
+        "parks" : ParkVOEncoder(),
+    }

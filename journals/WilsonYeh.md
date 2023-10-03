@@ -1,3 +1,38 @@
+## August 05, 2022
+*Worked on tidying up the README with wireframes and more detailed info about our project
+*Worked on getting some unit tests for testing various parts of our project
+
+Cleaned up our README, since this hasnt been changed since our initial inception of this project and updated the information to better reflect what works/ what doesnt/ and what we hope to continue to develop.
+## August 04, 2022
+*The project is finally able to append to a users list through insomnia, there were some changes that needed to be made for our views to handle this information for accounts - and spend the rest half of the day to get everyone else up to speed, because since there were MAJOR changes in our models, previously cached data from our containers were throwing many errors. 
+## August 03, 2022
+*We did not anticpate how users account would handle the information to add them to their list; and thus we needed to create a poller that would handle the polling from our parks api, which polls from NPS. Essentially, we needed something on the users side to poll this information and needed a poller from users to poll parkvo data. 
+## August 02, 2022
+*Worked on park search functionality 
+
+We were looking for ways to implement some sort of search functionality as we originally intended - we found at least for now, using our ability to filter through search parameters in our parks based on state was our best option of making this work. 
+## August 01, 2022
+*Frontend styling
+
+Liam and I have been working on front-end styling of our signup forms and login forms, and were making a lot of progress on getting things to look how we want and the benefit of us working together ensures our forms are cohesive and look like they belong to the same website. 
+## July 28, 2022
+*Merge conflicts
+
+We were finally able to get everything up and running and we had noticed we were very behind with everyones branches so we spent the day getting all the merge conflicts resolved and everyone up to speed so we could have up to date working branches that included everyones work up to this point. 
+## July 27, 2022
+*AUTH IS WORKING
+
+With some help and guidance we were able to get user logins / signup fully functional and with tokens properly created and deleted up on logout. 
+## July 26, 2022
+*Fixed 500 Server Error
+
+Made some changes in the views and encoders, everything is still working as it was before, except 500 errors have been resolved with /accounts. We are still not able to figure out why the JWT tokens are not showing up - although they are being created with the auth. 
+
+useEffect for user signup is unecessary, as this really should be something for users logging in, and signup inherits from login **which should be the func using the useeffect - we really just need something to handle the submit when users are signing up.
+## July 25, 2022
+Was able to troubleshoot some user signup issues today - signup still returns 500 server error but still posts - tokens are still grandted to users on login, later in the day we were also able to get login to redirect properly. 
+## July 22, 2022
+Still working on users signup/logout - we ran into some conflicts this time around where once Liam and I merged functionality for user sign up stopped working.
 ## July 21, 2022
 
 Not a lot of news today - Liam and I continue to make progress on the user authentication; We are both very close to completion with users signing up and users logging in. 
